@@ -1,12 +1,12 @@
 <!doctype html>
-<html>
-	<!--
-		ぬんサーチX（エックス）
-		2025/4/9 Copyright @minatsukijun
+<!--
+	ぬんサーチX（エックス）
+	2025/4/9 Copyright @minatsukijun
 
-		Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
-		(๑╹ᆺ╹)b
-	-->
+	Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
+	(๑╹ᆺ╹)b
+-->
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=360,initial-scale=1">
@@ -15,9 +15,17 @@
 
 	<body>
 		<h3>ぬんサーチX（えっくす）</h3>
-		<h4>1. 日付範囲指定</h4>
+		<h4>オプション</h4>
 		<p>
-			いつから？：<input type="date" name="since-date" id="textboxSinceDate" value="2017-09-07"><br> いつまで？：<input type="date" name="until-date" id="textboxUntilDate">
+			<input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled">ときのそら（@tokino_sora）のポストだけを検索
+		</p>
+		<h4>1. 日付範囲指定（チェックで有効無効切り替え）</h4>
+		<p>
+			<input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" checked>
+			いつから？：<input type="date" name="since-date" id="textboxSinceDate" value="2017-09-07"> JST 00時00分00秒 から<br>
+			　　　　　　　　<input type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onclick="clickSinceYesterdayButton()"><br><br>
+			<input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" checked>
+			いつまで？：<input type="date" name="until-date" id="textboxUntilDate"> JST 23時59分59秒 まで
 		</p>
 		<h4>2. キーワード指定</h4>
 		キーワード：<input type="text" name="name" id="textboxKeyword" size="20"><br>
@@ -55,6 +63,11 @@
 		window.onload = function getTodayDate() {
 			var today = new Date();
 			document.getElementById('textboxUntilDate').value = today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+		}
+		function clickSinceYesterdayButton() {
+			var yesterday = new Date();
+			yesterday.setDate(yesterday.getDate()-1);
+			document.getElementById('textboxSinceDate').value = yesterday.getFullYear()+"-"+("0"+(yesterday.getMonth()+1)).slice(-2)+"-"+("0"+yesterday.getDate()).slice(-2);
 		}
 		function clickLiveStreamTagButton() {
 			var hashTag = "#ときのそら生放送";
@@ -130,7 +143,16 @@
 		}
 		function openPage() {
 			var keyword = document.getElementById('textboxKeyword').value;
-			var searchQuery = keyword+" since:"+document.getElementById('textboxSinceDate').value+" until:"+document.getElementById('textboxUntilDate').value;
+			var searchQuery = keyword;
+			if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
+				searchQuery += " from:tokino_sora";
+			}
+			if (document.getElementById('checkboxSinceEnabled').checked === true) {
+				searchQuery += " since:"+document.getElementById('textboxSinceDate').value+"_00:00:00_JST";
+			}
+			if (document.getElementById('checkboxUntilEnabled').checked === true) {
+				searchQuery += " until:"+document.getElementById('textboxUntilDate').value+"_23:59:59_JST";
+			}
 			var openUrl = "https://x.com/search?q="+encodeURIComponent(searchQuery)+"&src=typed_query&f=top";
 			window.open(openUrl, '_blank');
 		}
