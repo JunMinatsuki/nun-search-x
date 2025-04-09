@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<!--
+		ぬんサーチX（エックス）
+		2025/4/9 Copyright @minatsukijun
+
+		Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
+		(๑╹ᆺ╹)b
+	-->
+	<head>
+		<meta charset="utf-8">
+		<title>ぬんサーチX（えっくす）</title>
+	</head>
+
+	<body>
+		<h3>ぬんサーチX（えっくす）</h3>
+		<h4>1. 日付範囲指定</h4>
+		<p>
+			いつから？：<input type="date" name="since-date" id="textboxSinceDate" value="2017-09-07"><br> いつまで？：<input type="date" name="until-date" id="textboxUntilDate">
+		</p>
+		<h4>2. キーワード指定</h4>
+		キーワード：<input type="text" name="name" id="textboxKeyword" size="20"><br>
+		※　半角スペース区切り(AND検索)<br>
+		" OR "を手入力して区切るとOR検索
+		<p>			
+			<strong>↓自動入力ボタン</strong><br>
+			<p>
+				<input type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onclick="clickNameTagButton()">
+			</p>
+			<p>
+				<input type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onclick="clickLiveStreamTagButton()"> 
+				<input type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onclick="clickFcTagButton()"> 
+			</p>
+			<p>
+				<input type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onclick="clickArtTagButton()"> 
+				<input type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onclick="clickOldArtTagButton()">
+			</p>
+			<p>
+				<input type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="clickListenTagButton()"> 
+				<input type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="clickIsshoTagButton()"> 
+			</p>
+		</p>
+		<h4>3. 設定した条件でXを検索</h4>
+		<p>
+			<input class="button" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onclick="openPage()">
+		</p>
+	</body>
+	
+	<script>
+		window.onload = function getTodayDate() {
+			var today = new Date();
+			document.getElementById('textboxUntilDate').value = today.getFullYear()+"-"+("0"+(today.getMonth()+1)).slice(-2)+"-"+("0"+today.getDate()).slice(-2);
+		}
+		function clickLiveStreamTagButton() {
+			var hashTag = "#ときのそら生放送";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickFcTagButton() {
+			var hashTag = "#ときのそらFC";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickNameTagButton() {
+			var hashTag = "#ときのそら";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickArtTagButton() {
+			var hashTag = "#そらArt";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickOldArtTagButton() {
+			var hashTag = "#soraArt";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickListenTagButton(){
+			var hashTag = "#そらぬん聞いたよ";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickIsshoTagButton(){
+			var hashTag ="#ときのそらと一緒";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function openPage() {
+			var keyword = document.getElementById('textboxKeyword').value;
+			var searchQuery = keyword+" since:"+document.getElementById('textboxSinceDate').value+" until:"+document.getElementById('textboxUntilDate').value;
+			var openUrl = "https://x.com/search?q="+encodeURIComponent(searchQuery)+"&src=typed_query&f=top";
+			window.open(openUrl, '_blank');
+		}
+	</script>
+</html>
