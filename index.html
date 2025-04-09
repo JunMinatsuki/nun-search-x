@@ -40,6 +40,10 @@
 				<input type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="clickListenTagButton()"> 
 				<input type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="clickIsshoTagButton()"> 
 			</p>
+			<p>
+				<input type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onclick="clickKeepShininTagButton()"> 
+				<input type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onclick="clickSorapa2024TagButton()"> 
+			</p>
 		</p>
 		<h4>3. 設定した条件でXを検索</h4>
 		<p>
@@ -102,6 +106,22 @@
 		}
 		function clickIsshoTagButton(){
 			var hashTag ="#ときのそらと一緒";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickKeepShininTagButton(){
+			var hashTag ="#ときのそら_KeepShinin";
+			var keyword = document.getElementById('textboxKeyword').value;
+			if (keyword !== "") {
+				keyword += " "; 
+			}
+			document.getElementById('textboxKeyword').value = keyword + hashTag;
+		}
+		function clickSorapa2024TagButton(){
+			var hashTag ="#そらぱ2024";
 			var keyword = document.getElementById('textboxKeyword').value;
 			if (keyword !== "") {
 				keyword += " "; 
