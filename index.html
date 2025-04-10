@@ -61,14 +61,25 @@
 	</body>
 
 	<script>
-		window.onload = function getTodayDate() {
-			var today = new Date();
-			document.getElementById('textboxUntilDate').value = today.getFullYear() + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + ("0" + today.getDate()).slice(-2);
+		/** @type {() => string} - 今日の日付を"YYYY-MM-DD"形式の文字列で取得 */
+		function getTodayDate() {
+			// 実はこれでいけちゃうんです…… https://www.ey-office.com/blog_archive/2023/04/18/short-code-to-get-todays-date-in-yyyy-mm-dd-format-in-javascript/
+			return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
 		}
-		function clickSinceYesterdayButton() {
+		/** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
+		function getYesterdayDate() {
 			var yesterday = new Date();
 			yesterday.setDate(yesterday.getDate() - 1);
-			document.getElementById('textboxSinceDate').value = yesterday.getFullYear() + "-" + ("0" + (yesterday.getMonth() + 1)).slice(-2) + "-" + ("0" + yesterday.getDate()).slice(-2);
+			return yesterday.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
+		}
+
+		window.onload = function updateUntilDate() {
+			var today = getTodayDate();
+			document.getElementById('textboxUntilDate').value = today;
+		}
+		function clickSinceYesterdayButton() {
+			var yesterday = getYesterdayDate();
+			document.getElementById('textboxSinceDate').value = yesterday;
 		}
 		function clickLiveStreamTagButton() {
 			var hashTag = "#ときのそら生放送";
