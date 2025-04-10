@@ -63,7 +63,6 @@
 	<script>
 		/** @type {() => string} - 今日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 		function getTodayDate() {
-			// 実はこれでいけちゃうんです…… https://www.ey-office.com/blog_archive/2023/04/18/short-code-to-get-todays-date-in-yyyy-mm-dd-format-in-javascript/
 			return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
 		}
 		/** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
