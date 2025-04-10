@@ -35,23 +35,23 @@
 		<p>
 			<strong>↓自動入力ボタン</strong><br>
 		<p>
-			<input type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onclick="clickNameTagButton()">
+			<input type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onclick="onClickTagButton(event)">
 		</p>
 		<p>
-			<input type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onclick="clickLiveStreamTagButton()">
-			<input type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onclick="clickFcTagButton()">
+			<input type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onclick="onClickTagButton(event)">
+			<input type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onclick="onClickTagButton(event)">
 		</p>
 		<p>
-			<input type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onclick="clickArtTagButton()">
-			<input type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onclick="clickOldArtTagButton()">
+			<input type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onclick="onClickTagButton(event)">
+			<input type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onclick="onClickTagButton(event)">
 		</p>
 		<p>
-			<input type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="clickListenTagButton()">
-			<input type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="clickIsshoTagButton()">
+			<input type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="onClickTagButton(event)">
+			<input type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="onClickTagButton(event)">
 		</p>
 		<p>
-			<input type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onclick="clickKeepShininTagButton()">
-			<input type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onclick="clickSorapa2024TagButton()">
+			<input type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onclick="onClickTagButton(event)">
+			<input type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onclick="onClickTagButton(event)">
 		</p>
 		</p>
 		<h4>3. 設定した条件でXを検索</h4>
@@ -81,72 +81,8 @@
 			var yesterday = getYesterdayDate();
 			document.getElementById('textboxSinceDate').value = yesterday;
 		}
-		function clickLiveStreamTagButton() {
-			var hashTag = "#ときのそら生放送";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickFcTagButton() {
-			var hashTag = "#ときのそらFC";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickNameTagButton() {
-			var hashTag = "#ときのそら";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickArtTagButton() {
-			var hashTag = "#そらArt";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickOldArtTagButton() {
-			var hashTag = "#soraArt";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickListenTagButton() {
-			var hashTag = "#そらぬん聞いたよ";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickIsshoTagButton() {
-			var hashTag = "#ときのそらと一緒";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickKeepShininTagButton() {
-			var hashTag = "#ときのそら_KeepShinin";
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function clickSorapa2024TagButton() {
-			var hashTag = "#そらぱ2024";
+		function onClickTagButton(event) {
+			var hashTag = event.target.value;
 			var keyword = document.getElementById('textboxKeyword').value;
 			if (keyword !== "") {
 				keyword += " ";
