@@ -1,108 +1,107 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：0.2b
+	ぬんサーチX（エックス） バージョン：1.00
 	2025/4/9 Copyright @minatsukijun
 
 	Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
 	(๑╹ᆺ╹)b
+	
+	メインビジュアル提供：もふもふ大好きDS 様（X：@DS_NDSL）
 -->
 <html>
 
-	<head>
+	<head prefix="og: https://ogp.me/ns#">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=360,initial-scale=1">
-		<title>ぬんサーチX（えっくす）</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1 viewport-fit=cover">
+		
+		<meta property="og:url" content="https://junminatsuki.github.io/nun-search-x/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="ぬんサーチ（Nun Search）" />
+		<meta property="og:description" content="ときのそらに関するXポストの検索ツールです。推し活やエゴサが楽になるかも。" />
+		<meta property="og:site_name" content="皆月じゅんのGitHub" />
+		<meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/mv_nun-search_DS_NDSL.jpg" />
+		
+		<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+		
+		<title>ぬんサーチ（Nun Search）</title>
 	</head>
-
+	
+	<header>
+		<figure>
+			<img src="assets/img/mv_nun-search_DS_NDSL.jpg" alt="ぬんサーチ（Nun Search）">
+			<figcaption class="caption">ヘッダーイラスト提供：もふもふ大好きDS 様</figcaption>
+		</figure>
+	</header>
+	
 	<body>
-		<h3>ぬんサーチX（えっくす）</h3>
-		<h4>オプション</h4>
-		<p>
-			<input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled">ときのそら（@tokino_sora）のポストだけを検索
-		</p>
-		<h4>1. 日付範囲指定（チェックで有効無効切り替え）</h4>
-		<p>
-			<input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" checked>
-			いつから？：<input type="date" name="since-date" id="textboxSinceDate" value="2017-09-07"> JST 00時00分00秒 から<br>
-			　　　　　　　　<input type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onclick="clickSinceYesterdayButton()"><br><br>
-			<input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" checked>
-			いつまで？：<input type="date" name="until-date" id="textboxUntilDate"> JST 23時59分59秒 まで
-		</p>
-		<h4>2. キーワード指定</h4>
-		キーワード：<input type="text" name="name" id="textboxKeyword" size="20"><br>
-		※　半角スペース区切り(AND検索)<br>
-		" OR "を手入力して区切るとOR検索
-		<p>
-			<strong>↓自動入力ボタン</strong><br>
-		<p>
-			<input type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onclick="onClickTagButton(event)">
-		</p>
-		<p>
-			<input type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onclick="onClickTagButton(event)">
-			<input type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onclick="onClickTagButton(event)">
-		</p>
-		<p>
-			<input type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onclick="onClickTagButton(event)">
-			<input type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onclick="onClickTagButton(event)">
-		</p>
-		<p>
-			<input type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="onClickTagButton(event)">
-			<input type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="onClickTagButton(event)">
-		</p>
-		<p>
-			<input type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onclick="onClickTagButton(event)">
-			<input type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onclick="onClickTagButton(event)">
-		</p>
-		</p>
-		<h4>3. 設定した条件でXを検索</h4>
-		<p>
-			<input class="button" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onclick="openPage()">
-		</p>
+		<h1>ぬんサーチ（Nun Search）</h1>
+		
+		<div class="block-option">
+			<h2>オプション</h2>
+			<p>
+				<input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled">ときのそら（@tokino_sora）のポストだけを検索
+			</p>
+		</div>
+		
+		<div class="block-date">
+			<h2>1. 日付範囲指定</h2>
+			<span class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
+			<p>
+				<input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" checked>いつから？<br>
+				<input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2017-09-07"> JST 00時00分00秒 から<br>
+				<input class="button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onclick="clickSinceYesterdayButton()"><br><br>
+				<input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" checked>いつまで？<br>
+				<input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate"> JST 23時59分59秒 まで
+			</p>
+		</div>
+		<div class="keyword-blodk">
+			<h2>2. キーワード指定</h2>
+			<span class="text-notes">※半角スペース区切り→AND検索、"OR"区切り→OR検索</span>
+			<p>
+				<input class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力"><br>
+				<input class="button-reset-keyword" type="button" name="reset-keyword" id="buttonSinceYesterdayTag" value="キーワドをリセット" onclick="clickResetKeywordButton()">
+			</p>
+			<div class="keyword-button-block">
+				<h3>キーワードを自動入力できるボタン</h3>
+				<h4>一般</h4>
+				<p>
+					<input type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onclick="onClickTagButton(event)">
+				</p>
+				<h4>配信やコンテンツの感想</h4>
+				<p>
+					<input class="button-keyword" type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onclick="onClickTagButton(event)">
+					<input class="button-keyword" type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onclick="onClickTagButton(event)">
+					<input class="button-keyword" type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onclick="onClickTagButton(event)">
+				</p>
+				<h4>ファンアート</h4>
+				<p>
+					<input class="button-keyword" type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onclick="onClickTagButton(event)">
+					<input class="button-keyword" type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onclick="onClickTagButton(event)">
+				</p>
+				<h4>そらともウォッチング(*´꒳`*)ﾐﾃﾙﾖ</h4>
+				<p>
+					<input class="button-keyword" type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onclick="onClickTagButton(event)"><br>
+					<input class="button-keyword" type="button" name="humburg-tag" id="buttonHumburgTag" value="#そらちゃんハンバーグどうぞ" onclick="onClickTagButton(event)">
+					<input class="button-keyword" type="button" name="gyutan-tag" id="buttonGyutanTag" value="#そらちゃん牛タンどうぞ" onclick="onClickTagButton(event)">
+				</p>
+				<h4>スペシャル</h4>
+				<p>
+					<input class="button-keyword" type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onclick="onClickTagButton(event)">
+					<input class="button-keyword" type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onclick="onClickTagButton(event)">
+				</p>
+			</div>
+		</div>
+		<div class="block-search">
+			<h2>3. 設定した条件でXを検索</h2>
+			<p>
+				<input class="button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onclick="openPage()">
+			</p>
+		</div>
 	</body>
-
-	<script>
-		/** @type {() => string} - 今日の日付を"YYYY-MM-DD"形式の文字列で取得 */
-		function getTodayDate() {
-			return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
-		}
-		/** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
-		function getYesterdayDate() {
-			var yesterday = new Date();
-			yesterday.setDate(yesterday.getDate() - 1);
-			return yesterday.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
-		}
-
-		window.onload = function updateUntilDate() {
-			var today = getTodayDate();
-			document.getElementById('textboxUntilDate').value = today;
-		}
-		function clickSinceYesterdayButton() {
-			var yesterday = getYesterdayDate();
-			document.getElementById('textboxSinceDate').value = yesterday;
-		}
-		function onClickTagButton(event) {
-			var hashTag = event.target.value;
-			var keyword = document.getElementById('textboxKeyword').value;
-			if (keyword !== "") {
-				keyword += " ";
-			}
-			document.getElementById('textboxKeyword').value = keyword + hashTag;
-		}
-		function openPage() {
-			var keyword = document.getElementById('textboxKeyword').value;
-			var searchQuery = keyword;
-			if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
-				searchQuery += " from:tokino_sora";
-			}
-			if (document.getElementById('checkboxSinceEnabled').checked === true) {
-				searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_00:00:00_JST";
-			}
-			if (document.getElementById('checkboxUntilEnabled').checked === true) {
-				searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_23:59:59_JST";
-			}
-			var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
-			window.open(openUrl, '_blank');
-		}
-	</script>
+	<footer>
+		&copy; 2025 皆月じゅん　<a href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
+		本ページは<a href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a>で公開しています。
+	</footer>
+	<script src="assets/js/script.js"></script>
 
 </html>
