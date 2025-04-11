@@ -26,8 +26,8 @@ header figure img {
 }
 
 html {
-	margin: 16px;
-	font-size: 100%;
+	margin: 8px;
+	font-size: 16px;
 	padding-left: calc(env(safe-area-inset-left) + .2em);
 	padding-bottom: env(safe-area-inset-bottom);
 }
@@ -118,6 +118,7 @@ p {
 
 footer {
 	background-color:#FF95D7;
+	font-size: 0.9rem;
 	color: white;
 	text-align: center;
 	padding: 10px;
