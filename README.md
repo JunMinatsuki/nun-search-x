@@ -1,5 +1,5 @@
 
-ぬんサーチX（エックス） バージョン:0.2a
+ぬんサーチX（エックス）
 
 2025/4/9 Copyright @minatsukijun
 
