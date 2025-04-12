@@ -15,6 +15,10 @@ window.onload = function setLanguage() {
 		document.getElementById('language').value = "ja";
 		changeLanguage("ja");
 	}
+	else if (browserLanguage === "ko") {
+		document.getElementById('language').value = "ko";
+		changeLanguage("ko");
+	}
 	else {
 		document.getElementById('language').value = "en";
 		changeLanguage("en");
