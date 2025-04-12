@@ -11,9 +11,14 @@ function getYesterdayDate() {
 
 window.onload = function setLanguage() {
 	var browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
+	console.log("言語コード: "+browserLanguage);
 	if (browserLanguage === "ja") {
 		document.getElementById('language').value = "ja";
 		changeLanguage("ja");
+	}
+	else if (browserLanguage === "zh-TW") {
+		document.getElementById('language').value = "zh-TW";
+		changeLanguage("zh-TW");
 	}
 	else if (browserLanguage === "ko") {
 		document.getElementById('language').value = "ko";

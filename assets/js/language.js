@@ -1,4 +1,5 @@
 const languageData = {
+	/** 日本語 */
     'ja': {
         'page-title': 'ぬんサーチ（Nun Search）',
 		'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS 様',
@@ -29,11 +30,12 @@ const languageData = {
 		'text-footer02': '本ページは',
 		'text-footer03': 'で公開しています。'
     },
+	/** 英語 */
     'en': {
         'page-title': 'Nun Search',
 		'header-caption': 'Header illustration provided by: もふもふ大好きDS San',
         'heading-page-title': 'Nun Search',
-		'label-language-selector': '表示言語: ',
+		'label-language-selector': 'Language: ',
         'heading-option': 'Option',
 		'text-option': 'Search only posts by Tokino Sora (@tokino_sora)',
 		'heading-date': '1.Specify date range',
@@ -57,10 +59,42 @@ const languageData = {
 		'text-search-btn': 'Search for X (๑╹ᆺ╹)Nun!',
 		'text-footer01': '2025 Jun Minatsuki',
 		'text-footer02': 'This page is working on ',
-		'text-footer03': ''
+		'text-footer03': '.'
     },
-	    'ko': {
-        'page-title': '눈서치',
+	/** 繁体中国語（台湾など） */
+	'zh-TW': {
+        'page-title': 'Nun搜尋 (Nun Search）',
+		'header-caption': '頁首插圖提供：もふもふ大好きDS',
+        'heading-page-title': 'Nun搜尋 (Nun Search）',
+		'label-language-selector': 'Language: ',
+        'heading-option': '選項',
+		'text-option': '只搜尋時乃空（@tokino_sora）的推文',
+		'heading-date': '1.搜尋日期範圍',
+		'date-text-notes': '※可點選方框啟用/停用日期範圍',
+		'text-date-01': '開始日期',
+		'text-date-02': 'JST 00時00分00秒 開始',
+		'text-date-03': '設定為昨天',
+		'text-date-04': '截止日期',
+		'text-date-05': 'JST 23時59分59秒 截止',
+		'heading-keyword': '2.設定關鍵字',
+		'keyword-text-notes': '※以半形空格分隔 -> AND 搜尋，以「OR」分隔 -> OR 搜尋',
+		'textbox-keyword': '輸入關鍵字',
+		'text-keyword-rstbtn': '重設關鍵字',
+		'heading-autoinput-btn':　'點選可自動輸入常用關鍵字',
+		'heading-general-tag':　'一般',
+		'heading-streaming-tag': '直播及其他活動的感想',
+		'heading-fanart-tag': '粉絲圖',
+		'heading-soratomo-watching-tag': '空友觀察中(*´꒳`*)我在看唷',
+		'heading-special-tag': '特殊',
+		'heading-search': '3.用以上條件於推特(X)搜尋',
+		'text-search-btn': '按我搜尋(๑╹ᆺ╹)Nun!!',
+		'text-footer01': '2025 皆月じゅん',
+		'text-footer02': '本頁面公開於',
+		'text-footer03': '.'
+    },
+	/** 韓国語 */
+	'ko': {
+        'page-title': '눈서치 (Nun Search）',
 		'header-caption': '헤더 일러스트 제공 : もふもふ大好きDS 님',
         'heading-page-title': '눈서치',
 		'label-language-selector': 'Language: ',
