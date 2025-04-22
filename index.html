@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：1.4.0
+	ぬんサーチX（エックス） バージョン：1.5.0
 	2025/4/9 Copyright @minatsukijun
 
 	Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
@@ -70,9 +70,13 @@
 		</div>
 		<div class="keyword-blodk">
 			<h2 data-language-key="heading-keyword">2. キーワード指定</h2>
-			<span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り→AND検索、"OR"区切り→OR検索</span>
+			
+			<input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" checked><span data-language-key="radio-and">"AND"で検索</span>
+			<input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR"><span data-language-key="radio-or">"OR"で検索</span><br>
+			
 			<p>
 				<input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力"><br>
+				<span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
 				<input data-language-key="text-keyword-rstbtn" class="button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onclick="clickResetKeywordButton()">
 			</p>
 			<div class="keyword-button-block">

@@ -55,7 +55,13 @@ function onClickTagButton(event) {
 
 function openPage() {
   var keyword = document.getElementById('textboxKeyword').value;
-  var searchQuery = keyword;
+  var searchQuery = null;
+  if (document.getElementById('radioSearchOptionOr').checked === true) {
+	  searchQuery = keyword.replace(" ", " OR ");
+  }
+  else {
+	  searchQuery = keyword;
+  }
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     searchQuery += " from:tokino_sora";
   }
