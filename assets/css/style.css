@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 header {
 	position:sticky;
 	text-align: center;
@@ -26,24 +33,37 @@ header figure img {
 }
 
 html {
-	margin: 8px;
-	font-size: 16px;
+	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+	font-size: 90%;
 	padding-left: calc(env(safe-area-inset-left) + .2em);
 	padding-bottom: env(safe-area-inset-bottom);
 }
 
 body {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding:0.5rem;
 	font-family: sans-serif;
 }
 
 div {
 	border: solid 2px #A8B4F6;
-	text-align: center;
-	margin:10px;
+	margin-bottom: 0.5rem;
+	padding:0.5rem;
 }
 
-div.keyword-button-block {
+div.strong-border {
 	border: solid 2px #EA96A6;
+}
+
+div.no-border {
+	border: none;
+}
+
+div.2col {
+	display: flex;
 }
 
 h1 {
@@ -92,28 +112,73 @@ p {
 	background-color: #FDF9D9;
 }
 
-.button-keyword {
-	margin-bottom: 5px;
-}
-
-.button-search {
-	margin: 0 auto;
-	width: 294px;
-}
-
-.button-set-yesterday {
-	margin-top:5px;
-	width: 294px;
-}
-
 .textbox-keyword {
-	width: 294px;
+	width: 100%;
 	background-color: #FDF9D9;
+	white-space: normal;
+	word-break: break-all;
 }
 
-.button-reset-keyword {
-	margin-top:5px;
-	width: 294px;
+input.btn {
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;
+	white-space: normal;
+	word-break: break-all;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
+}
+
+input.btn-full {
+	width: 100%;
+	font-size: 1.0rem;
+	font-weight: bold;
+	line-height: 1.5;
+	border: 2px solid #333333;
+	border-radius: 0;
+	background: #FDF9D9;
+}
+
+input.btn-full:hover {
+	width: 100%;
+	font-size: 1.0rem;
+	font-weight: bold;
+	line-height: 1.5;
+	border: 2px solid #D22B5D;
+	color: #FFFFFF;
+	background: #D22B5D;
+}
+
+input.btn-half {
+	width:49%;
+	font-size: 0.9rem;
+	font-weight: normal;
+	line-height: 1.2;
+	border: 1px solid #333333;
+	border-radius: 0;
+	background: #FDF9D9;
+}
+
+input.btn-half:hover {
+	width:49%;
+	font-size: 0.9rem;
+	font-weight: normal;
+	line-height: 1.2;
+	border: 1px solid #D22B5D;
+	color: #FFFFFF;
+	background: #D22B5D;
 }
 
 footer {
@@ -121,6 +186,5 @@ footer {
 	font-size: 0.9rem;
 	color: white;
 	text-align: center;
-	padding: 10px;
-	margin: 10px;
+	padding:0.5rem;
 }
