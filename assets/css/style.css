@@ -129,8 +129,6 @@ input.btn {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
 	text-align: center;
 	vertical-align: top;
 	text-decoration: none;
