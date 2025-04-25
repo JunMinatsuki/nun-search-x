@@ -151,7 +151,8 @@ input.btn-full {
 	background: #FDF9D9;
 }
 
-input.btn-full:active {
+@media (hover: hover)  {
+	input.btn-full:hover {
 	width: 100%;
 	font-size: 1.0rem;
 	font-weight: bold;
@@ -159,6 +160,19 @@ input.btn-full:active {
 	border: 2px solid #D22B5D;
 	color: #FFFFFF;
 	background: #D22B5D;
+	}
+}
+
+@media (hover: none)  {
+	input.btn-full:active {
+	width: 100%;
+	font-size: 1.0rem;
+	font-weight: bold;
+	line-height: 1.5;
+	border: 2px solid #D22B5D;
+	color: #FFFFFF;
+	background: #D22B5D;
+	}
 }
 
 input.btn-half {
@@ -171,7 +185,8 @@ input.btn-half {
 	background: #FDF9D9;
 }
 
-input.btn-half:active {
+@media (hover: hover)  {
+	input.btn-half:hover {
 	width:49%;
 	font-size: 0.9rem;
 	font-weight: normal;
@@ -179,6 +194,19 @@ input.btn-half:active {
 	border: 1px solid #D22B5D;
 	color: #FFFFFF;
 	background: #D22B5D;
+	}
+}
+
+@media (hover: none)  {
+	input.btn-half:active {
+	width:49%;
+	font-size: 0.9rem;
+	font-weight: normal;
+	line-height: 1.2;
+	border: 1px solid #D22B5D;
+	color: #FFFFFF;
+	background: #D22B5D;
+	}
 }
 
 footer {
