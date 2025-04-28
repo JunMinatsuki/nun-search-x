@@ -85,7 +85,6 @@ h2 {
 	text-decoration-style: double;
 }
 
-
 h3 {
 	font-size: 1.0rem;
 	color: #333333;
@@ -134,9 +133,7 @@ input.btn {
 	text-decoration: none;
 	white-space: normal;
 	word-break: break-all;
-	letter-spacing: 0.1em;
 	color: #212529;
-	border-radius: 0.5rem;
 }
 
 input.btn-full {
@@ -205,6 +202,22 @@ input.btn-half {
 	color: #FFFFFF;
 	background: #D22B5D;
 	}
+}
+
+input.btn-hide {
+	margin: 0rem;
+	display: inline;
+	width:5.5rem;
+	color: #FFFFFF;
+	border: none;
+	background-color: transparent;
+	letter-spacing: 0rem;
+	cursor:default;
+}
+
+details {
+	width: 100%;
+	padding:0.5rem;
 }
 
 footer {

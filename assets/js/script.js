@@ -35,6 +35,58 @@ window.addEventListener ( 'load', function updateUntilDate() {
   document.getElementById('textboxUntilDate').value = today;
 })
 
+window.addEventListener ( 'load', function confirmBlockRefresh() {
+  refreshConfirmAreaOption();
+  refreshConfirmAreaSince();
+  refreshConfirmAreaUntil();
+  refreshConfirmAreaAndOr();
+  refreshConfirmAreaKeyword();
+})
+
+function refreshConfirmAreaOption() {
+  if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
+    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
+  }
+  else {
+	document.getElementById('confirmValueOption').innerHTML = "";
+  }
+}
+
+function refreshConfirmAreaSince() {
+  if (document.getElementById('checkboxSinceEnabled').checked === true) {
+    document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value+" "+document.getElementById('textboxSinceTime').value+" JST";
+  }
+  else {
+	document.getElementById('confirmValueSince').innerHTML = "";
+  }
+}
+
+function refreshConfirmAreaUntil() {
+  if (document.getElementById('checkboxUntilEnabled').checked === true) {
+    document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value+" "+document.getElementById('textboxUntilTime').value+" JST";
+  }
+  else {
+	document.getElementById('confirmValueUntil').innerHTML = "";
+  }
+}
+
+function refreshConfirmAreaKeyword() {
+  document.getElementById('confirmValueKeyword').innerHTML = document.getElementById('textboxKeyword').value;
+}
+
+document.getElementById('textboxKeyword').addEventListener ('input', function syncConfirmKeyword() {
+  refreshConfirmAreaKeyword();
+})
+
+function refreshConfirmAreaAndOr() {
+  if (document.getElementById('radioSearchOptionAnd').checked === true){
+    document.getElementById('confirmValueAndOr').innerHTML = "AND";
+  }
+  else if (document.getElementById('radioSearchOptionOr').checked === true){
+    document.getElementById('confirmValueAndOr').innerHTML = "OR";
+  }
+}
+
 function clickSinceYesterdayButton() {
   var yesterday = getYesterdayDate();
   document.getElementById('textboxSinceDate').value = yesterday;
@@ -42,6 +94,7 @@ function clickSinceYesterdayButton() {
 
 function clickResetKeywordButton() {
   document.getElementById('textboxKeyword').value="";
+  refreshConfirmAreaKeyword();
 }
 
 function onClickTagButton(event) {
@@ -51,6 +104,7 @@ function onClickTagButton(event) {
     keyword += " ";
   }
   document.getElementById('textboxKeyword').value = keyword + hashTag;
+  refreshConfirmAreaKeyword();
 }
 
 function openPage() {
@@ -66,12 +120,18 @@ function openPage() {
     searchQuery += " from:tokino_sora";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_00:00:00_JST";
+    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_"+document.getElementById('textboxSinceTime').value+"_JST";
   }
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_23:59:59_JST";
+    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_"+document.getElementById('textboxUntilTime').value+"_JST";
   }
   var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
+  window.open(openUrl, '_blank');
+}
+
+function openBarehenWatch() {
+  var searchQuery = "そらちゃん バレへん";
+  var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
 
@@ -93,4 +153,5 @@ const changeLanguage = function(lang) {
 			element.value = text;
 		}
     });
+	refreshConfirmAreaOption();
 }
