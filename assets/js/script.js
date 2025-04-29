@@ -16,13 +16,25 @@ window.onload = function setLanguage() {
 		document.getElementById('language').value = "ja";
 		changeLanguage("ja");
 	}
+	else if (browserLanguage === "zh-CN" | browserLanguage === "zh") {
+		document.getElementById('language').value = "zh-CN";
+		changeLanguage("zh-CN");
+	}
 	else if (browserLanguage === "zh-TW") {
 		document.getElementById('language').value = "zh-TW";
 		changeLanguage("zh-TW");
 	}
+	else if (browserLanguage === "zh-HK") {
+		document.getElementById('language').value = "zh-HK";
+		changeLanguage("zh-HK");
+	}
 	else if (browserLanguage === "ko") {
 		document.getElementById('language').value = "ko";
 		changeLanguage("ko");
+	}
+	else if (browserLanguage === "id") {
+		document.getElementById('language').value = "id";
+		changeLanguage("id");
 	}
 	else {
 		document.getElementById('language').value = "en";
