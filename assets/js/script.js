@@ -1,53 +1,53 @@
 /** @type {() => string} - 今日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 function getTodayDate() {
-  return new Date().toLocaleDateString('sv-SE', {timeZone: 'Asia/Tokyo'});
+  return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
 }
 /** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 function getYesterdayDate() {
   var yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
-  return yesterday.toLocaleDateString('sv-SE', {timeZone: 'Asia/Tokyo'});
+  return yesterday.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
 }
 
 window.onload = function setLanguage() {
-	var browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
-	console.log("言語コード: "+browserLanguage);
-	if (browserLanguage === "ja") {
-		document.getElementById('language').value = "ja";
-		changeLanguage("ja");
-	}
-	else if (browserLanguage === "zh-CN" | browserLanguage === "zh") {
-		document.getElementById('language').value = "zh-CN";
-		changeLanguage("zh-CN");
-	}
-	else if (browserLanguage === "zh-TW") {
-		document.getElementById('language').value = "zh-TW";
-		changeLanguage("zh-TW");
-	}
-	else if (browserLanguage === "zh-HK") {
-		document.getElementById('language').value = "zh-HK";
-		changeLanguage("zh-HK");
-	}
-	else if (browserLanguage === "ko") {
-		document.getElementById('language').value = "ko";
-		changeLanguage("ko");
-	}
-	else if (browserLanguage === "id") {
-		document.getElementById('language').value = "id";
-		changeLanguage("id");
-	}
-	else {
-		document.getElementById('language').value = "en";
-		changeLanguage("en");
-	}
+  var browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
+  console.log("言語コード: " + browserLanguage);
+  if (browserLanguage === "ja") {
+    document.getElementById('language').value = "ja";
+    changeLanguage("ja");
+  }
+  else if (browserLanguage === "zh-CN" | browserLanguage === "zh") {
+    document.getElementById('language').value = "zh-CN";
+    changeLanguage("zh-CN");
+  }
+  else if (browserLanguage === "zh-TW") {
+    document.getElementById('language').value = "zh-TW";
+    changeLanguage("zh-TW");
+  }
+  else if (browserLanguage === "zh-HK") {
+    document.getElementById('language').value = "zh-HK";
+    changeLanguage("zh-HK");
+  }
+  else if (browserLanguage === "ko") {
+    document.getElementById('language').value = "ko";
+    changeLanguage("ko");
+  }
+  else if (browserLanguage === "id") {
+    document.getElementById('language').value = "id";
+    changeLanguage("id");
+  }
+  else {
+    document.getElementById('language').value = "en";
+    changeLanguage("en");
+  }
 }
 
-window.addEventListener ( 'load', function updateUntilDate() {
+window.addEventListener('load', function updateUntilDate() {
   var today = getTodayDate();
   document.getElementById('textboxUntilDate').value = today;
 })
 
-window.addEventListener ( 'load', function confirmBlockRefresh() {
+window.addEventListener('load', function confirmBlockRefresh() {
   refreshConfirmAreaOption();
   refreshConfirmAreaSince();
   refreshConfirmAreaUntil();
@@ -60,25 +60,25 @@ function refreshConfirmAreaOption() {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
   }
   else {
-	document.getElementById('confirmValueOption').innerHTML = "";
+    document.getElementById('confirmValueOption').innerHTML = "";
   }
 }
 
 function refreshConfirmAreaSince() {
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value+" "+document.getElementById('textboxSinceTime').value+" JST";
+    document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value + " " + document.getElementById('textboxSinceTime').value + " JST";
   }
   else {
-	document.getElementById('confirmValueSince').innerHTML = "";
+    document.getElementById('confirmValueSince').innerHTML = "";
   }
 }
 
 function refreshConfirmAreaUntil() {
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value+" "+document.getElementById('textboxUntilTime').value+" JST";
+    document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value + " " + document.getElementById('textboxUntilTime').value + " JST";
   }
   else {
-	document.getElementById('confirmValueUntil').innerHTML = "";
+    document.getElementById('confirmValueUntil').innerHTML = "";
   }
 }
 
@@ -86,15 +86,15 @@ function refreshConfirmAreaKeyword() {
   document.getElementById('confirmValueKeyword').innerHTML = document.getElementById('textboxKeyword').value;
 }
 
-document.getElementById('textboxKeyword').addEventListener ('input', function syncConfirmKeyword() {
+document.getElementById('textboxKeyword').addEventListener('input', function syncConfirmKeyword() {
   refreshConfirmAreaKeyword();
 })
 
 function refreshConfirmAreaAndOr() {
-  if (document.getElementById('radioSearchOptionAnd').checked === true){
+  if (document.getElementById('radioSearchOptionAnd').checked === true) {
     document.getElementById('confirmValueAndOr').innerHTML = "AND";
   }
-  else if (document.getElementById('radioSearchOptionOr').checked === true){
+  else if (document.getElementById('radioSearchOptionOr').checked === true) {
     document.getElementById('confirmValueAndOr').innerHTML = "OR";
   }
 }
@@ -105,17 +105,17 @@ function clickSinceYesterdayButton() {
 }
 
 function clickResetKeywordButton() {
-  document.getElementById('textboxKeyword').value="";
+  document.getElementById('textboxKeyword').value = "";
   refreshConfirmAreaKeyword();
 }
 
 function onClickTagButton(event) {
   var hashTag = event.target.value;
   var keyword = document.getElementById('textboxKeyword').value;
-  if (keyword !== "") {
-    keyword += " ";
-  }
-  document.getElementById('textboxKeyword').value = keyword + hashTag;
+  var tags = new Set(keyword.split(" ").filter(tag => tag !== ""));
+  tags.add(hashTag);
+  // "既にある場合は削除"にしたい場合は、上の行を「tags[tags.has(hashTag) ? "delete" : "add"](hashTag);」に変更する
+  document.getElementById('textboxKeyword').value = Array.from(tags).join(" ");
   refreshConfirmAreaKeyword();
 }
 
@@ -123,19 +123,19 @@ function openPage() {
   var keyword = document.getElementById('textboxKeyword').value;
   var searchQuery = null;
   if (document.getElementById('radioSearchOptionOr').checked === true) {
-	  searchQuery = keyword.replace(" ", " OR ");
+    searchQuery = keyword.replaceAll(" ", " OR ");
   }
   else {
-	  searchQuery = keyword;
+    searchQuery = keyword;
   }
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     searchQuery += " from:tokino_sora";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_"+document.getElementById('textboxSinceTime').value+"_JST";
+    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_" + document.getElementById('textboxSinceTime').value + "_JST";
   }
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_"+document.getElementById('textboxUntilTime').value+"_JST";
+    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_" + document.getElementById('textboxUntilTime').value + "_JST";
   }
   var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
   window.open(openUrl, '_blank');
@@ -147,23 +147,23 @@ function openBarehenWatch() {
   window.open(openUrl, '_blank');
 }
 
-const langs =  document.getElementById('language');
+const langs = document.getElementById('language');
 langs.addEventListener('change', (e) => {
-    changeLanguage(e.target.value);
+  changeLanguage(e.target.value);
 });
 
-const changeLanguage = function(lang) {
-    let elements = document.querySelectorAll('[data-language-key]');
-    elements.forEach(function (element) {
-        let key = element.getAttribute('data-language-key');
-        let text = languageData[lang][key];
-        element.textContent = text;
-		if (element.id === "textboxKeyword" ) {
-			element.placeholder = text;
-		}
-		if (element.type === "button" ) {
-			element.value = text;
-		}
-    });
-	refreshConfirmAreaOption();
+const changeLanguage = function (lang) {
+  let elements = document.querySelectorAll('[data-language-key]');
+  elements.forEach(function (element) {
+    let key = element.getAttribute('data-language-key');
+    let text = languageData[lang][key];
+    element.textContent = text;
+    if (element.id === "textboxKeyword") {
+      element.placeholder = text;
+    }
+    if (element.type === "button") {
+      element.value = text;
+    }
+  });
+  refreshConfirmAreaOption();
 }
