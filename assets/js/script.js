@@ -55,6 +55,34 @@ window.addEventListener ( 'load', function confirmBlockRefresh() {
   refreshConfirmAreaKeyword();
 })
 
+window.addEventListener('load', function setTimezones() {
+  /** @type {string[]} - タイムゾーン指定として使える文字列一覧 JSTなど */
+  var timeZones = [
+    { "value": "JST", "desc": "JST (Japan Standard Time)" },
+    { "value": "UTC", "desc": "UTC (Coordinated Universal Time)" },
+  ];
+  /** @type {HTMLOptionElement[]} - タイムゾーン指定の選択肢 */
+  var sinceTimeZoneOptions = timeZones.map(function (timeZone) {
+    var option = document.createElement('option');
+    option.value = timeZone.value;
+    option.textContent = timeZone.desc;
+    return option;
+  });
+  /** @type {HTMLOptionElement[]} - タイムゾーン指定の選択肢 2 */
+  var untilTimeZoneOptions = timeZones.map(function (timeZone) {
+    var option = document.createElement('option');
+    option.value = timeZone.value;
+    option.textContent = timeZone.desc;
+    return option;
+  });
+  // それぞれをselect要素に追加
+  this.document.getElementById('sinceTimeZoneSelector').append(...sinceTimeZoneOptions);
+  this.document.getElementById('untilTimeZoneSelector').append(...untilTimeZoneOptions);
+  // デフォルトとしてJSTを選択
+  this.document.getElementById('sinceTimeZoneSelector').value = "JST";
+  this.document.getElementById('untilTimeZoneSelector').value = "JST";
+})
+
 function refreshConfirmAreaOption() {
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
@@ -66,7 +94,7 @@ function refreshConfirmAreaOption() {
 
 function refreshConfirmAreaSince() {
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value+" "+document.getElementById('textboxSinceTime').value+" JST";
+    document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value+" "+document.getElementById('textboxSinceTime').value + " " + getSinceTimeZone();
   }
   else {
 	document.getElementById('confirmValueSince').innerHTML = "";
@@ -75,7 +103,7 @@ function refreshConfirmAreaSince() {
 
 function refreshConfirmAreaUntil() {
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value+" "+document.getElementById('textboxUntilTime').value+" JST";
+    document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value+" "+document.getElementById('textboxUntilTime').value + " " + getUntilTimeZone();
   }
   else {
 	document.getElementById('confirmValueUntil').innerHTML = "";
@@ -119,6 +147,14 @@ function onClickTagButton(event) {
   refreshConfirmAreaKeyword();
 }
 
+function getUntilTimeZone() {
+  return document.getElementById('untilTimeZoneSelector').value;
+}
+
+function getSinceTimeZone() {
+  return document.getElementById('sinceTimeZoneSelector').value;
+}
+
 function openPage() {
   var keyword = document.getElementById('textboxKeyword').value;
   var searchQuery = null;
@@ -132,10 +168,10 @@ function openPage() {
     searchQuery += " from:tokino_sora";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_"+document.getElementById('textboxSinceTime').value+"_JST";
+    searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_"+document.getElementById('textboxSinceTime').value + "_" + getSinceTimeZone();
   }
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_"+document.getElementById('textboxUntilTime').value+"_JST";
+    searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_"+document.getElementById('textboxUntilTime').value + "_" + getUntilTimeZone();
   }
   var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
   window.open(openUrl, '_blank');

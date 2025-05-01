@@ -5,7 +5,7 @@
 
 	ときのそらに関するXの検索を少し楽にするページです。
 	(๑╹△╹)そらちゃん愛してるぞ！
-	
+
 	メインビジュアル提供：もふもふ大好きDS 様（X：@DS_NDSL）
 -->
 <html lang="jp">
@@ -63,6 +63,7 @@
 	  <details>
 		<summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
 		<input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
+		<select name="since-time-timezone" id="sinceTimeZoneSelector" class="selectbox-timezone"></select>
 	  </details>
       <input data-language-key="text-date-03" class="btn btn-full button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onClick="clickSinceYesterdayButton();refreshConfirmAreaSince()">
     </div>
@@ -73,6 +74,7 @@
 	  <details>
 	  <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
 		<input class="inputbox-time" type="time" step="1" name="until-time" id="textboxUntilTime" value="23:59:59" onChange="refreshConfirmAreaUntil()">
+		<select name="until-time-timezone" id="untilTimeZoneSelector" class="selectbox-timezone"></select>
 	  </details>
     </div>
   </div>
@@ -141,7 +143,7 @@
 </div>
 </body>
 <footer>
-  <span data-language-key="page-title">ぬんサーチ（Nun Search）</span> <input class="btn btn-hide" value="🔍️(╹ᆺ╹๑)" onClick="openBarehenWatch()"><br>
+  <span data-language-key="page-title">ぬんサーチ（Nun Search）</span> <input class="btn btn-hide" value="🔍️(╹ᆺ╹๑)" onClick="openBarehenWatch()" tabindex="-1"><br>
   &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span> <a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
   <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span></footer>
 <script src="assets/js/script.js"></script>
