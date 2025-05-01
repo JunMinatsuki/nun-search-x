@@ -1,10 +1,10 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：2.0.1
+	ぬんサーチX（エックス） バージョン：2.2.0
 	2025/4/9 Copyright @minatsukijun
 
-	Xの検索を少し楽にするページです。休憩中にサッと作ったから安っぽいのは許してぬん
-	(๑╹ᆺ╹)b
+	ときのそらに関するXの検索を少し楽にするページです。
+	(๑╹△╹)そらちゃん愛してるぞ！
 	
 	メインビジュアル提供：もふもふ大好きDS 様（X：@DS_NDSL）
 -->
@@ -17,18 +17,19 @@
 <meta property="og:title" content="ぬんサーチ（Nun Search）" />
 <meta property="og:description" content="ときのそらに関するXポストの検索ツールです。推し活やエゴサが楽になるかも。" />
 <meta property="og:site_name" content="皆月じゅんのGitHub" />
-<meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/mv_nun-search_DS_NDSL.jpg" />
+<meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/ogp_nun-search_DS_NDSL.jpg" />
 <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
 <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
+	<link rel="stylesheet" href="assets/css/color.css" type="text/css">
 <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 <title data-language-key="page-title">ぬんサーチ（Nun Search）</title>
 </head>
 <header>
-  <figure><img src="assets/img/mv_nun-search_DS_NDSL.jpg" alt="ぬんサーチ（Nun Search）">
-    <figcaption data-language-key="header-caption" class="caption">ヘッダーイラスト提供：もふもふ大好きDS 様</figcaption>
+  <figure><img src="assets/img/mv_nun-search_DS_NDSL.png" alt="ぬんサーチ（Nun Search）">
+    <figcaption data-language-key="header-caption" class="caption">ヘッダーイラスト提供：もふもふ大好きDS</figcaption>
   </figure>
 </header>
 
@@ -90,30 +91,30 @@
     <div class="strong-border">
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
 	  <h4 data-language-key="heading-special-tag">スペシャル</h4>
-      <div class="2col no-border">
+      <div class="no-border">
         <input class="btn btn-half" type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="holoRust-tag" id="buttonHoloRustTag" value="#holoRUST" onClick="onClickTagButton(event)">
 		<input class="btn btn-half" type="button" name="aosorahako-tag" id="buttonAosorahakoTag" value="#青空はこ" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-general-tag">一般</h4>
-      <div class="2col no-border">
+      <div class="no-border">
         <input class="btn btn-half" type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
-      <div class="2col no-border">
+      <div class="no-border">
         <input class="btn btn-half" type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="arrived-tag" id="buttonArrivedTag" value="#そらちゃん届いたよ" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-fanart-tag">ファンアート</h4>
-      <div class="2col no-border">
+      <div class="no-border">
         <input class="btn btn-half" type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-soratomo-watching-tag">そらともウォッチング(*´꒳`*)ﾐﾃﾙﾖ</h4>
-      <div class="2col no-border">
+      <div class="no-border">
         <input class="btn btn-half" type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="ramen-tag" id="buttonHumburgTag" value="#そらちゃんラーメンどうぞ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" name="humburg-tag" id="buttonHumburgTag" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
@@ -141,8 +142,8 @@
 </body>
 <footer>
   <span data-language-key="page-title">ぬんサーチ（Nun Search）</span> <input class="btn btn-hide" value="🔍️(╹ᆺ╹๑)" onClick="openBarehenWatch()"><br>
-  &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span> <a href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
-  <span data-language-key="text-footer02">本ページは</span><a href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span></footer>
+  &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span> <a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
+  <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span></footer>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/language.js"></script>
 </html>

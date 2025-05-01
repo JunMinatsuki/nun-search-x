@@ -2,7 +2,7 @@ const languageData = {
 	/** 日本語 */
     'ja': {
         'page-title': 'ぬんサーチ（Nun Search）',
-		'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS 様',
+		'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS',
         'heading-page-title': 'ぬんサーチ（Nun Search）',
 		'label-language-selector': 'Language: ',
         'heading-option': 'オプション',
@@ -37,7 +37,7 @@ const languageData = {
 	/** 英語 */
     'en': {
         'page-title': 'Nun Search',
-		'header-caption': 'Header illustration provided by: もふもふ大好きDS San',
+		'header-caption': 'Header illustration provided by: もふもふ大好きDS',
         'heading-page-title': 'Nun Search',
 		'label-language-selector': 'Language: ',
         'heading-option': 'Option',
