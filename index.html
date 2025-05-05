@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：2.2.0
+	ぬんサーチX（エックス） バージョン：2.2.1
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -11,22 +11,22 @@
 <html lang="jp">
 
 <head prefix="og: https://ogp.me/ns#">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1.0 viewport-fit=cover">
-  <meta property="og:url" content="https://junminatsuki.github.io/nun-search-x/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="ぬんサーチ（Nun Search）" />
-  <meta property="og:description" content="ときのそらに関するXポストの検索ツールです。推し活やエゴサが楽になるかも。" />
-  <meta property="og:site_name" content="皆月じゅんのGitHub" />
-  <meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/ogp_nun-search_DS_NDSL.jpg" />
-  <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/color.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-  <title data-language-key="page-title">ぬんサーチ（Nun Search）</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1.0 viewport-fit=cover">
+<meta property="og:url" content="https://junminatsuki.github.io/nun-search-x/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ぬんサーチ（Nun Search）" />
+<meta property="og:description" content="ときのそらに関するXポストの検索ツールです。推し活やエゴサが楽になるかも。" />
+<meta property="og:site_name" content="皆月じゅんのGitHub" />
+<meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/ogp_nun-search_DS_NDSL.jpg" />
+<link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="stylesheet" href="assets/css/color.css" type="text/css">
+<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+<title data-language-key="page-title">ぬんサーチ（Nun Search）</title>
 </head>
 <header>
   <figure><img src="assets/img/mv_nun-search_DS_NDSL.png" alt="ぬんサーチ（Nun Search）">
@@ -35,38 +35,73 @@
 </header>
 
 <body>
-  <div class="no-border" ontouchstart="">
-    <h1 data-language-key="heading-page-title">ぬんサーチ（Nun Search）</h1>
-    <div class="language-select-wrapper"> <span data-language-key="label-language-selector">Language: </span>
-      <select class="language-selector" id="language">
-        <option value="ja">日本語</option>
-        <option value="en">English</option>
-        <option value="zh-CN">简体中文</option>
-        <option value="zh-TW">繁體中文</option>
-        <option value="zh-HK">廣州話</option>
-        <option value="ko">한국어</option>
-        <option value="id">Bahasa</option>
-      </select>
+<div class="no-border" ontouchstart="">
+  <h1 data-language-key="heading-page-title">ぬんサーチ（Nun Search）</h1>
+  <div class="language-select-wrapper"> <span data-language-key="label-language-selector">Language: </span>
+    <select class="language-selector" id="language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh-CN">简体中文</option>
+      <option value="zh-TW">繁體中文</option>
+      <option value="zh-HK">廣州話</option>
+      <option value="ko">한국어</option>
+      <option value="id">Bahasa</option>
+    </select>
+  </div>
+  <div class="block-option">
+    <h2 data-language-key="heading-option">オプション</h2>
+    <p>
+      <input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled" onChange="refreshConfirmAreaOption()">
+      <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span> </p>
+  </div>
+  <div class="block-date">
+    <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
+    <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
+    <div class="strong-border">
+      <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()" checked>
+      <span data-language-key="text-date-01">いつから？</span><br>
+      <input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2017-09-07" onChange="refreshConfirmAreaSince()">
+      <details>
+        <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
+        <input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
+      </details>
+      <input data-language-key="text-date-03" class="btn btn-full button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onClick="clickSinceYesterdayButton();refreshConfirmAreaSince()">
     </div>
-    <div class="block-option">
-      <h2 data-language-key="heading-option">オプション</h2>
-      <p>
-        <input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled" onChange="refreshConfirmAreaOption()">
-        <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span>
-      </p>
+    <div class="strong-border">
+      <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
+      <span data-language-key="text-date-04">いつまで？</span><br>
+      <input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate" onChange="refreshConfirmAreaUntil()">
+      <details>
+        <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
+        <input class="inputbox-time" type="time" step="1" name="until-time" id="textboxUntilTime" value="23:59:59" onChange="refreshConfirmAreaUntil()">
+      </details>
     </div>
-    <div class="block-date">
-      <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
-      <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
-      <div class="strong-border">
-        <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()" checked>
-        <span data-language-key="text-date-01">いつから？</span><br>
-        <input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2017-09-07" onChange="refreshConfirmAreaSince()">
-        <details>
-          <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
-          <input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
-        </details>
-        <input data-language-key="text-date-03" class="btn btn-full button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onClick="clickSinceYesterdayButton();refreshConfirmAreaSince()">
+  </div>
+  <div class="keyword-block">
+    <h2 data-language-key="heading-keyword">2. キーワード指定</h2>
+    <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
+    <span data-language-key="radio-and">"AND"で検索</span>
+    <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
+    <span data-language-key="radio-or">"OR"で検索</span><br>
+    <p>
+      <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
+      <br>
+      <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
+      <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
+    </p>
+    <div class="strong-border">
+      <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
+      <h4 data-language-key="heading-special-tag">スペシャル</h4>
+      <div class="no-border">
+        <input class="btn btn-half" type="button" name="birthday2025-tag" id="buttonBirthday2025Tag" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" name="holoRust-tag" id="buttonHoloRustTag" value="#holoRUST" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" name="aosorahako-tag" id="buttonAosorahakoTag" value="#青空はこ" onClick="onClickTagButton(event)">
+      </div>
+      <h4 data-language-key="heading-general-tag">一般</h4>
+      <div class="no-border">
+        <input class="btn btn-half" type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onClick="onClickTagButton(event)">
       </div>
       <div class="strong-border">
         <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
@@ -124,29 +159,28 @@
         </div>
       </div>
     </div>
-    <div class="block-search">
-      <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
-      <details>
-        <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
-        <h4 data-language-key="heading-option">オプション</h4>
-        <span class="confirm-this-search" id="confirmValueOption"></span>
-        <h4 data-language-key="text-date-01">いつから？</h4>
-        <span class="confirm-this-search" id="confirmValueSince"></span>
-        <h4 data-language-key="text-date-04">いつまで？</h4>
-        <span class="confirm-this-search" id="confirmValueUntil"></span>
-        <h4 data-language-key="text-keyword">キーワード</h4>
-        <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
-        <span class="confirm-this-search" id="confirmValueKeyword"></span>
-      </details>
-      <input data-language-key="text-search-btn" class="btn btn-full button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
-    </div>
+  <div class="block-search">
+    <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
+    <details>
+      <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
+      <h4 data-language-key="heading-option">オプション</h4>
+      <span class="confirm-this-search" id="confirmValueOption"></span>
+      <h4 data-language-key="text-date-01">いつから？</h4>
+      <span class="confirm-this-search" id="confirmValueSince"></span>
+      <h4 data-language-key="text-date-04">いつまで？</h4>
+      <span class="confirm-this-search" id="confirmValueUntil"></span>
+      <h4 data-language-key="text-keyword">キーワード</h4>
+      <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
+      <span class="confirm-this-search" id="confirmValueKeyword"></span> </details>
+    <input data-language-key="text-search-btn" class="btn btn-full button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
   </div>
+</div>
 </body>
-<footer>
-  <span data-language-key="page-title">ぬんサーチ（Nun Search）</span> <input class="btn btn-hide" value="🔍️(╹ᆺ╹๑)" onClick="openBarehenWatch()"><br>
-  &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span> <a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
-  <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span>
-</footer>
+<footer><span data-language-key="page-title">ぬんサーチ（Nun Search）</span>
+  <input class="btn btn-hide" value="🔍️(╹ᆺ╹๑)" onClick="openBarehenWatch()">
+  <br>
+  &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span><a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
+  <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span></footer>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/language.js"></script>
 

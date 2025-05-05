@@ -1,12 +1,16 @@
 /** @type {() => string} - 今日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 function getTodayDate() {
-  return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
+  return new Date().toLocaleDateString('sv-SE', {
+    timeZone: 'Asia/Tokyo'
+  });
 }
 /** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 function getYesterdayDate() {
   var yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
-  return yesterday.toLocaleDateString('sv-SE', { timeZone: 'Asia/Tokyo' });
+  return yesterday.toLocaleDateString('sv-SE', {
+    timeZone: 'Asia/Tokyo'
+  });
 }
 
 window.onload = function setLanguage() {
@@ -15,28 +19,22 @@ window.onload = function setLanguage() {
   if (browserLanguage === "ja") {
     document.getElementById('language').value = "ja";
     changeLanguage("ja");
-  }
-  else if (browserLanguage === "zh-CN" | browserLanguage === "zh") {
+  } else if (browserLanguage === "zh-CN" | browserLanguage === "zh") {
     document.getElementById('language').value = "zh-CN";
     changeLanguage("zh-CN");
-  }
-  else if (browserLanguage === "zh-TW") {
+  } else if (browserLanguage === "zh-TW") {
     document.getElementById('language').value = "zh-TW";
     changeLanguage("zh-TW");
-  }
-  else if (browserLanguage === "zh-HK") {
+  } else if (browserLanguage === "zh-HK") {
     document.getElementById('language').value = "zh-HK";
     changeLanguage("zh-HK");
-  }
-  else if (browserLanguage === "ko") {
+  } else if (browserLanguage === "ko") {
     document.getElementById('language').value = "ko";
     changeLanguage("ko");
-  }
-  else if (browserLanguage === "id") {
+  } else if (browserLanguage === "id") {
     document.getElementById('language').value = "id";
     changeLanguage("id");
-  }
-  else {
+  } else {
     document.getElementById('language').value = "en";
     changeLanguage("en");
   }
@@ -58,8 +56,7 @@ window.addEventListener('load', function confirmBlockRefresh() {
 function refreshConfirmAreaOption() {
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
-  }
-  else {
+  } else {
     document.getElementById('confirmValueOption').innerHTML = "";
   }
 }
@@ -67,8 +64,7 @@ function refreshConfirmAreaOption() {
 function refreshConfirmAreaSince() {
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
     document.getElementById('confirmValueSince').innerHTML = document.getElementById('textboxSinceDate').value + " " + document.getElementById('textboxSinceTime').value + " JST";
-  }
-  else {
+  } else {
     document.getElementById('confirmValueSince').innerHTML = "";
   }
 }
@@ -76,8 +72,7 @@ function refreshConfirmAreaSince() {
 function refreshConfirmAreaUntil() {
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
     document.getElementById('confirmValueUntil').innerHTML = document.getElementById('textboxUntilDate').value + " " + document.getElementById('textboxUntilTime').value + " JST";
-  }
-  else {
+  } else {
     document.getElementById('confirmValueUntil').innerHTML = "";
   }
 }
@@ -93,8 +88,7 @@ document.getElementById('textboxKeyword').addEventListener('input', function syn
 function refreshConfirmAreaAndOr() {
   if (document.getElementById('radioSearchOptionAnd').checked === true) {
     document.getElementById('confirmValueAndOr').innerHTML = "AND";
-  }
-  else if (document.getElementById('radioSearchOptionOr').checked === true) {
+  } else if (document.getElementById('radioSearchOptionOr').checked === true) {
     document.getElementById('confirmValueAndOr').innerHTML = "OR";
   }
 }
@@ -123,9 +117,8 @@ function openPage() {
   var keyword = document.getElementById('textboxKeyword').value;
   var searchQuery = null;
   if (document.getElementById('radioSearchOptionOr').checked === true) {
-    searchQuery = keyword.replaceAll(" ", " OR ");
-  }
-  else {
+    searchQuery = keyword.replace(" ", " OR ");
+  } else {
     searchQuery = keyword;
   }
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
