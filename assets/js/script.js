@@ -106,10 +106,10 @@ function clickResetKeywordButton() {
 function onClickTagButton(event) {
   var hashTag = event.target.value;
   var keyword = document.getElementById('textboxKeyword').value;
-  if (keyword !== "") {
-    keyword += " ";
-  }
-  document.getElementById('textboxKeyword').value = keyword + hashTag;
+  var tags = new Set(keyword.split(" ").filter(tag => tag !== ""));
+  tags.add(hashTag);
+  // "既にある場合は削除"にしたい場合は、上の行を「tags[tags.has(hashTag) ? "delete" : "add"](hashTag);」に変更する
+  document.getElementById('textboxKeyword').value = Array.from(tags).join(" ");
   refreshConfirmAreaKeyword();
 }
 

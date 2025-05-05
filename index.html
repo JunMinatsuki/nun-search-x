@@ -5,10 +5,11 @@
 
 	ときのそらに関するXの検索を少し楽にするページです。
 	(๑╹△╹)そらちゃん愛してるぞ！
-	
+
 	メインビジュアル提供：もふもふ大好きDS 様（X：@DS_NDSL）
 -->
 <html lang="jp">
+
 <head prefix="og: https://ogp.me/ns#">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1.0 viewport-fit=cover">
@@ -102,27 +103,62 @@
       <div class="no-border">
         <input class="btn btn-half" type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onClick="onClickTagButton(event)">
       </div>
-      <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
-      <div class="no-border">
-        <input class="btn btn-half" type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="arrived-tag" id="buttonArrivedTag" value="#そらちゃん届いたよ" onClick="onClickTagButton(event)">
-      </div>
-      <h4 data-language-key="heading-fanart-tag">ファンアート</h4>
-      <div class="no-border">
-        <input class="btn btn-half" type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onClick="onClickTagButton(event)">
-      </div>
-      <h4 data-language-key="heading-soratomo-watching-tag">そらともウォッチング(*´꒳`*)ﾐﾃﾙﾖ</h4>
-      <div class="no-border">
-        <input class="btn btn-half" type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="ramen-tag" id="buttonHumburgTag" value="#そらちゃんラーメンどうぞ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="humburg-tag" id="buttonHumburgTag" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" name="gyutan-tag" id="buttonGyutanTag" value="#そらちゃん牛タンどうぞ" onClick="onClickTagButton(event)">
+      <div class="strong-border">
+        <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
+        <span data-language-key="text-date-04">いつまで？</span><br>
+        <input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate" onChange="refreshConfirmAreaUntil()">
+        <details>
+          <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
+          <input class="inputbox-time" type="time" step="1" name="until-time" id="textboxUntilTime" value="23:59:59" onChange="refreshConfirmAreaUntil()">
+        </details>
       </div>
     </div>
-  </div>
+    <div class="keyword-block">
+      <h2 data-language-key="heading-keyword">2. キーワード指定</h2>
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
+      <span data-language-key="radio-and">"AND"で検索</span>
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
+      <span data-language-key="radio-or">"OR"で検索</span><br>
+      <p>
+        <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
+        <br>
+        <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
+        <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
+      </p>
+      <div class="strong-border">
+        <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
+        <h4 data-language-key="heading-special-tag">スペシャル</h4>
+        <div class="no-border">
+          <input class="btn btn-half" type="button" name="keepShinin-tag" id="buttonKeepShininTag" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="sorapa2024-tag" id="buttonSorapa2024Tag" value="#そらぱ2024" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="holoRust-tag" id="buttonHoloRustTag" value="#holoRUST" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="aosorahako-tag" id="buttonAosorahakoTag" value="#青空はこ" onClick="onClickTagButton(event)">
+        </div>
+        <h4 data-language-key="heading-general-tag">一般</h4>
+        <div class="no-border">
+          <input class="btn btn-half" type="button" name="name-tag" id="buttonNameTag" value="#ときのそら" onClick="onClickTagButton(event)">
+        </div>
+        <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
+        <div class="no-border">
+          <input class="btn btn-half" type="button" name="livestream-tag" id="buttonLiveStreamTag" value="#ときのそら生放送" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="fc-tag" id="buttonFcTag" value="#ときのそらFC" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="listen-tag" id="buttonListenTag" value="#そらぬん聞いたよ" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="arrived-tag" id="buttonArrivedTag" value="#そらちゃん届いたよ" onClick="onClickTagButton(event)">
+        </div>
+        <h4 data-language-key="heading-fanart-tag">ファンアート</h4>
+        <div class="no-border">
+          <input class="btn btn-half" type="button" name="art-tag" id="buttonArtTag" value="#そらArt" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="old-art-tag" id="buttonOldArtTag" value="#soraArt" onClick="onClickTagButton(event)">
+        </div>
+        <h4 data-language-key="heading-soratomo-watching-tag">そらともウォッチング(*´꒳`*)ﾐﾃﾙﾖ</h4>
+        <div class="no-border">
+          <input class="btn btn-half" type="button" name="issyo-tag" id="buttonIsshoTag" value="#ときのそらと一緒" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="ramen-tag" id="buttonHumburgTag" value="#そらちゃんラーメンどうぞ" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="humburg-tag" id="buttonHumburgTag" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
+          <input class="btn btn-half" type="button" name="gyutan-tag" id="buttonGyutanTag" value="#そらちゃん牛タンどうぞ" onClick="onClickTagButton(event)">
+        </div>
+      </div>
+    </div>
   <div class="block-search">
     <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
     <details>
@@ -147,4 +183,5 @@
   <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span></footer>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/language.js"></script>
+
 </html>
