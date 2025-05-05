@@ -1,309 +1,308 @@
 @charset "utf-8";
-
 *, *:before, *:after {
-	-webkit-box-sizing: inherit;
-	box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 header {
-	position: sticky;
-	text-align: center;
+  position: sticky;
+  text-align: center;
 }
 header figure {
-	top: 0;
-	left: 0;
-	margin: 0;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
 header figure img {
-	max-width: 100%;
-	object-fit: cover;
+  max-width: 100%;
+  object-fit: cover;
 }
 .caption {
-	color: var(--color-caption-light);
-	font-size: 0.8rem;
-	text-align: center;
+  color: var(--color-caption-light);
+  font-size: 0.8rem;
+  text-align: center;
 }
 .text-notes {
-	color: var(--color-notes-light);
-	font-size: 0.8rem;
+  color: var(--color-notes-light);
+  font-size: 0.8rem;
 }
 html {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: 90%;
-	padding-left: calc(env(safe-area-inset-left) + .2em);
-	padding-bottom: env(safe-area-inset-bottom);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 90%;
+  padding-left: calc(env(safe-area-inset-left) + .2em);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 body {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0.5rem;
-	font-family: sans-serif;
-	color: var(--color-text-light);
-	transition: 0.2s;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  color: var(--color-text-light);
+  transition: 0.2s;
 }
 div {
-	border: solid 2px var(--color-div-border-light);
-	margin-bottom: 0.5rem;
-	padding: 0.5rem;
+  border: solid 2px var(--color-div-border-light);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
 }
 div.strong-border {
-	border: solid 2px var(--color-div-sub-border-light);
+  border: solid 2px var(--color-div-sub-border-light);
 }
 div.no-border {
-	border: none;
+  border: none;
 }
 h1 {
-	font-size: 1.5rem;
-	color: var(--color-text-strong-light);
-	font-weight: bolder;
-	text-decoration: underline;
-	text-decoration-color: var(--color-decoration-yellow);
-	text-decoration-style: double;
-	text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-text-strong-light);
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: var(--color-decoration-yellow);
+  text-decoration-style: double;
+  text-align: center;
 }
 h2 {
-	font-size: 1.2rem;
-	color: var(--color-text-strong-light);
-	font-weight: bolder;
-	text-decoration: underline;
-	text-decoration-color: var(--color-decoration-yellow);
-	text-decoration-style: double;
+  font-size: 1.2rem;
+  color: var(--color-text-strong-light);
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: var(--color-decoration-yellow);
+  text-decoration-style: double;
 }
 h3 {
-	font-size: 1.0rem;
-	color: var(--color-text-strong-light);
-	font-weight: bold;
-	text-decoration: underline;
-	text-decoration-color: var(--color-decoration-yellow);
-	text-decoration-style: double;
+  font-size: 1.0rem;
+  color: var(--color-text-strong-light);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--color-decoration-yellow);
+  text-decoration-style: double;
 }
 h4 {
-	font-size: 0.9rem;
-	color: var(--color-text-strong-light);
-	font-weight: bold;
-	text-decoration: underline;
-	text-decoration-color: var(--color-text-strong-light);
-	text-decoration-style: solid;
+  font-size: 0.9rem;
+  color: var(--color-text-strong-light);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-strong-light);
+  text-decoration-style: solid;
 }
 p {
-	color: var(--color-text-light);
+  color: var(--color-text-light);
 }
 .inputbox-date {
-	border: 1px solid var(--color-input-border-light);
-	background-color: var(--color-input-background-light);
+  border: 1px solid var(--color-input-border-light);
+  background-color: var(--color-input-background-light);
 }
 .inputbox-time {
-	border: 1px solid var(--color-input-border-light);
-	background-color: var(--color-input-background-light);
+  border: 1px solid var(--color-input-border-light);
+  background-color: var(--color-input-background-light);
 }
 .textbox-keyword {
-	width: 100%;
-	border: 1px solid var(--color-input-border-light);
-	background-color: var(--color-input-background-light);
-	white-space: normal;
-	word-break: break-all;
+  width: 100%;
+  border: 1px solid var(--color-input-border-light);
+  background-color: var(--color-input-background-light);
+  white-space: normal;
+  word-break: break-all;
 }
 input.btn {
-	margin-top: 0.2rem;
-	margin-bottom: 0.2rem;
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	text-align: center;
-	vertical-align: top;
-	text-decoration: none;
-	white-space: normal;
-	word-break: break-all;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  vertical-align: top;
+  text-decoration: none;
+  white-space: normal;
+  word-break: break-all;
 }
 input.btn-full {
-	width: 100%;
-	font-size: 1.0rem;
-	font-weight: bold;
-	line-height: 1.5;
-	border: 2px solid var(--color-input-border-light);
-	border-radius: 0;
-	color: var(--color-input-text-light);
-	background: var(--color-input-background-light);
+  width: 100%;
+  font-size: 1.0rem;
+  font-weight: bold;
+  line-height: 1.5;
+  border: 2px solid var(--color-input-border-light);
+  border-radius: 0;
+  color: var(--color-input-text-light);
+  background: var(--color-input-background-light);
 }
 @media (hover: hover) {
-	input.btn-full:hover {
-		width: 100%;
-		font-size: 1.0rem;
-		font-weight: bold;
-		line-height: 1.5;
-		border: 2px solid var(--color-input-border-active-light);
-		color: var(--color-input-text-active-light);
-		background: var(--color-input-background-active-light);
-	}
+  input.btn-full:hover {
+    width: 100%;
+    font-size: 1.0rem;
+    font-weight: bold;
+    line-height: 1.5;
+    border: 2px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
 }
 @media (hover: none) {
-	input.btn-full:active {
-		width: 100%;
-		font-size: 1.0rem;
-		font-weight: bold;
-		line-height: 1.5;
-		border: 2px solid var(--color-input-border-active-light);
-		color: var(--color-input-text-active-light);
-		background: var(--color-input-background-active-light);
-	}
+  input.btn-full:active {
+    width: 100%;
+    font-size: 1.0rem;
+    font-weight: bold;
+    line-height: 1.5;
+    border: 2px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
 }
 input.btn-half {
-	width: 49%;
-	font-size: 0.9rem;
-	font-weight: normal;
-	line-height: 1.2;
-	border: 1px solid var(--color-input-border-light);
-	border-radius: 0;
-	color: var(--color-input-text-light);
-	background: var(--color-input-background-light);
+  width: 49%;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1.2;
+  border: 1px solid var(--color-input-border-light);
+  border-radius: 0;
+  color: var(--color-input-text-light);
+  background: var(--color-input-background-light);
 }
 @media (hover: hover) {
-	input.btn-half:hover {
-		width: 49%;
-		font-size: 0.9rem;
-		font-weight: normal;
-		line-height: 1.2;
-		border: 1px solid var(--color-input-border-active-light);
-		color: var(--color-input-text-active-light);
-		background: var(--color-input-background-active-light);
-	}
+  input.btn-half:hover {
+    width: 49%;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.2;
+    border: 1px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
 }
 @media (hover: none) {
-	input.btn-half:active {
-		width: 49%;
-		font-size: 0.9rem;
-		font-weight: normal;
-		line-height: 1.2;
-		border: 1px solid var(--color-input-border-active-light);
-		color: var(--color-input-text-active-light);
-		background: var(--color-input-background-active-light);
-	}
+  input.btn-half:active {
+    width: 49%;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.2;
+    border: 1px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
 }
 input.btn-hide {
-	margin: 0rem;
-	display: inline;
-	width: 5.5rem;
-	color: var(--color-footer-text-light);
-	border: none;
-	background-color: transparent;
-	letter-spacing: 0rem;
-	cursor: default;
+  margin: 0rem;
+  display: inline;
+  width: 5.5rem;
+  color: var(--color-footer-text-light);
+  border: none;
+  background-color: transparent;
+  letter-spacing: 0rem;
+  cursor: default;
 }
 details {
-	width: 100%;
-	padding: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
 }
 footer {
-	background-color: var(--color-footer-background-light);
-	font-size: 0.9rem;
-	color: var(--color-footer-text-light);
-	text-align: center;
-	padding: 0.5rem;
+  background-color: var(--color-footer-background-light);
+  font-size: 0.9rem;
+  color: var(--color-footer-text-light);
+  text-align: center;
+  padding: 0.5rem;
 }
 a.footer {
-	color: var(--color-footer-text-light);
+  color: var(--color-footer-text-light);
 }
 /** ダークモードの設定 */
 @media (prefers-color-scheme: dark) {
-	.caption {
-		color: var(--color-caption-dark);
-	}
-	.text-notes {
-		color: var(--color-notes-dark);
-	}
-	body {
-		color: var(--color-text-dark);
-		background-color: var(--color-body-background-dark);
-	}
-	div {
-		border-color: var(--color-div-border-dark);
-	}
-	div.strong-border {
-		border-color: var(--color-div-sub-border-dark);
-	}
-	h1 {
-		color: var(--color-text-strong-dark);
-		text-decoration-color: var(--color-decoration-yellow);
-	}
-	h2 {
-		color: var(--color-text-strong-dark);
-		text-decoration-color: var(--color-decoration-yellow);
-	}
-	h3 {
-		color: var(--color-text-strong-dark);
-		text-decoration-color: var(--color-decoration-yellow);
-	}
-	h4 {
-		color: var(--color-text-strong-dark);
-		text-decoration-color: var(--color-text-strong-dark);
-	}
-	p {
-		color: var(--color-text-dark);
-	}
-	.inputbox-date {
-		border-color: var(--color-input-border-dark);
-		background-color: var(--color-input-background-dark);
-	}
-	.inputbox-time {
-		border-color: var(--color-input-border-dark);
-		background-color: var(--color-input-background-dark);
-	}
-	.textbox-keyword {
-		border-color: var(--color-input-border-dark);
-		background-color: var(--color-input-background-dark);
-	}
-	input.btn-full {
-		border-color: var(--color-input-border-dark);
-		color: var(--color-input-text-light);
-		background: var(--color-input-background-dark);
-	}
-	@media (hover: hover) {
-		input.btn-full:hover {
-			border-color: var(--color-input-border-active-dark);
-			color: var(--color-input-text-active-dark);
-			background: var(--color-input-background-active-dark);
-		}
-	}
-	@media (hover: none) {
-		input.btn-full:active {
-			border-color: var(--color-input-border-active-dark);
-			color: var(--color-input-text-active-dark);
-			background: var(--color-input-background-active-dark);
-		}
-	}
-	input.btn-half {
-		border-color: var(--color-input-border-dark);
-		color: var(--color-input-text-dark);
-		background: var(--color-input-background-dark);
-	}
-	@media (hover: hover) {
-		input.btn-half:hover {
-			border-color: var(--color-input-border-active-dark);
-			color: var(--color-input-text-active-dark);
-			background: var(--color-input-background-active-dark);
-		}
-	}
-	@media (hover: none) {
-		input.btn-half:active {
-			border-color: var(--color-input-border-active-dark);
-			color: var(--color-input-text-active-dark);
-			background: var(--color-input-background-active-dark);
-		}
-	}
-	input.btn-hide {
-		color: var(--color-footer-text-dark);
-	}
-	footer {
-		border: 1px solid var(--color-div-border-dark);
-		background-color: var(--color-footer-background-dark);
-		color: var(--color-footer-text-dark);
-	}
-	a.footer {
-		color: var(--color-footer-text-dark);
-	}
+  .caption {
+    color: var(--color-caption-dark);
+  }
+  .text-notes {
+    color: var(--color-notes-dark);
+  }
+  body {
+    color: var(--color-text-dark);
+    background-color: var(--color-body-background-dark);
+  }
+  div {
+    border-color: var(--color-div-border-dark);
+  }
+  div.strong-border {
+    border-color: var(--color-div-sub-border-dark);
+  }
+  h1 {
+    color: var(--color-text-strong-dark);
+    text-decoration-color: var(--color-decoration-yellow);
+  }
+  h2 {
+    color: var(--color-text-strong-dark);
+    text-decoration-color: var(--color-decoration-yellow);
+  }
+  h3 {
+    color: var(--color-text-strong-dark);
+    text-decoration-color: var(--color-decoration-yellow);
+  }
+  h4 {
+    color: var(--color-text-strong-dark);
+    text-decoration-color: var(--color-text-strong-dark);
+  }
+  p {
+    color: var(--color-text-dark);
+  }
+  .inputbox-date {
+    border-color: var(--color-input-border-dark);
+    background-color: var(--color-input-background-dark);
+  }
+  .inputbox-time {
+    border-color: var(--color-input-border-dark);
+    background-color: var(--color-input-background-dark);
+  }
+  .textbox-keyword {
+    border-color: var(--color-input-border-dark);
+    background-color: var(--color-input-background-dark);
+  }
+  input.btn-full {
+    border-color: var(--color-input-border-dark);
+    color: var(--color-input-text-light);
+    background: var(--color-input-background-dark);
+  }
+  @media (hover: hover) {
+    input.btn-full:hover {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+  }
+  @media (hover: none) {
+    input.btn-full:active {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+  }
+  input.btn-half {
+    border-color: var(--color-input-border-dark);
+    color: var(--color-input-text-dark);
+    background: var(--color-input-background-dark);
+  }
+  @media (hover: hover) {
+    input.btn-half:hover {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+  }
+  @media (hover: none) {
+    input.btn-half:active {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+  }
+  input.btn-hide {
+    color: var(--color-footer-text-dark);
+  }
+  footer {
+    border: 1px solid var(--color-div-border-dark);
+    background-color: var(--color-footer-background-dark);
+    color: var(--color-footer-text-dark);
+  }
+  a.footer {
+    color: var(--color-footer-text-dark);
+  }
 }
