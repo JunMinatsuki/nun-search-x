@@ -28,7 +28,7 @@ header figure img {
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 90%;
+  font-size: 100%;
   padding-left: calc(env(safe-area-inset-left) + .2em);
   padding-bottom: env(safe-area-inset-bottom);
 }
