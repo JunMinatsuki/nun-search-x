@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：2.3.5
+	ぬんサーチX（エックス） バージョン：2.4.0
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -36,13 +36,9 @@
 <body>
 <div class="no-border" ontouchstart="">
   <h1 data-language-key="heading-page-title">ぬんサーチ（Nun Search）</h1>
-  <div>
-    <div class="strong-border" align="center">
-      ⭐️🍰 <strong>そらちゃん、お誕生日おめでとう！</strong>🎁🎉<br>
-      新しい一年も元気に輝き続けられますように。<br>
-      2025.5.15
-    </div>
-  </div>
+  <div class="strong-border" align="center"> ⭐️🍰 <strong>そらちゃん、お誕生日おめでとう！</strong>🎁🎉<br>
+    新しい一年も元気に輝き続けられますように。<br>
+    2025.5.15 </div>
   <div class="language-select-wrapper"> <span data-language-key="label-language-selector">Language: </span>
     <select class="language-selector" id="language">
       <option value="ja">日本語</option>
@@ -106,7 +102,8 @@
       </div>
       <h4 data-language-key="heading-general-tag">一般</h4>
       <div class="no-border">
-        <input class="btn btn-half" type="button" value="#ときのそら" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" value="#ときのそら" onClick="onClickTagButton(event)">
+        <br>
         <input class="btn btn-half" type="button" value="ときのそら" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="そらちゃん" onClick="onClickTagButton(event)">
       </div>
@@ -129,33 +126,45 @@
         <input class="btn btn-half" type="button" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃん牛タンどうぞ" onClick="onClickTagButton(event)">
       </div>
-      <div class="no-border">
-        <details>
-          <summary><span data-language-key="heading-archive-tag">アーカイブ</span></summary>
-          <h4>あ行</h4>
-          <input class="btn btn-half" type="button" value="#青空はこ" onClick="onClickTagButton(event)">
-          <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 そらちゃん" onClick="onClickTagButton(event)">
-          <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 ときのそら" onClick="onClickTagButton(event)">
-          <h4>は行</h4>
-          <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
-        </details>
-      </dev>
+      <details>
+        <summary><span data-language-key="heading-archive-tag">アーカイブ</span></summary>
+        <h4>あ行</h4>
+        <input class="btn btn-half" type="button" value="#青空はこ" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 そらちゃん" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 ときのそら" onClick="onClickTagButton(event)">
+        <h4>は行</h4>
+        <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
+      </details>
+    </div>
+    <div class="block-search">
+      <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
+      <details>
+        <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
+        <h4 data-language-key="heading-option">オプション</h4>
+        <span class="confirm-this-search" id="confirmValueOption"></span>
+        <h4 data-language-key="text-date-01">いつから？</h4>
+        <span class="confirm-this-search" id="confirmValueSince"></span>
+        <h4 data-language-key="text-date-04">いつまで？</h4>
+        <span class="confirm-this-search" id="confirmValueUntil"></span>
+        <h4 data-language-key="text-keyword">キーワード</h4>
+        <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
+        <span class="confirm-this-search" id="confirmValueKeyword"></span> </details>
+      <input data-language-key="text-search-btn" class="btn btn-full button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
   </div>
-  <div class="block-search">
-    <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
-    <details>
-      <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
-      <h4 data-language-key="heading-option">オプション</h4>
-      <span class="confirm-this-search" id="confirmValueOption"></span>
-      <h4 data-language-key="text-date-01">いつから？</h4>
-      <span class="confirm-this-search" id="confirmValueSince"></span>
-      <h4 data-language-key="text-date-04">いつまで？</h4>
-      <span class="confirm-this-search" id="confirmValueUntil"></span>
-      <h4 data-language-key="text-keyword">キーワード</h4>
-      <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
-      <span class="confirm-this-search" id="confirmValueKeyword"></span> </details>
-    <input data-language-key="text-search-btn" class="btn btn-full button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+  <div>
+    <h2 data-language-key="heading-tokino-timer" class="head-inline">ときのタイマー</h2>
+    <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時間:分:秒</span>
+    <div class="no-border"> <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
+      <blockquote>> <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
+      </blockquote>
+      <strong><span data-language-key="tokino-timer-text-birth">お誕生日まで</span></strong><br>
+      <blockquote>> <span id="rBirthDate"></span>:<span id="rBirthHour"></span>:<span id="rBirthMinute"></span>:<span id="rBirthSecond"></span><br>
+      </blockquote>
+      <strong><span data-language-key="tokino-timer-text-aniv">周年まで</span></strong><br>
+      <blockquote>> <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
+      </blockquote>
+    </div>
   </div>
 </div>
 </body>

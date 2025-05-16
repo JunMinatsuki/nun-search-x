@@ -1,7 +1,7 @@
 @charset "utf-8";
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 header {
   position: sticky;
@@ -26,8 +26,6 @@ header figure img {
   font-size: 0.8rem;
 }
 html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   font-size: 100%;
   padding-left: calc(env(safe-area-inset-left) + .2em);
   padding-bottom: env(safe-area-inset-bottom);
@@ -36,18 +34,21 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5rem;
+  padding: 0.4rem;
   font-family: sans-serif;
   color: var(--color-text-light);
   transition: 0.2s;
 }
 div {
   border: solid 2px var(--color-div-border-light);
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+  padding: 0.3rem;
 }
 div.strong-border {
   border: solid 2px var(--color-div-sub-border-light);
+}
+div.no-border {
+  border: none;
 }
 h1 {
   font-size: 1.5rem;
@@ -82,6 +83,12 @@ h4 {
   text-decoration-color: var(--color-text-strong-light);
   text-decoration-style: solid;
 }
+.head-inline {
+  display: inline;
+}
+.align-center {
+  text-align: center;
+}
 p {
   color: var(--color-text-light);
 }
@@ -101,8 +108,7 @@ p {
   word-break: break-all;
 }
 input.btn {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+  margin: 0.1rem 0rem 0.1rem 0rem;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -126,12 +132,11 @@ input.btn-full {
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
 }
+blockquote {
+  margin: 0rem 0rem 0rem 1rem;
+}
 @media (hover: hover) {
   input.btn-full:hover {
-    width: 100%;
-    font-size: 1.0rem;
-    font-weight: bold;
-    line-height: 1.5;
     border: 2px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
@@ -139,10 +144,6 @@ input.btn-full {
 }
 @media (hover: none) {
   input.btn-full:active {
-    width: 100%;
-    font-size: 1.0rem;
-    font-weight: bold;
-    line-height: 1.5;
     border: 2px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
@@ -152,7 +153,7 @@ input.btn-half {
   width: 49%;
   font-size: 0.9rem;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.3;
   border: 1px solid var(--color-input-border-light);
   border-radius: 0;
   color: var(--color-input-text-light);
@@ -160,10 +161,6 @@ input.btn-half {
 }
 @media (hover: hover) {
   input.btn-half:hover {
-    width: 49%;
-    font-size: 0.9rem;
-    font-weight: normal;
-    line-height: 1.2;
     border: 1px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
@@ -171,10 +168,6 @@ input.btn-half {
 }
 @media (hover: none) {
   input.btn-half:active {
-    width: 49%;
-    font-size: 0.9rem;
-    font-weight: normal;
-    line-height: 1.2;
     border: 1px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
@@ -191,8 +184,7 @@ input.btn-hide {
   cursor: default;
 }
 details {
-  width: 100%;
-  padding: 0.5rem;
+  padding: 0.4rem;
 }
 footer {
   background-color: var(--color-footer-background-light);

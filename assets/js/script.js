@@ -142,6 +142,64 @@ function openBarehenWatch() {
   window.open(openUrl, '_blank');
 }
 
+function runningDate() {
+  const now = new Date();
+  const bigBangDate = new Date(2017, 8, 7, 11, 8, 54);
+
+  const time = now.getTime() - bigBangDate.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('runningDate').textContent = date;
+  document.getElementById('runningHour').textContent = hour;
+  document.getElementById('runningMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('runningSecond').textContent = String(second).padStart(2, '0');
+}
+
+function remainBirthDay() {
+  const now = new Date();
+  const birthDay = new Date(now.getFullYear(), 4, 15);
+  if (now.getMonth() > 4 || now.getMonth() == 4 && now.getDate() > 15) {
+    birthDay.setFullYear(now.getFullYear() + 1);
+  }
+
+  const time = birthDay.getTime() - now.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('rBirthDate').textContent = date;
+  document.getElementById('rBirthHour').textContent = hour;
+  document.getElementById('rBirthMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rBirthSecond').textContent = String(second).padStart(2, '0');
+}
+
+function remainAnivDay() {
+  const now = new Date();
+  const anivDay = new Date(now.getFullYear(), 8, 7);
+  if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() > 7) {
+    birthDay.setFullYear(now.getFullYear() + 1);
+  }
+
+  const time = anivDay.getTime() - now.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('rAnivDate').textContent = date;
+  document.getElementById('rAnivHour').textContent = hour;
+  document.getElementById('rAnivMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rAnivSecond').textContent = String(second).padStart(2, '0');
+}
+
+setInterval(runningDate, 1000);
+setInterval(remainBirthDay, 1000);
+setInterval(remainAnivDay, 1000);
+
 const langs = document.getElementById('language');
 langs.addEventListener('change', (e) => {
   changeLanguage(e.target.value);

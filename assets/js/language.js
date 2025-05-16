@@ -33,7 +33,12 @@ const languageData = {
     'text-search-btn': 'Xで検索 (๑╹ᆺ╹)ぬん！',
     'text-footer01': '2025 皆月じゅん',
     'text-footer02': '本ページは',
-    'text-footer03': 'で公開しています。'
+    'text-footer03': 'で公開しています。',
+    'heading-tokino-timer': 'ときのタイマー',
+    'tokino-timer-notes': '※日:時間:分:秒',
+    'tokino-timer-text-post':'最初のポストから',
+    'tokino-timer-text-birth':'お誕生日まで',
+    'tokino-timer-text-aniv':'周年まで'
   },
   /** 英語 */
   'en': {
@@ -69,7 +74,12 @@ const languageData = {
     'text-search-btn': 'Search for X (๑╹ᆺ╹)Nun!',
     'text-footer01': '2025 Jun Minatsuki',
     'text-footer02': 'This page is working on ',
-    'text-footer03': '.'
+    'text-footer03': '.',
+    'heading-tokino-timer': 'Tokino Timer',
+    'tokino-timer-notes': '*day:hr:min:sec',
+    'tokino-timer-text-post':'From the first post',
+    'tokino-timer-text-birth':'Remaining until birthday',
+    'tokino-timer-text-aniv':'Remaining until anniversary'
   },
   /** 簡体中国語（北京語、中国標準語） */
   'zh-CN': {
@@ -105,7 +115,12 @@ const languageData = {
     'text-search-btn': '按我搜寻(๑╹ᆺ╹)Nun!!',
     'text-footer01': '2025 皆月じゅん',
     'text-footer02': '本页面公开于',
-    'text-footer03': '.'
+    'text-footer03': '.',
+    'heading-tokino-timer': '时乃定时器',
+    'tokino-timer-notes': '※日:时:分:秒',
+    'tokino-timer-text-post':'从第一篇推文开始',
+    'tokino-timer-text-birth':'剩余至生日',
+    'tokino-timer-text-aniv':'剩余至周年纪念日'
   },
   /** 繁体中国語（台湾など） */
   'zh-TW': {
@@ -141,7 +156,12 @@ const languageData = {
     'text-search-btn': '按我搜尋(๑╹ᆺ╹)Nun!!',
     'text-footer01': '2025 皆月じゅん',
     'text-footer02': '本頁面公開於',
-    'text-footer03': '.'
+    'text-footer03': '.',
+    'heading-tokino-timer': '時乃定時器',
+    'tokino-timer-notes': '※日:時:分:秒',
+    'tokino-timer-text-post':'從第一篇推文開始',
+    'tokino-timer-text-birth':'剩餘至生日',
+    'tokino-timer-text-aniv':'剩餘至週年紀念日'
   },
   /** 広東語（香港、マカオ、広州） */
   'zh-HK': {
@@ -177,7 +197,12 @@ const languageData = {
     'text-search-btn': '按我搜尋(๑╹ᆺ╹)Nun!!',
     'text-footer01': '2025 皆月じゅん',
     'text-footer02': '呢個頁面公開於',
-    'text-footer03': '.'
+    'text-footer03': '.',
+    'heading-tokino-timer': '時乃定時器',
+    'tokino-timer-notes': '※日:時:分:秒',
+    'tokino-timer-text-post':'從第一篇推文開始',
+    'tokino-timer-text-birth':'剩餘至生日',
+    'tokino-timer-text-aniv':'剩餘至週年紀念日'
   },
   /** 韓国語 */
   'ko': {
@@ -213,7 +238,12 @@ const languageData = {
     'text-search-btn': 'X에서 검색(@╹ᆺ╹)눈!',
     'text-footer01': '2025 미나츠키 준',
     'text-footer02': '해당 페이지는',
-    'text-footer03': '에서 공개중입니다.'
+    'text-footer03': '에서 공개중입니다.',
+    'heading-tokino-timer': '토키노 타이머',
+    'tokino-timer-notes': '※日:시:분:秒',
+    'tokino-timer-text-post':'첫 포스트에서',
+    'tokino-timer-text-birth':'생일까지 남은 시간',
+    'tokino-timer-text-aniv':'기념일까지 남음'
   },
   /** インドネシア語 */
   'id': {
@@ -249,6 +279,11 @@ const languageData = {
     'text-search-btn': 'Pencarian untuk X (๑╹ᆺ╹)Nun!',
     'text-footer01': '2025 Jun Minatsuki',
     'text-footer02': 'Halaman ini berfungsi di ',
-    'text-footer03': '.'
+    'text-footer03': '.',
+    'heading-tokino-timer': 'Pengatur Waktu Tokino',
+    'tokino-timer-notes': '*hari:jam:menit:detik',
+    'tokino-timer-text-post':'Dari postingan pertama',
+    'tokino-timer-text-birth':'Tetap sampai ulang tahun',
+    'tokino-timer-text-aniv':'Bertahan sampai ulang tahun'
   },
 };
