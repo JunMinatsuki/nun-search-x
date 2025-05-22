@@ -225,7 +225,7 @@ function floatingNunnunSwitcher(scrollEnd) {
   const floatingNunnun = document.querySelector('.floating-nunnun-wrap');
   const scroll = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scroll >= 0 && scroll < scrollEnd) {
+  if ((scroll >= 0 && scroll < scrollEnd) || scroll < 0) {
     floatingNunnun.style.opacity = "1";
     floatingNunnun.style.zIndex = "100";
   } else {
