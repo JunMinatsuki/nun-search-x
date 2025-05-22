@@ -31,7 +31,7 @@ html {
   padding-bottom: env(safe-area-inset-bottom);
 }
 body {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding: 0.4rem;
@@ -40,6 +40,7 @@ body {
   transition: 0.2s;
 }
 div {
+  max-width: inherit;
   border: solid 2px var(--color-div-border-light);
   margin-bottom: 0.4rem;
   padding: 0.3rem;
@@ -48,7 +49,21 @@ div.strong-border {
   border: solid 2px var(--color-div-sub-border-light);
 }
 div.no-border {
+  width: inherit;
   border: none;
+}
+div.floating-nunnun-wrap {
+  position: fixed;
+  width: inherit;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  margin: auto;
+  border: none;
+  text-align: center;
+  opacity: 0;
+  z-index: -100;
+  transition: 0.2s;
 }
 h1 {
   font-size: 1.5rem;
@@ -183,6 +198,12 @@ input.btn-hide {
   letter-spacing: 0rem;
   cursor: default;
 }
+input.btn-floating {
+  border: solid 2px var(--color-div-sub-border-light);
+  border-radius: 20px;
+  width: 66%;
+  box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.66);
+}
 details {
   padding: 0.4rem;
 }
@@ -286,6 +307,9 @@ a.footer {
   input.btn-hide {
     color: var(--color-footer-text-dark);
   }
+  input.btn-floating {
+  border: solid 2px var(--color-div-sub-border-dark);
+}
   footer {
     border: 1px solid var(--color-div-border-dark);
     background-color: var(--color-footer-background-dark);

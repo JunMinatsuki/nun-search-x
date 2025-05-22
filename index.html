@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチX（エックス） バージョン：2.4.2
+	ぬんサーチX（エックス） バージョン：2.5.0
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -36,9 +36,9 @@
 <body>
 <div class="no-border" ontouchstart="">
   <h1 data-language-key="heading-page-title">ぬんサーチ（Nun Search）</h1>
-  <div class="strong-border" align="center"> ⭐️🍰 <strong>そらちゃん、お誕生日おめでとう！</strong>🎁🎉<br>
-    新しい一年も元気に輝き続けられますように。<br>
-    2025.5.15 </div>
+  <!--
+  <div class="strong-border" align="center"> "なにかメッセージを表示したいときのブロック"<br>
+  </div> -->
   <div class="language-select-wrapper"> <span data-language-key="label-language-selector">Language: </span>
     <select class="language-selector" id="language">
       <option value="ja">日本語</option>
@@ -63,7 +63,7 @@
       <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()" checked>
       <span data-language-key="text-date-01">いつから？</span><br>
       <input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2017-09-07" onChange="refreshConfirmAreaSince()">
-      <details>
+      <details id="detailsSetSinceTime">
         <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
         <input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
       </details>
@@ -73,7 +73,7 @@
       <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
       <span data-language-key="text-date-04">いつまで？</span><br>
       <input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate" onChange="refreshConfirmAreaUntil()">
-      <details>
+      <details id="detailsSetUntilTime">
         <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
         <input class="inputbox-time" type="time" step="1" name="until-time" id="textboxUntilTime" value="23:59:59" onChange="refreshConfirmAreaUntil()">
       </details>
@@ -128,7 +128,7 @@
         <input class="btn btn-half" type="button" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃん牛タンどうぞ" onClick="onClickTagButton(event)">
       </div>
-      <details>
+      <details id="detailsKeywordArchive">
         <summary><span data-language-key="heading-archive-tag">アーカイブ</span></summary>
         <h4>あ行</h4>
         <input class="btn btn-half" type="button" value="#青空はこ" onClick="onClickTagButton(event)">
@@ -140,7 +140,7 @@
     </div>
     <div class="block-search">
       <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
-      <details>
+      <details id="detailsSummaryConfirmThisSearch">
         <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
         <h4 data-language-key="heading-option">オプション</h4>
         <span class="confirm-this-search" id="confirmValueOption"></span>
@@ -151,7 +151,10 @@
         <h4 data-language-key="text-keyword">キーワード</h4>
         <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
         <span class="confirm-this-search" id="confirmValueKeyword"></span> </details>
-      <input data-language-key="text-search-btn" class="btn btn-full button-search" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+      <input data-language-key="text-search-btn" class="btn btn-full button-search" id="searchBtn" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+    </div>
+    <div class="floating-nunnun-wrap" id="floatingNunnun">
+      <input data-language-key="text-search-btn" class="btn btn-full button-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
   </div>
   <div>

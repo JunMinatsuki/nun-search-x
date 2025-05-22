@@ -6,7 +6,7 @@ function getTodayDate() {
 }
 /** @type {() => string} - 昨日の日付を"YYYY-MM-DD"形式の文字列で取得 */
 function getYesterdayDate() {
-  var yesterday = new Date();
+  let yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   return yesterday.toLocaleDateString('sv-SE', {
     timeZone: 'Asia/Tokyo'
@@ -14,8 +14,7 @@ function getYesterdayDate() {
 }
 
 window.onload = function setLanguage() {
-  var browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
-  console.log("言語コード: " + browserLanguage);
+  const browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language;
   if (browserLanguage === "ja") {
     document.getElementById('language').value = "ja";
     changeLanguage("ja");
@@ -41,7 +40,7 @@ window.onload = function setLanguage() {
 }
 
 window.addEventListener('load', function updateUntilDate() {
-  var today = getTodayDate();
+  const today = getTodayDate();
   document.getElementById('textboxUntilDate').value = today;
 })
 
@@ -94,7 +93,7 @@ function refreshConfirmAreaAndOr() {
 }
 
 function clickSinceYesterdayButton() {
-  var yesterday = getYesterdayDate();
+  const yesterday = getYesterdayDate();
   document.getElementById('textboxSinceDate').value = yesterday;
 }
 
@@ -104,9 +103,9 @@ function clickResetKeywordButton() {
 }
 
 function onClickTagButton(event) {
-  var hashTag = event.target.value;
-  var keyword = document.getElementById('textboxKeyword').value;
-  var tags = new Set(keyword.split(" ").filter(tag => tag !== ""));
+  let hashTag = event.target.value;
+  let keyword = document.getElementById('textboxKeyword').value;
+  let tags = new Set(keyword.split(" ").filter(tag => tag !== ""));
   hashTag.split(" ").forEach(tag => {
     tags.add(tag);
   });
@@ -116,8 +115,8 @@ function onClickTagButton(event) {
 }
 
 function openPage() {
-  var keyword = document.getElementById('textboxKeyword').value;
-  var searchQuery = null;
+  let keyword = document.getElementById('textboxKeyword').value;
+  let searchQuery = null;
   if (document.getElementById('radioSearchOptionOr').checked === true) {
     searchQuery = keyword.replace(" ", " OR ");
   } else {
@@ -132,13 +131,13 @@ function openPage() {
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
     searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_" + document.getElementById('textboxUntilTime').value + "_JST";
   }
-  var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
+  const openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
   window.open(openUrl, '_blank');
 }
 
 function openBarehenWatch() {
-  var searchQuery = "そらちゃん バレへん";
-  var openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
+  let searchQuery = "そらちゃん バレへん";
+  let openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
 
@@ -220,3 +219,57 @@ const changeLanguage = function (lang) {
   });
   refreshConfirmAreaOption();
 }
+
+// フローティングぬんぬん表示切り替え
+function floatingNunnunSwitcher(scrollEnd) {
+  const floatingNunnun = document.querySelector('.floating-nunnun-wrap');
+  const scroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scroll >= 0 && scroll < scrollEnd) {
+    floatingNunnun.style.opacity = "1";
+    floatingNunnun.style.zIndex = "100";
+  } else {
+    floatingNunnun.style.opacity = "0";
+    floatingNunnun.style.zIndex = "-100";
+  }
+}
+
+function calcScrollEnd(scrollEndOffset) {
+  return document.getElementById('searchBtn').getBoundingClientRect().top + window.scrollY - window.innerHeight + scrollEndOffset;
+}
+
+window.addEventListener('DOMContentLoaded', () => { 
+  const scrollEndOffset = 50; 
+  const detailsSetSinceTime = document.getElementById('detailsSetSinceTime');
+  const detailsSetUntilTime = document.getElementById('detailsSetUntilTime');
+  const detailsKeywordArchive = document.getElementById('detailsKeywordArchive');
+  const detailsSummaryConfirmThisSearch = document.getElementById('detailsSummaryConfirmThisSearch');
+
+  detailsSetSinceTime.addEventListener('toggle', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  detailsSetUntilTime.addEventListener('toggle', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  detailsKeywordArchive.addEventListener('toggle', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  detailsSummaryConfirmThisSearch.addEventListener('toggle', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  window.addEventListener('resize', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  window.addEventListener('scroll', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+
+  window.addEventListener('load', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
+})
