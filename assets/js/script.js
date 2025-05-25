@@ -192,7 +192,7 @@ function calcScrollEnd(scrollEndOffset) {
 }
 
 window.addEventListener('DOMContentLoaded', () => { 
-  const scrollEndOffset = 50; 
+  const scrollEndOffset = 30; 
   const detailsSetSinceTime = document.getElementById('detailsSetSinceTime');
   const detailsSetUntilTime = document.getElementById('detailsSetUntilTime');
   const detailsKeywordArchive = document.getElementById('detailsKeywordArchive');
