@@ -41,9 +41,11 @@ body {
 }
 div {
   max-width: inherit;
-  border: solid 2px var(--color-div-border-light);
   margin-bottom: 0.4rem;
   padding: 0.3rem;
+}
+div.border {
+  border: solid 2px var(--color-div-border-light);
 }
 div.strong-border {
   border: solid 2px var(--color-div-sub-border-light);
@@ -140,12 +142,32 @@ input.btn {
   white-space: normal;
   word-break: break-all;
 }
+input.btn-half {
+  width: 49%;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.8;
+  border: 1px solid var(--color-input-border-light);
+  border-radius: 0;
+  color: var(--color-input-text-light);
+  background: var(--color-input-background-light);
+}
 input.btn-full {
   width: 100%;
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.5;
   border: 2px solid var(--color-input-border-light);
+  border-radius: 0;
+  color: var(--color-input-text-light);
+  background: var(--color-input-background-light);
+}
+input.btn-search {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2.5;
+  border: 3px solid var(--color-input-border-light);
   border-radius: 0;
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
@@ -154,32 +176,18 @@ blockquote {
   margin: 0rem 0rem 0rem 1rem;
 }
 @media (hover: hover) {
+  input.btn-half:hover {
+    border: 1px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
   input.btn-full:hover {
     border: 2px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
   }
-}
-@media (hover: none) {
-  input.btn-full:active {
-    border: 2px solid var(--color-input-border-active-light);
-    color: var(--color-input-text-active-light);
-    background: var(--color-input-background-active-light);
-  }
-}
-input.btn-half {
-  width: 49%;
-  font-size: 0.9rem;
-  font-weight: normal;
-  line-height: 1.3;
-  border: 1px solid var(--color-input-border-light);
-  border-radius: 0;
-  color: var(--color-input-text-light);
-  background: var(--color-input-background-light);
-}
-@media (hover: hover) {
-  input.btn-half:hover {
-    border: 1px solid var(--color-input-border-active-light);
+  input.btn-search:hover {
+    border: 3px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
   }
@@ -187,6 +195,16 @@ input.btn-half {
 @media (hover: none) {
   input.btn-half:active {
     border: 1px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
+  input.btn-full:active {
+    border: 2px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
+  input.btn-search:active {
+    border: 3px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
   }
@@ -202,9 +220,9 @@ input.btn-hide {
   cursor: default;
 }
 input.btn-floating {
-  border: solid 2px var(--color-div-sub-border-light);
-  border-radius: 20px;
-  width: 66%;
+  border: solid 3px var(--color-div-sub-border-light);
+  border-radius: 30px;
+  width: 75%;
   box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.66);
 }
 details {
@@ -232,14 +250,14 @@ a.footer {
     color: var(--color-text-dark);
     background-color: var(--color-body-background-dark);
   }
-  div {
+  div.border {
     border-color: var(--color-div-border-dark);
   }
   div.strong-border {
     border-color: var(--color-div-sub-border-dark);
   }
   a.div {
-  color: var(--color-caption-dark);
+    color: var(--color-caption-dark);
   }
   h1 {
     color: var(--color-text-strong-dark);
@@ -272,39 +290,50 @@ a.footer {
     border-color: var(--color-input-border-dark);
     background-color: var(--color-input-background-dark);
   }
-  input.btn-full {
-    border-color: var(--color-input-border-dark);
-    color: var(--color-input-text-light);
-    background: var(--color-input-background-dark);
-  }
-  @media (hover: hover) {
-    input.btn-full:hover {
-      border-color: var(--color-input-border-active-dark);
-      color: var(--color-input-text-active-dark);
-      background: var(--color-input-background-active-dark);
-    }
-  }
-  @media (hover: none) {
-    input.btn-full:active {
-      border-color: var(--color-input-border-active-dark);
-      color: var(--color-input-text-active-dark);
-      background: var(--color-input-background-active-dark);
-    }
-  }
   input.btn-half {
     border-color: var(--color-input-border-dark);
     color: var(--color-input-text-dark);
     background: var(--color-input-background-dark);
   }
+  input.btn-full {
+    border-color: var(--color-input-border-dark);
+    color: var(--color-input-text-light);
+    background: var(--color-input-background-dark);
+  }
+  input.btn-search {
+    border-color: var(--color-input-border-dark);
+    color: var(--color-input-text-light);
+    background: var(--color-input-background-dark);
+  }
   @media (hover: hover) {
-    input.btn-half:hover {
+        input.btn-half:hover {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+    input.btn-full:hover {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+        input.btn-search:hover {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
     }
   }
   @media (hover: none) {
-    input.btn-half:active {
+        input.btn-half:active {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+    input.btn-full:active {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+        input.btn-search:active {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
@@ -314,8 +343,11 @@ a.footer {
     color: var(--color-footer-text-dark);
   }
   input.btn-floating {
-  border: solid 2px var(--color-div-sub-border-dark);
-}
+    border-color: var(--color-div-sub-border-dark);
+  }
+  twitter-tweet {
+    data-theme: dark;
+  }
   footer {
     border: 1px solid var(--color-div-border-dark);
     background-color: var(--color-footer-background-dark);

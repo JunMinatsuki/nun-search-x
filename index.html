@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：2.6.0
+	ぬんサーチ バージョン：2.7.0
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -41,12 +41,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 
 <body>
-<div class="no-border" ontouchstart="">
+<div ontouchstart="">
   <h1 data-language-key="page-title">ぬんサーチ</h1>
-  <!--
-  <div class="strong-border" align="center"> "なにかメッセージを表示したいときのブロック"<br>
+  <!-- 告知の表示用
+  <div class="strong-border" align="center">
   </div> -->
-  <div class="language-select-wrapper"> <span data-language-key="label-language-selector">Language: </span>
+  <div class="language-select-wrapper border"> <span data-language-key="label-language-selector">Language: </span>
     <select class="language-selector" id="language">
       <option value="ja">日本語</option>
       <option value="en">English</option>
@@ -57,13 +57,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <option value="id">Bahasa</option>
     </select>
   </div>
-  <div class="block-option">
+  <div class="block-option border">
     <h2 data-language-key="heading-option">オプション</h2>
     <p>
       <input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled" onChange="refreshConfirmAreaOption()">
       <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span> </p>
   </div>
-  <div class="block-date">
+  <div class="block-date border">
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
     <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
     <div class="strong-border">
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </details>
     </div>
   </div>
-  <div class="keyword-block">
+  <div class="keyword-block border">
     <h2 data-language-key="heading-keyword">2. キーワード指定</h2>
     <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
     <span data-language-key="radio-and">"AND"で検索</span>
@@ -101,21 +101,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="strong-border">
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
-      <div class="no-border">
+      <div>
         <input class="btn btn-half" type="button" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="モノトーン絶対領域パンツ衣装" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2024" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-general-tag">一般</h4>
-      <div class="no-border">
+      <div>
         <input class="btn btn-half" type="button" value="#ときのそら" onClick="onClickTagButton(event)">
         <br>
         <input class="btn btn-half" type="button" value="ときのそら" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="そらちゃん" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
-      <div class="no-border">
+      <div>
         <input class="btn btn-half" type="button" value="#ときのそら生放送" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそらFC" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#夜のそらちゃんスペース" onClick="onClickTagButton(event)">
@@ -124,12 +124,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#そらちゃん届いたよ" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-fanart-tag">ファンアート</h4>
-      <div class="no-border">
+      <div>
         <input class="btn btn-half" type="button" value="#そらArt" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#soraArt" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-soratomo-watching-tag">そらともウォッチング(*´꒳`*)ﾐﾃﾙﾖ</h4>
-      <div class="no-border">
+      <div>
         <input class="btn btn-half" type="button" value="#ときのそらと一緒" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃんラーメンどうぞ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃんハンバーグどうぞ" onClick="onClickTagButton(event)">
@@ -145,7 +145,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
       </details>
     </div>
-    <div class="block-search">
+    <div class="block-search border">
       <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
       <details id="detailsSummaryConfirmThisSearch">
         <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
@@ -158,23 +158,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h4 data-language-key="text-keyword">キーワード</h4>
         <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
         <span class="confirm-this-search" id="confirmValueKeyword"></span> </details>
-      <input data-language-key="text-search-btn" class="btn btn-full button-search" id="searchBtn" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+      <input data-language-key="text-search-btn" class="btn btn-search" id="searchBtn" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
-    <div class="floating-nunnun-wrap" id="floatingNunnun">
-      <input data-language-key="text-search-btn" class="btn btn-full button-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+    <div class="floating-nunnun-wrap border" id="floatingNunnun">
+      <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
   </div>
-  <div>
+  <div class="border">
+    <h2 data-language-key="heading-announcement">🌟 告知 🌟</h2>
+    <blockquote data-language-key="" class="twitter-tweet" data-width="550" data-theme="light" data-lang="ja" align="center">
+      <p lang="ja" dir="ltr">🐻ときのそら誕生日記念グッズ2025発売💿<br>
+        生誕グッズが発売されました〜(๑╹ᆺ╹)<a href="https://t.co/43p2Y0e2op">https://t.co/43p2Y0e2op</a><br>
+        みんな～お揃いにしよ～🌟<a href="https://twitter.com/hashtag/%E3%81%A8%E3%81%8D%E3%81%AE%E3%81%9D%E3%82%89%E3%81%8A%E6%8A%AB%E9%9C%B2%E7%9B%AE%E8%AA%95%E7%94%9F%E6%97%A52025?src=hash&amp;ref_src=twsrc%5Etfw">#ときのそらお披露目誕生日2025</a> <a href="https://t.co/zANiWxH4nK">pic.twitter.com/zANiWxH4nK</a></p>
+      &mdash; ときのそら🐻💿 (@tokino_sora) <a href="https://twitter.com/tokino_sora/status/1923007624854814950?ref_src=twsrc%5Etfw">May 15, 2025</a></blockquote>
+  </div>
+  <div class="border">
     <h2 data-language-key="heading-tokino-timer" class="head-inline">ときのタイマー</h2>
-    <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時間:分:秒</span>
-    <div class="no-border"> <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
-      <blockquote>> <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
+    <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時:分:秒</span>
+    <blockquote data-language-key="" class="twitter-tweet" data-width="550" data-theme="light" data-lang="ja" align="center">
+      <p lang="ja" dir="ltr">キョロキョロ👀</p>
+      &mdash; ときのそら🐻💿 (@tokino_sora) <a href="https://twitter.com/tokino_sora/status/905613818872512512?ref_src=twsrc%5Etfw">September 7, 2017</a></blockquote>
+    <div class="strong-border"> <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
+      <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
       </blockquote>
       <strong><span data-language-key="tokino-timer-text-birth">お誕生日まで</span></strong><br>
-      <blockquote>> <span id="rBirthDate"></span>:<span id="rBirthHour"></span>:<span id="rBirthMinute"></span>:<span id="rBirthSecond"></span><br>
+      <blockquote>＞ <span id="rBirthDate"></span>:<span id="rBirthHour"></span>:<span id="rBirthMinute"></span>:<span id="rBirthSecond"></span><br>
       </blockquote>
       <strong><span data-language-key="tokino-timer-text-aniv">周年まで</span></strong><br>
-      <blockquote>> <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
+      <blockquote>＞ <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
       </blockquote>
     </div>
   </div>
@@ -185,8 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <br>
   &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span><a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
   <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span><br>
-  <a class="footer" href="./privacy-policy.html"><span data-language-key="text-privacy-policy">プライバシーポリシー<span></a>
-</footer>
+  <a class="footer" href="./privacy-policy.html"><span data-language-key="text-privacy-policy">プライバシーポリシー</span></a></footer>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/language.js"></script>
 <script src="assets/js/language-switcher.js"></script>
