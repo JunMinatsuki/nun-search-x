@@ -65,6 +65,9 @@ div.floating-nunnun-wrap {
   z-index: -100;
   transition: 0.2s;
 }
+a.div {
+  color: var(--color-caption-light);
+}
 h1 {
   font-size: 1.5rem;
   color: var(--color-text-strong-light);
@@ -234,6 +237,9 @@ a.footer {
   }
   div.strong-border {
     border-color: var(--color-div-sub-border-dark);
+  }
+  a.div {
+  color: var(--color-caption-dark);
   }
   h1 {
     color: var(--color-text-strong-dark);

@@ -1,9 +1,8 @@
 const languageData = {
   /** 日本語 */
   'ja': {
-    'page-title': 'ぬんサーチ（Nun Search）',
+    'page-title': 'ぬんサーチ',
     'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS',
-    'heading-page-title': 'ぬんサーチ（Nun Search）',
     'label-language-selector': 'Language: ',
     'heading-option': 'オプション',
     'text-option': 'ときのそら（@tokino_sora）のポストだけを検索',
@@ -38,13 +37,20 @@ const languageData = {
     'tokino-timer-notes': '※日:時間:分:秒',
     'tokino-timer-text-post':'最初のポストから',
     'tokino-timer-text-birth':'お誕生日まで',
-    'tokino-timer-text-aniv':'周年まで'
+    'tokino-timer-text-aniv':'周年まで',
+    'privacy-policy-page-title':'プライバシーポリシー | ぬんサーチ',
+    'text-privacy-policy':'プライバシーポリシー',
+    'text-use-ga':'Googleアナリティクスの使用',
+    'privacy-policy-text-ga-01':'本サイトは、Googleのアクセス解析ツール「Googleアナリティクス」を使用しています。Googleアナリティクスはデータの収集のためにCookieを使用しています。',
+    'privacy-policy-text-ga-02':'このデータは匿名で収集されており、個人を特定するものではありません。収集したデータは本サイト改善の目的にのみ利用します。',
+    'privacy-policy-text-ga-03':'この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。',
+    'privacy-policy-text-ga-04':'詳細については以下のURLをご確認ください。',
+    'text-back-to-top':'トップに戻る'
   },
   /** 英語 */
   'en': {
     'page-title': 'Nun Search',
     'header-caption': 'Header illustration provided by: もふもふ大好きDS',
-    'heading-page-title': 'Nun Search',
     'label-language-selector': 'Language: ',
     'heading-option': 'Option',
     'text-option': 'Search only posts by Tokino Sora (@tokino_sora)',
@@ -79,13 +85,21 @@ const languageData = {
     'tokino-timer-notes': '*day:hr:min:sec',
     'tokino-timer-text-post':'From the first post',
     'tokino-timer-text-birth':'Remaining until birthday',
-    'tokino-timer-text-aniv':'Remaining until anniversary'
+    'tokino-timer-text-aniv':'Remaining until anniversary',
+    'privacy-policy-page-title':'Privacy policy | Nun Search',
+    'text-privacy-policy':'Privacy policy',
+    'text-use-ga':'Use of Google Analytics',
+    'privacy-policy-text-ga-01':'This site uses Google\'s access analysis tool "Google Analytics". Google Analytics uses cookies to collect data.',
+    'privacy-policy-text-ga-02':'This data is collected anonymously and does not identify individuals. The collected data will be used only for the purpose of improving this site.',
+    'privacy-policy-text-ga-03':'This function can be refused by disabling cookies, so please check your browser settings.',
+    'privacy-policy-text-ga-04':'For more information, please see the following URL.',
+    'text-back-to-top':'Return to top'
+    
   },
   /** 簡体中国語（北京語、中国標準語） */
   'zh-CN': {
-    'page-title': 'Nun搜寻 (Nun Search）',
+    'page-title': 'Nun搜寻',
     'header-caption': '页首插图提供：もふもふ大好きDS',
-    'heading-page-title': 'Nun搜寻 (Nun Search）',
     'label-language-selector': 'Language: ',
     'heading-option': '选项',
     'text-option': '只搜寻时乃空（@tokino_sora）的推文',
@@ -120,13 +134,20 @@ const languageData = {
     'tokino-timer-notes': '※日:时:分:秒',
     'tokino-timer-text-post':'从第一篇推文开始',
     'tokino-timer-text-birth':'剩余至生日',
-    'tokino-timer-text-aniv':'剩余至周年纪念日'
+    'tokino-timer-text-aniv':'剩余至周年纪念日',
+    'privacy-policy-page-title':'隐私政策 | Nun搜寻',
+    'text-privacy-policy':'隐私政策',
+    'text-use-ga':'使用Google Analytics',
+    'privacy-policy-text-ga-01':'本网站使用Google的访问分析工具“Google Analytics”。 Google Analytics 使用 cookie 来收集数据。',
+    'privacy-policy-text-ga-02':'这些数据是匿名收集的，不会识别您的个人身份。所收集的数据仅用于改进本网站。',
+    'privacy-policy-text-ga-03':'此功能允许您通过禁用cookies来拒绝收集，因此请检查您的浏览器设置。',
+    'privacy-policy-text-ga-04':'详细信息请参阅以下网址。',
+    'text-back-to-top':'返回顶部'
   },
   /** 繁体中国語（台湾など） */
   'zh-TW': {
-    'page-title': 'Nun搜尋 (Nun Search）',
+    'page-title': 'Nun搜尋',
     'header-caption': '頁首插圖提供：もふもふ大好きDS',
-    'heading-page-title': 'Nun搜尋 (Nun Search）',
     'label-language-selector': 'Language: ',
     'heading-option': '選項',
     'text-option': '只搜尋時乃空（@tokino_sora）的推文',
@@ -161,13 +182,20 @@ const languageData = {
     'tokino-timer-notes': '※日:時:分:秒',
     'tokino-timer-text-post':'從第一篇推文開始',
     'tokino-timer-text-birth':'剩餘至生日',
-    'tokino-timer-text-aniv':'剩餘至週年紀念日'
+    'tokino-timer-text-aniv':'剩餘至週年紀念日',
+    'privacy-policy-page-title':'隱私權政策 | Nun搜尋',
+    'text-privacy-policy':'隱私權政策',
+    'text-use-ga':'使用Google Analytics',
+    'privacy-policy-text-ga-01':'本網站使用Google的訪問分析工具「Google Analytics」。 Google Analytics 使用 cookie 來收集資料。',
+    'privacy-policy-text-ga-02':'這些資料是匿名收集的，不會識別您的個人身分。所收集的數據僅用於改進本網站。',
+    'privacy-policy-text-ga-03':'此功能可讓您透過停用cookies來拒絕收集，因此請檢查您的瀏覽器設定。',
+    'privacy-policy-text-ga-04':'詳細資訊請參閱以下網址。',
+    'text-back-to-top':'回到頂部'
   },
   /** 広東語（香港、マカオ、広州） */
   'zh-HK': {
-    'page-title': 'Nun搜尋 (Nun Search）',
+    'page-title': 'Nun搜尋',
     'header-caption': '頁首插圖提供：もふもふ大好きDS',
-    'heading-page-title': 'Nun搜尋 (Nun Search）',
     'label-language-selector': 'Language: ',
     'heading-option': '選項',
     'text-option': '只搜尋時乃空（@tokino_sora）嘅推文',
@@ -202,13 +230,20 @@ const languageData = {
     'tokino-timer-notes': '※日:時:分:秒',
     'tokino-timer-text-post':'從第一篇推文開始',
     'tokino-timer-text-birth':'剩餘至生日',
-    'tokino-timer-text-aniv':'剩餘至週年紀念日'
+    'tokino-timer-text-aniv':'剩餘至週年紀念日',
+    'privacy-policy-page-title':'私隱政策 | Nun搜尋',
+    'text-privacy-policy':'私隱政策',
+    'text-use-ga':'使用 Google Analytics',
+    'privacy-policy-text-ga-01':'本網站使用 Google 嘅訪問分析工具「 Google Analytics 」。 Google Analytics 用 cookie 嚟收集數據。',
+    'privacy-policy-text-ga-02':'呢啲數據係匿名收集嘅，唔會識別你嘅個人身份。所收集嘅數據只係用嚟改進本網站。',
+    'privacy-policy-text-ga-03':'呢個功能允許你透過禁用 cookies 嚟拒絕收集，所以請檢查你嘅瀏覽器設定。',
+    'privacy-policy-text-ga-04':'詳細資訊請參閱以下網址。',
+    'text-back-to-top':'返去頂部'
   },
   /** 韓国語 */
   'ko': {
-    'page-title': '눈서치 (Nun Search）',
+    'page-title': '눈서치',
     'header-caption': '헤더 일러스트 제공 : もふもふ大好きDS 님',
-    'heading-page-title': '눈서치',
     'label-language-selector': 'Language: ',
     'heading-option': '옵션',
     'text-option': '토키노 소라（@tokino_sora）의 포스트 한정 검색',
@@ -243,13 +278,20 @@ const languageData = {
     'tokino-timer-notes': '※日:시:분:秒',
     'tokino-timer-text-post':'첫 포스트에서',
     'tokino-timer-text-birth':'생일까지 남은 시간',
-    'tokino-timer-text-aniv':'기념일까지 남음'
+    'tokino-timer-text-aniv':'기념일까지 남음',
+    'privacy-policy-page-title':'개인 정보 보호 정책 | 눈서치',
+    'text-privacy-policy':'개인 정보 보호 정책',
+    'text-use-ga':'Google Analytics 사용',
+    'privacy-policy-text-ga-01':'이 사이트는 Google의 액세스 분석 도구 "Google 애널리틱스"를 사용합니다. Google 애널리틱스는 데이터 수집을 위해 쿠키를 사용합니다.',
+    'privacy-policy-text-ga-02':'이 데이터는 익명으로 수집되며 개인을 식별하지 않습니다.',
+    'privacy-policy-text-ga-03':'이 기능은 쿠키를 비활성화하여 수집을 거부할 수 있으므로 브라우저의 설정을 확인하십시오.',
+    'privacy-policy-text-ga-04':'자세한 내용은 아래 URL을 확인하십시오.',
+    'text-back-to-top':'맨 위로 돌아가기'
   },
   /** インドネシア語 */
   'id': {
     'page-title': 'Nun Pencarian',
     'header-caption': 'Ilustrasi tajuk disediakan oleh: もふもふ大好きDS',
-    'heading-page-title': 'Nun Pencarian',
     'label-language-selector': 'Language: ',
     'heading-option': 'Opsi',
     'text-option': 'Cari hanya postingan dari Tokino Sora (@tokino_sora)',
@@ -284,6 +326,14 @@ const languageData = {
     'tokino-timer-notes': '*hari:jam:menit:detik',
     'tokino-timer-text-post':'Dari postingan pertama',
     'tokino-timer-text-birth':'Tetap sampai ulang tahun',
-    'tokino-timer-text-aniv':'Bertahan sampai ulang tahun'
+    'tokino-timer-text-aniv':'Bertahan sampai ulang tahun',
+    'privacy-policy-page-title':'Kebijakan privasi | Nun Pencarian',
+    'text-privacy-policy':'Kebijakan privasi',
+    'text-use-ga':'Penggunaan Google Analytics',
+    'privacy-policy-text-ga-01':'Situs ini menggunakan alat analisis akses Google "Google Analytics". Google Analytics menggunakan cookie untuk mengumpulkan data.',
+    'privacy-policy-text-ga-02':'Data ini dikumpulkan secara anonim dan tidak mengidentifikasi individu. Data yang dikumpulkan hanya akan digunakan untuk tujuan meningkatkan situs ini.',
+    'privacy-policy-text-ga-03':'Fungsi ini dapat ditolak dengan menonaktifkan cookie, jadi harap periksa pengaturan browser Anda.',
+    'privacy-policy-text-ga-04':'Untuk informasi lebih lanjut, silakan lihat URL berikut.',
+    'text-back-to-top':'Kembali ke atas'
   },
 };
