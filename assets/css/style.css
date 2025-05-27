@@ -112,6 +112,9 @@ h4 {
 p {
   color: var(--color-text-light);
 }
+strong {
+  color: var(--color-text-strong-light);
+}
 .inputbox-date {
   border: 1px solid var(--color-input-border-light);
   background-color: var(--color-input-background-light);
@@ -278,6 +281,9 @@ a.footer {
   p {
     color: var(--color-text-dark);
   }
+      strong {
+      color: var(--color-text-strong-dark);
+    }
   .inputbox-date {
     border-color: var(--color-input-border-dark);
     background-color: var(--color-input-background-dark);
@@ -306,7 +312,7 @@ a.footer {
     background: var(--color-input-background-dark);
   }
   @media (hover: hover) {
-        input.btn-half:hover {
+    input.btn-half:hover {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
@@ -316,14 +322,14 @@ a.footer {
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
     }
-        input.btn-search:hover {
+    input.btn-search:hover {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
     }
   }
   @media (hover: none) {
-        input.btn-half:active {
+    input.btn-half:active {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
@@ -333,7 +339,7 @@ a.footer {
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
     }
-        input.btn-search:active {
+    input.btn-search:active {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);

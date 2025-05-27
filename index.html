@@ -59,9 +59,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <div class="block-option border">
     <h2 data-language-key="heading-option">オプション</h2>
-    <p>
+    <div class="strong-border">
       <input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span> </p>
+      <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span>
+    </div>
   </div>
   <div class="block-date border">
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
@@ -75,8 +76,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
       </details>
       <input data-language-key="text-date-03" class="btn btn-full button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onClick="clickSinceYesterdayButton();refreshConfirmAreaSince()">
-    </div>
-    <div class="strong-border">
       <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
       <span data-language-key="text-date-04">いつまで？</span><br>
       <input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate" onChange="refreshConfirmAreaUntil()">
@@ -88,16 +87,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <div class="keyword-block border">
     <h2 data-language-key="heading-keyword">2. キーワード指定</h2>
-    <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
-    <span data-language-key="radio-and">"AND"で検索</span>
-    <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
-    <span data-language-key="radio-or">"OR"で検索</span><br>
-    <p>
-      <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
-      <br>
-      <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
-      <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
-    </p>
+    <div class="strong-border">
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
+      <span data-language-key="radio-and">"AND"で検索</span>
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
+      <span data-language-key="radio-or">"OR"で検索</span><br>
+      <p>
+        <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
+        <br>
+        <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
+        <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
+      </p>
+    </div>
     <div class="strong-border">
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
@@ -145,8 +146,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
       </details>
     </div>
-    <div class="block-search border">
+  </div>
+      <div class="block-search border">
       <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
+        <div class="strong-border">
       <details id="detailsSummaryConfirmThisSearch">
         <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
         <h4 data-language-key="heading-option">オプション</h4>
@@ -163,11 +166,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="floating-nunnun-wrap border" id="floatingNunnun">
       <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
-  </div>
+        </div>
   <div class="border">
     <h2 data-language-key="heading-tokino-timer" class="head-inline">ときのタイマー</h2>
     <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時:分:秒</span>
-    <div> <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
+    <div class="strong-border" style="margin-top:1rem">
+      <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
       <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
       </blockquote>
       <strong><span data-language-key="tokino-timer-text-birth">お誕生日まで</span></strong><br>
