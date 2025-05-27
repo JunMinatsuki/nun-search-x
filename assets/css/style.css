@@ -103,11 +103,23 @@ h4 {
   text-decoration-color: var(--color-text-strong-light);
   text-decoration-style: solid;
 }
-.head-inline {
+.font-size-small {
+  font-size: 0.8rem;
+}
+.display-inline {
   display: inline;
 }
-.align-center {
+.text-align-center {
   text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+.nobr {
+  display: inline-block;
 }
 p {
   color: var(--color-text-light);
