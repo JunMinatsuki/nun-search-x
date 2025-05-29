@@ -109,6 +109,10 @@ h4 {
 .display-inline {
   display: inline;
 }
+.display-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
 .text-align-center {
   text-align: center;
 }
@@ -159,9 +163,11 @@ input.btn {
 }
 input.btn-half {
   width: 49%;
-  font-size: 1rem;
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  font-size: 0.9rem;
   font-weight: normal;
-  line-height: 1.8;
+  height: 3rem;
+  line-height: 1.5;
   border: 1px solid var(--color-input-border-light);
   border-radius: 0;
   color: var(--color-input-text-light);

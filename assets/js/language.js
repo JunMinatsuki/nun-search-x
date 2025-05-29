@@ -1,4 +1,4 @@
-const languageData = {
+﻿const languageData = {
   /** 日本語 */
   'ja': {
     'page-title': 'ぬんサーチ',
