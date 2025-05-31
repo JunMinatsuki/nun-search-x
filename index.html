@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：2.6.2
+	ぬんサーチ バージョン：2.7.0
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -55,12 +55,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 <div ontouchstart="">
   <h1 data-language-key="page-title">ぬんサーチ</h1>
-  <div data-language-key="text-description" class="no-border font-size-small"> 
-    「ぬんサーチ」はホロライブ所属のVtuber「ときのそら」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。
+  <div data-language-key="text-description" class="no-border font-size-small"> 「ぬんサーチ」はホロライブ所属のVtuber「ときのそら」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。 </div>
+  <!-- 告知の表示用 -->
+  <div class="border" align="center">
+    <h2 data-language-key="heading-news">🌟 Tokino News 🌟</h2>
+    <div class="strong-border">
+      <h5 data-language-key="heading-news-01">🐻ときのそら誕生日記念2025グッズ販売中💿</h5>
+      <span data-language-key="text-news-01" class="font-size-small">フルセットでは直筆サインがついてくる</span><br>
+      <input data-language-key="button-text-news-01" class="btn btn-news-link" type="button" value="hololive production OFFICIAL SHOP" onClick="window.open('https://shop.hololivepro.com/products/tokinosora_birthday_2025')">
+    </div>
   </div>
-  <!-- 告知の表示用
-  <div class="strong-border" align="center">
-  </div> -->
   <div class="block-date border">
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
     <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
@@ -99,15 +103,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#響咲リオナ生誕祭2025" onClick="onClickTagButton(event)"><br>
-				<input class="btn btn-half" type="button" value="#スタそら" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#はばない" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#響咲リオナ生誕祭2025" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#スタそら" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="スターそらイトファンタジー" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2024" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-general-tag">一般</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#ときのそら" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" value="#ときのそら" onClick="onClickTagButton(event)">
+        <br>
         <input class="btn btn-half" type="button" value="ときのそら" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="そらちゃん" onClick="onClickTagButton(event)">
       </div>
@@ -138,12 +144,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#青空はこ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 そらちゃん" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="＃一条莉々華生誕祭2025 ときのそら" onClick="onClickTagButton(event)">
-				<h4>た行</h4>
-				<input class="btn btn-half" type="button" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)">
+        <h4>た行</h4>
+        <input class="btn btn-half" type="button" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)">
         <h4>は行</h4>
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
-				<h4>ま行</h4>
-				<input class="btn btn-half" type="button" value="モノトーン絶対領域パンツ衣装" onClick="onClickTagButton(event)">
+        <h4>ま行</h4>
+        <input class="btn btn-half" type="button" value="モノトーン絶対領域パンツ衣装" onClick="onClickTagButton(event)">
       </details>
     </div>
   </div>
@@ -166,8 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
         <span class="confirm-this-search" id="confirmValueKeyword"></span>
         <h4 data-language-key="heading-option">オプション</h4>
-        <span class="confirm-this-search" id="confirmValueOption"></span>
-      </details>
+        <span class="confirm-this-search" id="confirmValueOption"></span> </details>
       <input data-language-key="text-search-btn" class="btn btn-search" id="searchBtn" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
     </div>
     <div class="floating-nunnun-wrap border" id="floatingNunnun">

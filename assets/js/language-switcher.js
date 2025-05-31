@@ -34,6 +34,9 @@ const changeLanguage = function (lang) {
   elements.forEach(function (element) {
     let key = element.getAttribute('data-language-key');
     let text = languageData[lang][key];
+    if (text === undefined) {
+      text = "Err:テキストああ迷子";
+    }
     element.textContent = text;
     if (element.id === "textboxKeyword") {
       element.placeholder = text;

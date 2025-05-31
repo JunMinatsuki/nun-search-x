@@ -103,6 +103,11 @@ h4 {
   text-decoration-color: var(--color-text-strong-light);
   text-decoration-style: solid;
 }
+h5 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text-strong-light);
+}
 .font-size-small {
   font-size: 0.8rem;
 }
@@ -193,6 +198,16 @@ input.btn-search {
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
 }
+input.btn-news-link {
+  width: 80%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1.1;
+  border: 1px solid var(--color-input-border-light);
+  border-radius: 10px;
+  color: var(--color-input-text-light);
+  background: var(--color-input-background-light);
+}
 blockquote {
   margin: 0rem 0rem 0rem 1rem;
 }
@@ -212,6 +227,11 @@ blockquote {
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
   }
+  input.btn-news-link:hover {
+    border: 1px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
 }
 @media (hover: none) {
   input.btn-half:active {
@@ -226,6 +246,11 @@ blockquote {
   }
   input.btn-search:active {
     border: 3px solid var(--color-input-border-active-light);
+    color: var(--color-input-text-active-light);
+    background: var(--color-input-background-active-light);
+  }
+  input.btn-news-link:active {
+    border: 1px solid var(--color-input-border-active-light);
     color: var(--color-input-text-active-light);
     background: var(--color-input-background-active-light);
   }
@@ -296,12 +321,15 @@ a.footer {
     color: var(--color-text-strong-dark);
     text-decoration-color: var(--color-text-strong-dark);
   }
+  h5 {
+  color: var(--color-text-strong-dark);
+}
   p {
     color: var(--color-text-dark);
   }
-      strong {
-      color: var(--color-text-strong-dark);
-    }
+  strong {
+    color: var(--color-text-strong-dark);
+  }
   .inputbox-date {
     border-color: var(--color-input-border-dark);
     background-color: var(--color-input-background-dark);
@@ -329,6 +357,11 @@ a.footer {
     color: var(--color-input-text-light);
     background: var(--color-input-background-dark);
   }
+  input.btn-news-link {
+    border-color: var(--color-input-border-dark);
+    color: var(--color-input-text-light);
+    background: var(--color-input-background-dark);
+  }
   @media (hover: hover) {
     input.btn-half:hover {
       border-color: var(--color-input-border-active-dark);
@@ -341,6 +374,11 @@ a.footer {
       background: var(--color-input-background-active-dark);
     }
     input.btn-search:hover {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+    input.btn-news-link:hover {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
@@ -358,6 +396,11 @@ a.footer {
       background: var(--color-input-background-active-dark);
     }
     input.btn-search:active {
+      border-color: var(--color-input-border-active-dark);
+      color: var(--color-input-text-active-dark);
+      background: var(--color-input-background-active-dark);
+    }
+    input.btn-news-link:active {
       border-color: var(--color-input-border-active-dark);
       color: var(--color-input-text-active-dark);
       background: var(--color-input-background-active-dark);
