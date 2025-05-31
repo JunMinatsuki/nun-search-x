@@ -1,10 +1,10 @@
 ﻿const languageData = {
   /** 日本語 */
   'ja': {
-    'page-title': 'ぬんサーチ',
+    'page-title': 'ぬんサーチ（Nun Search）',
     'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS',
     'label-language-selector': 'Language: ',
-    'text-description': '「ぬんサーチ」はホロライブ所属のVtuber「ときのそら」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。',
+    'text-description': '「ぬんサーチ」はホロライブ所属のVtuber「ときのそら」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。ちなみに「ぬん（Nun）」は(๑╹ᆺ╹)ぬんぬんです。Nun（修道女）の検索ツールじゃないよ！',
     'heading-news': '🌟 Tokino News 🌟',
     'heading-news-01': '🐻ときのそら誕生日記念2025グッズ販売中💿',
     'text-news-01': 'フルセットでは直筆サインがついてくる',
@@ -54,7 +54,7 @@
   },
   /** 英語 */
   'en': {
-    'page-title': 'Nun Search',
+    'page-title': 'ぬんサーチ（Nun Search）',
     'header-caption': 'Header illustration provided by: もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '"Nun Search" is a search tool for X posts related to Hololive\'s Vtuber "Tokino Sora". You can easily set the search date range and frequently used hashtags. It may make your oshikatsu and ego search easier.',
