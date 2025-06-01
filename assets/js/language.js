@@ -57,7 +57,7 @@
     'page-title': 'ぬんサーチ（Nun Search）',
     'header-caption': 'Header illustration provided by: もふもふ大好きDS',
     'label-language-selector': 'Language: ',
-    'text-description': '"Nun Search" is a search tool for X posts related to Hololive\'s Vtuber "Tokino Sora". You can easily set the search date range and frequently used hashtags. It may make your oshikatsu and ego search easier.By the way, By the way, "Nun" is (๑╹ᆺ╹) Nunnun. This is not a search tool for nuns!,
+    'text-description': '"Nun Search" is a search tool for X posts related to Hololive\'s Vtuber "Tokino Sora". You can easily set the search date range and frequently used hashtags. It may make your oshikatsu and ego search easier.By the way, By the way, "Nun" is (๑╹ᆺ╹) Nunnun. This is not a search tool for nuns!',
     'heading-news': '🌟 Tokino News 🌟',
     'heading-news-01': '🐻Tokino Sora birthday 2025 goods on sale💿',
     'text-news-01': 'The complete set comes with an autograph',
