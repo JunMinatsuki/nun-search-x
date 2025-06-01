@@ -191,8 +191,8 @@ function calcScrollEnd(scrollEndOffset) {
   return document.getElementById('searchBtn').getBoundingClientRect().top + window.scrollY - window.innerHeight + scrollEndOffset;
 }
 
-window.addEventListener('DOMContentLoaded', () => { 
-  const scrollEndOffset = 30; 
+window.addEventListener('DOMContentLoaded', () => {
+  const scrollEndOffset = 30;
   const detailsSetSinceTime = document.getElementById('detailsSetSinceTime');
   const detailsSetUntilTime = document.getElementById('detailsSetUntilTime');
   const detailsKeywordArchive = document.getElementById('detailsKeywordArchive');
@@ -229,16 +229,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // X埋め込み テーマ切り替え
 const darkmode = window.matchMedia('(prefers-color-scheme: dark)');
-function loadWidgets(){
+function loadWidgets() {
   const embed = document.querySelectorAll('blockquote.twitter-tweet');
-  if(embed.length === 0){
+  if (embed.length === 0) {
     return
   }
-  for(let i = 0; i < embed.length; i++){
-    if(darkmode.matches){
+  for (let i = 0; i < embed.length; i++) {
+    if (darkmode.matches) {
       embed[i].setAttribute('data-theme', 'dark');
-      } else {
-      embed[i].setAttribute('data-theme', 'light'); 
+    } else {
+      embed[i].setAttribute('data-theme', 'light');
     }
     embed[i].setAttribute('data-width', '550');
     embed[i].setAttribute('data-align', 'center');
@@ -247,20 +247,79 @@ function loadWidgets(){
   script.src = "https://platform.twitter.com/widgets.js";
   document.body.appendChild(script);
 }
-  
-function changeEmbedX(){
+
+function changeEmbedX() {
   const iframe = document.querySelectorAll('div.twitter-tweet-rendered iframe');
-  if(iframe.length === 0){
+  if (iframe.length === 0) {
     return
   }
-  for(let i = 0; i < iframe.length; i++){
-    if(darkmode.matches){
+  for (let i = 0; i < iframe.length; i++) {
+    if (darkmode.matches) {
       iframe[i].src = iframe[i].src.replace('&theme=light&', '&theme=dark&');
     } else {
       iframe[i].src = iframe[i].src.replace('&theme=dark&', '&theme=light&');
     }
   }
 }
+
+/** @type {(word: string) => HTMLInputElement} - ボタン要素を作る */
+const createButtonElement = (word) => {
+  const button = document.createElement('input');
+  button.classList.add('btn', 'btn-half');
+  button.type = 'button';
+  button.value = word;
+  button.onclick = onClickTagButton;
+  return button;
+};
+/** @type {(data: {active: {name: string, language_key: string, words: string[]}[], archived: {name: string, words: string[]}[]}) => void} - 検索ワード設定ボタンをJSONから取得して差し込む */
+const insertWordsSelectButtons = (data) => {
+  // ↓最終的に差し込む要素をこの配列に投げ込んでおく
+  const elements = [];
+  // アクティブなワードを差し込む
+  data.active.forEach((category) => {
+    const categoryHeader = document.createElement('h4');
+    categoryHeader.textContent = category.name;
+    categoryHeader.dataset.languageKey = category.language_key;
+    elements.push(categoryHeader);
+    const div = document.createElement('div');
+    category.words.forEach((word) => {
+      const button = createButtonElement(word);
+      div.appendChild(button);
+      div.appendChild(new Text(" "));
+    });
+    elements.push(div);
+  });
+  // アーカイブされたワードを差し込む
+  const details = document.createElement('details');
+  details.id = 'detailsKeywordArchive';
+  const summary = document.createElement('summary');
+  const summaryText = document.createElement('span');
+  summaryText.textContent = 'アーカイブ';
+  summaryText.dataset.languageKey = 'heading-archive-tag';
+  summary.appendChild(summaryText);
+  details.appendChild(summary);
+  data.archived.forEach((category) => {
+    const categoryHeader = document.createElement('h4');
+    categoryHeader.textContent = category.name;
+    details.appendChild(categoryHeader);
+    const div = document.createElement('div');
+    category.words.forEach((word) => {
+      const button = createButtonElement(word);
+      div.appendChild(button);
+      div.appendChild(new Text(" "));
+    });
+    details.appendChild(div);
+  });
+  elements.push(details);
+  // h3[data-language-key=heading-autoinput-btn]の直後に差し込む
+  const beforeElement = document.querySelector('h3[data-language-key="heading-autoinput-btn"]');
+  beforeElement.after(...elements);
+};
+
+window.addEventListener('DOMContentLoaded', async (event) => {
+  const data = await fetch("assets/data/search_words/sora.json").then(res => res.json());
+  insertWordsSelectButtons(data);
+});
 
 window.addEventListener('DOMContentLoaded', loadWidgets);
 darkmode.addEventListener('change', changeEmbedX);
