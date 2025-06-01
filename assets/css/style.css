@@ -271,7 +271,7 @@ input.btn-hide {
 input.btn-floating {
   border: solid 3px var(--color-div-sub-border-light);
   border-radius: 30px;
-  width: 75%;
+  width: 90%;
   box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.66);
 }
 details {
