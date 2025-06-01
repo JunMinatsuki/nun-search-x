@@ -1,0 +1,187 @@
+<!doctype html>
+<!--
+	ドドドサーチ バージョン：1.0.0
+	2025/6/1 Copyright @minatsukijun
+
+	角巻わために関するXの検索を少し楽にするページです。
+  ぬんサーチをベースに横展開
+-->
+<html lang="jp">
+<head prefix="og: https://ogp.me/ns#">
+<link rel="canonical" href="https://junminatsuki.github.io/nun-search-x/">
+<meta charset="utf-8">
+<title data-language-key="page-title">ドドドサーチ（DoDoDo Search）</title>
+<meta name="description" content="「ドドドサーチ」はホロライブ所属のVtuber「角巻わため」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。"/>
+<meta name="keywords" content="角巻わため,エゴサ,X,Twitter,ハッシュタグ,ポスト,検索">
+<meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1.0 viewport-fit=cover">
+<meta property="og:url" content="https://junminatsuki.github.io/nun-search-x/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ドドドサーチ（DoDoDo Search）" />
+<meta property="og:description" content="「ドドドサーチ」はホロライブ所属のVtuber「角巻わため」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。" />
+<meta property="og:site_name" content="皆月じゅんのGitHub" />
+<!-- OGP周りの設定は一旦保留
+<meta property="og:image" content="https://junminatsuki.github.io/nun-search-x/assets/img/ogp_nun-search_DS_NDSL.jpg" />
+<link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+-->
+<link rel="manifest" href="/site.webmanifest" />
+<link rel="stylesheet" href="assets/css/color-dododo.css" type="text/css">
+<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+</head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WNGN7GNX');</script>
+<header>
+  <div class="language-select-wrapper no-border text-align-right"><span data-language-key="label-language-selector">Language:</span>
+    <select class="language-selector" id="language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+  <!-- メインビジュアル
+  <figure><img src="" alt="">
+    <figcaption data-language-key="header-caption" class="caption"></figcaption>
+  </figure> -->
+</header>
+
+<body>
+<div ontouchstart="">
+  <h1 data-language-key="page-title">ドドドサーチ（DoDoDo Search）</h1>
+  <div data-language-key="text-description" class="no-border font-size-small"></div>
+  <!-- 告知の表示用 -->
+  <div class="border" align="center">
+    <h2 data-language-key="heading-news">🐏 DoDoDo News 🐏</h2>
+    <div class="strong-border">
+      <h5 data-language-key="heading-news-01">🐏角巻わため生誕祭2025🐏</h5>
+      <img class="bnr" src="assets/img/bnr_watamebirthday2025.jpeg" alt="角巻わため生誕祭2025バナー">
+      <a href="https://x.com/tsunomakiwatame/status/1929176851039035867" target="_blank" class="text-notes"><span data-language-key="text-news-01">バナー提供：角巻わため</span></a>
+    </div>
+  </div>
+  <div class="block-date border">
+    <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
+    <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
+    <div class="strong-border">
+      <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()" checked>
+      <span data-language-key="text-date-01">いつから？</span><br>
+      <input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2019-12-25" onChange="refreshConfirmAreaSince()">
+      <details id="detailsSetSinceTime">
+        <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
+        <input class="inputbox-time" type="time" step="1" name="since-time" id="textboxSinceTime" value="00:00:00" onChange="refreshConfirmAreaSince()">
+      </details>
+      <input data-language-key="text-date-03" class="btn btn-full button-set-yesterday" type="button" name="since-yesterday" id="buttonSinceYesterdayTag" value="昨日をセット" onClick="clickSinceYesterdayButton();refreshConfirmAreaSince()">
+      <input type="checkbox" name="until-enabled" id="checkboxUntilEnabled" onChange="refreshConfirmAreaUntil()">
+      <span data-language-key="text-date-04">いつまで？</span><br>
+      <input class="inputbox-date" type="date" name="until-date" id="textboxUntilDate" onChange="refreshConfirmAreaUntil()">
+      <details id="detailsSetUntilTime">
+        <summary><span data-language-key="text-set-time">時刻を設定する</span></summary>
+        <input class="inputbox-time" type="time" step="1" name="until-time" id="textboxUntilTime" value="23:59:59" onChange="refreshConfirmAreaUntil()">
+      </details>
+    </div>
+  </div>
+  <div class="keyword-block border">
+    <h2 data-language-key="heading-keyword">2. キーワード指定</h2>
+    <div class="strong-border">
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionAnd" value="AND" onChange="refreshConfirmAreaAndOr()" checked>
+      <span data-language-key="radio-and">"AND"で検索</span>
+      <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
+      <span data-language-key="radio-or">"OR"で検索</span><br>
+      <p>
+        <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
+        <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
+        <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
+      </p>
+    </div>
+    <div class="strong-border">
+      <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
+      <h4 data-language-key="heading-special-tag">スペシャル</h4>
+      <div>
+        <input class="btn btn-half" type="button" value="#角巻わため生誕祭2025" onClick="onClickTagButton(event)">
+      </div>
+      <h4 data-language-key="heading-general-tag">一般</h4>
+      <div>
+        <input class="btn btn-half" type="button" value="#角巻わため" onClick="onClickTagButton(event)">
+      </div>
+      <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
+      <div>
+        <input class="btn btn-half" type="button" value="#ドドドライブ" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#はばない" onClick="onClickTagButton(event)">
+      </div>
+      <h4 data-language-key="heading-fanart-tag">ファンアートや切り抜き動画</h4>
+      <div>
+        <input class="btn btn-half" type="button" value="#つのまきあーと" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#わたわた動画" onClick="onClickTagButton(event)">
+      </div>
+      <h4 data-language-key="heading-watamate-watching-tag">わためいと</h4>
+      <div>
+        <input class="btn btn-half" type="button" value="#わためいと" onClick="onClickTagButton(event)">
+      </div>
+      <!--<details id="detailsKeywordArchive">
+        <summary><span data-language-key="heading-archive-tag">アーカイブ</span></summary>
+        <h4>あ行</h4>
+      </details> -->
+    </div>
+  </div>
+  <div class="block-option border">
+    <h2 data-language-key="heading-option">オプション</h2>
+    <div class="strong-border">
+      <input type="checkbox" name="sorachan-love" id="checkboxWatameLoveModeEnabled" onChange="refreshConfirmAreaOption()">
+      <span data-language-key="text-option" id="textOption">角巻わため（@tsunomakiwatame）のポストだけを検索</span> </div>
+  </div>
+  <div class="block-search border">
+    <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
+    <div class="strong-border">
+      <details id="detailsSummaryConfirmThisSearch">
+        <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
+        <h4 data-language-key="text-date-01">いつから？</h4>
+        <span class="confirm-this-search" id="confirmValueSince"></span>
+        <h4 data-language-key="text-date-04">いつまで？</h4>
+        <span class="confirm-this-search" id="confirmValueUntil"></span>
+        <h4 data-language-key="text-keyword">キーワード</h4>
+        <strong><span data-language-key="andor-label"></span><span id="confirmValueAndOr"></span></strong><br>
+        <span class="confirm-this-search" id="confirmValueKeyword"></span>
+        <h4 data-language-key="heading-option">オプション</h4>
+        <span class="confirm-this-search" id="confirmValueOption"></span></details>
+      <input data-language-key="text-search-btn" class="btn btn-search" id="searchBtn" type="button" value="Xで検索 Ꮚ•ꈊ•Ꮚ ドドド！" onClick="openPage()">
+    </div>
+    <div class="floating-nunnun-wrap border" id="floatingNunnun">
+      <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索 Ꮚ•ꈊ•Ꮚ ドドド！" onClick="openPage()">
+    </div>
+  </div>
+  <div class="border">
+    <h2 data-language-key="heading-dododo-timer" class="display-inline">ドドドタイマー</h2>
+    <span data-language-key="dododo-timer-notes" class="text-notes">※ 日:時:分:秒</span>
+    <div class="strong-border" style="margin-top:1rem">
+      <strong><span data-language-key="dododo-timer-text-post">最初のポストから</span></strong><br>
+      <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
+      </blockquote>
+      <strong><span data-language-key="dododo-timer-text-birth">お誕生日まで</span></strong><br>
+      <blockquote>＞ <span id="rBirthDate"></span>:<span id="rBirthHour"></span>:<span id="rBirthMinute"></span>:<span id="rBirthSecond"></span><br>
+      </blockquote>
+      <strong><span data-language-key="dododo-timer-text-aniv">周年まで</span></strong><br>
+      <blockquote>＞ <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
+      </blockquote>
+    </div>
+  </div>
+  <div class ="border">
+    <h2 data-language-key="heading-sister-page">姉妹ページ一覧</h2>
+    <div class="strong-border">
+      <input data-language-key="text-nun-search" class="btn btn-half" type="button" value="ぬんサーチ" onClick="location.href='./'">
+      <input data-language-key="text-dododo-search" class="btn btn-half" type="button" value="ドドドサーチ" onClick="location.href='./dododo-search.html'">
+    </div>
+  </div>
+</div>
+</body>
+<footer><span data-language-key="page-title">ドドドサーチ（DoDoDo Search）</span>
+  <input class="btn btn-hide" value="🔍️Ꮚ•ꈊ•Ꮚ" onClick="openBarehenWatch()">
+  <br>
+  &copy;<span data-language-key="text-footer01">2025 皆月じゅん</span><a class="footer" href="https://x.com/minatsukijun" target="_blank">X:@minatsukijun</a><br>
+  <span data-language-key="text-footer02">本ページは</span><a class="footer" href="https://github.com/JunMinatsuki/nun-search-x" target="_blank">GitHub</a><span data-language-key="text-footer03">で公開しています。</span><br>
+  <a class="footer" href="./privacy-policy.html"><span data-language-key="text-privacy-policy">プライバシーポリシー</span></a></footer>
+<script src="assets/js/script-dododo.js"></script>
+<script src="assets/js/language-dododo.js"></script>
+<script src="assets/js/language-switcher-dododo.js"></script>
+</html>

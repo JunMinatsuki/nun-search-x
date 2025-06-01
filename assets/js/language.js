@@ -2,9 +2,11 @@
   /** 日本語 */
   'ja': {
     'page-title': 'ぬんサーチ（Nun Search）',
+    'text-nun-search': 'ぬんサーチ（Nun Search）',
+    'text-dododo-search': 'ドドドサーチ（DoDoDo Search）',
     'header-caption': 'ヘッダーイラスト提供：もふもふ大好きDS',
     'label-language-selector': 'Language: ',
-    'text-description': '「ぬんサーチ」はホロライブ所属のVtuber「ときのそら」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。ちなみに「ぬん（Nun）」は(๑╹ᆺ╹)ぬんぬんのことです。Nun（修道女）の検索ツールじゃないよ！',
+    'text-description': '「ドドドサーチ」はホロライブ所属のVtuber「角巻わため」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。',
     'heading-news': '🌟 Tokino News 🌟',
     'heading-news-01': '🐻ときのそら誕生日記念2025グッズ販売中💿',
     'text-news-01': 'フルセットでは直筆サインがついてくる',
@@ -43,6 +45,7 @@
     'tokino-timer-text-post':'最初のポストから',
     'tokino-timer-text-birth':'お誕生日まで',
     'tokino-timer-text-aniv':'周年まで',
+    'heading-sister-page':'姉妹ページ',
     'privacy-policy-page-title':'プライバシーポリシー | ぬんサーチ',
     'text-privacy-policy':'プライバシーポリシー',
     'text-use-ga':'Googleアナリティクスの使用',
@@ -55,6 +58,8 @@
   /** 英語 */
   'en': {
     'page-title': 'ぬんサーチ（Nun Search）',
+    'text-nun-search': 'Nun Search',
+    'text-dododo-search': 'DoDoDo Search',
     'header-caption': 'Header illustration provided by: もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '"Nun Search" is a search tool for X posts related to Hololive\'s Vtuber "Tokino Sora". You can easily set the search date range and frequently used hashtags. It may make your oshikatsu and ego search easier.By the way, By the way, "Nun" is (๑╹ᆺ╹) Nunnun. This is not a search tool for nuns!',
@@ -96,6 +101,7 @@
     'tokino-timer-text-post':'From the first post',
     'tokino-timer-text-birth':'Remaining until birthday',
     'tokino-timer-text-aniv':'Remaining until anniversary',
+    'heading-sister-page':'Sister Page',
     'privacy-policy-page-title':'Privacy policy | Nun Search',
     'text-privacy-policy':'Privacy policy',
     'text-use-ga':'Use of Google Analytics',
@@ -109,6 +115,8 @@
   /** 簡体中国語（北京語、中国標準語） */
   'zh-CN': {
     'page-title': 'Nun搜寻',
+    'text-nun-search': 'Nun搜寻',
+    'text-dododo-search': 'DoDoDo搜寻',
     'header-caption': '页首插图提供：もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '“Nun Search”是用于搜索与Hololive旗下Vtuber"时乃空"相关的 X post 的工具。您可以轻松设置搜索日期范围、常用标签等。它可能会让你最喜欢的偶像活动和自我搜索变得更容易。顺便说一句，“Nun”是 (๑╹ᆺ╹) Nunnun。这不是修女搜索工具！',
@@ -149,6 +157,7 @@
     'tokino-timer-notes': '※日:时:分:秒',
     'tokino-timer-text-post':'从第一篇推文开始',
     'tokino-timer-text-birth':'剩余至生日',
+    'heading-sister-page':'姐妹页',
     'tokino-timer-text-aniv':'剩余至周年纪念日',
     'privacy-policy-page-title':'隐私政策 | Nun搜寻',
     'text-privacy-policy':'隐私政策',
@@ -162,6 +171,8 @@
   /** 繁体中国語（台湾など） */
   'zh-TW': {
     'page-title': 'Nun搜尋',
+    'text-nun-search': 'Nun搜尋',
+    'text-dododo-search': 'DoDoDo搜尋',
     'header-caption': '頁首插圖提供：もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '"Nun Search"是Hololive旗下Vtuber"時乃空"的 X post 工具。可以確認搜尋的日期時間、常用標記等，更輕鬆地搜尋最開心的偶像活動。順便說一下，"Nun"是(๑╹ᆺ╹)Nunnun。這不是修女的搜尋工具！',
@@ -203,6 +214,7 @@
     'tokino-timer-text-post':'從第一篇推文開始',
     'tokino-timer-text-birth':'剩餘至生日',
     'tokino-timer-text-aniv':'剩餘至週年紀念日',
+    'heading-sister-page':'姐妹頁',
     'privacy-policy-page-title':'隱私權政策 | Nun搜尋',
     'text-privacy-policy':'隱私權政策',
     'text-use-ga':'使用Google Analytics',
@@ -215,6 +227,8 @@
   /** 広東語（香港、マカオ、広州） */
   'zh-HK': {
     'page-title': 'Nun搜尋',
+    'text-nun-search': 'Nun搜尋',
+    'text-dododo-search': 'DoDoDo搜尋',
     'header-caption': '頁首插圖提供：もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '"Nun搜尋"係一個喺 Hololive 旗下嘅 Vtuber"時乃空"嘅 X post 嘅工具，你可以睇返你搜尋嘅日期同時間，常用嘅標記等等，令你更容易搵到你搵到嘅最歡樂嘅偶像活動。順便講吓，"修女"係(๑╹ᆺ╹)修女。呢個唔係修女嘅搜尋工具!',
@@ -256,6 +270,7 @@
     'tokino-timer-text-post':'從第一篇推文開始',
     'tokino-timer-text-birth':'剩餘至生日',
     'tokino-timer-text-aniv':'剩餘至週年紀念日',
+    'heading-sister-page':'姊妹頁面',
     'privacy-policy-page-title':'私隱政策 | Nun搜尋',
     'text-privacy-policy':'私隱政策',
     'text-use-ga':'使用 Google Analytics',
@@ -268,6 +283,8 @@
   /** 韓国語 */
   'ko': {
     'page-title': '눈서치',
+    'text-nun-search': '눈서치',
+    'text-dododo-search': '도도도서치',
     'header-caption': '헤더 일러스트 제공 : もふもふ大好きDS 님',
     'label-language-selector': 'Language: ',
     'text-description': '"눈서치" 는 홀로 라이브 소속의 Vtuber "토키노 소라" 에 관한 X포스트의 검색 툴입니다.검색 날짜와 시간의 범위와 자주 사용되는 해시 태그 등을 쉽게 설정할 수 있습니다.추격활이나 에고사가 편해질지도.참고로, "Nun"은 (๑╹ᆺ╹) Nunnun입니다. 이건 수녀님 검색 도구가 아닙니다!',
@@ -309,6 +326,7 @@
     'tokino-timer-text-post':'첫 포스트에서',
     'tokino-timer-text-birth':'생일까지 남은 시간',
     'tokino-timer-text-aniv':'기념일까지 남음',
+    'heading-sister-page':'자매 페이지',
     'privacy-policy-page-title':'개인 정보 보호 정책 | 눈서치',
     'text-privacy-policy':'개인 정보 보호 정책',
     'text-use-ga':'Google Analytics 사용',
@@ -321,6 +339,8 @@
   /** インドネシア語 */
   'id': {
     'page-title': 'Nun Pencarian',
+    'text-nun-search': 'Nun Pencarian',
+    'text-dododo-search': 'DoDoDo Pencarian',
     'header-caption': 'Ilustrasi tajuk disediakan oleh: もふもふ大好きDS',
     'label-language-selector': 'Language: ',
     'text-description': '"Nun Search" adalah alat pencarian untuk X posting yang terkait dengan Vtuber Hololive "Tokino Sora". Anda dapat dengan mudah mengatur rentang tanggal pencarian dan tagar yang sering digunakan. Ini mungkin membuat pencarian oshikatsu dan ego Anda lebih mudah.Ngomong-ngomong, "Nun" adalah (๑╹ᆺ╹) Nunnun. Ini bukan alat pencarian untuk biarawati!',
@@ -362,6 +382,7 @@
     'tokino-timer-text-post':'Dari postingan pertama',
     'tokino-timer-text-birth':'Tetap sampai ulang tahun',
     'tokino-timer-text-aniv':'Bertahan sampai ulang tahun',
+    'heading-sister-page':'Halaman saudara',
     'privacy-policy-page-title':'Kebijakan privasi | Nun Pencarian',
     'text-privacy-policy':'Kebijakan privasi',
     'text-use-ga':'Penggunaan Google Analytics',
