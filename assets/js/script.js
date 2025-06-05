@@ -134,7 +134,7 @@ function runningDate() {
 function remainBirthDay() {
   const now = new Date();
   const birthDay = new Date(now.getFullYear(), 4, 15);
-  if (now.getMonth() > 4 || now.getMonth() == 4 && now.getDate() > 15) {
+  if (now.getMonth() > 4 || now.getMonth() == 4 && now.getDate() >= 15) {
     birthDay.setFullYear(now.getFullYear() + 1);
   }
 
@@ -153,7 +153,7 @@ function remainBirthDay() {
 function remainAnivDay() {
   const now = new Date();
   const anivDay = new Date(now.getFullYear(), 8, 7);
-  if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() > 7) {
+  if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
     birthDay.setFullYear(now.getFullYear() + 1);
   }
 
