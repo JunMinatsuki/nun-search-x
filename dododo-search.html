@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ドドドサーチ バージョン：1.0.0
+	ドドドサーチ バージョン：1.1.0
 	2025/6/1 Copyright @minatsukijun
 
 	角巻わために関するXの検索を少し楽にするページです。
@@ -71,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
     <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
     <div class="strong-border">
-      <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()" checked>
+      <input type="checkbox" name="since-enabled" id="checkboxSinceEnabled" onChange="refreshConfirmAreaSince()">
       <span data-language-key="text-date-01">いつから？</span><br>
       <input class="inputbox-date" type="date" name="since-date" id="textboxSinceDate" value="2019-12-25" onChange="refreshConfirmAreaSince()">
       <details id="detailsSetSinceTime">
@@ -139,7 +139,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 data-language-key="heading-option">オプション</h2>
     <div class="strong-border">
       <input type="checkbox" name="sorachan-love" id="checkboxWatameLoveModeEnabled" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-option" id="textOption">角巻わため（@tsunomakiwatame）のポストだけを検索</span> </div>
+      <span data-language-key="text-option" id="textOption">角巻わため（@tsunomakiwatame）のポストだけを検索</span><br>
+      <input type="checkbox" name="media-only" id="mediaOnlyModeEnabled" onChange="refreshConfirmAreaOption()">
+      <span data-language-key="text-media-only" id="textOptionMedia">画像・動画付きのポストだけを検索</span>
+    </div>
   </div>
   <div class="block-search border">
     <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>

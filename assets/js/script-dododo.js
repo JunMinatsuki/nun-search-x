@@ -29,6 +29,12 @@ window.addEventListener('load', function confirmBlockRefresh() {
 function refreshConfirmAreaOption() {
   if (document.getElementById('checkboxWatameLoveModeEnabled').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
+    if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+        document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionMedia').innerText;
+        }
+  }
+  else if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionMedia').innerText;
   } else {
     document.getElementById('confirmValueOption').innerHTML = "";
   }
@@ -99,13 +105,16 @@ function openPage() {
   if (document.getElementById('checkboxWatameLoveModeEnabled').checked === true) {
     searchQuery += " from:tsunomakiwatame";
   }
+  if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+    searchQuery += " filter:media";
+  }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
     searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_" + document.getElementById('textboxSinceTime').value + "_JST";
   }
   if (document.getElementById('checkboxUntilEnabled').checked === true) {
     searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_" + document.getElementById('textboxUntilTime').value + "_JST";
   }
-  const openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=top";
+  const openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
 
