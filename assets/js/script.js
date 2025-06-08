@@ -75,6 +75,7 @@ function refreshConfirmAreaAndOr() {
 function clickSinceYesterdayButton() {
   const yesterday = getYesterdayDate();
   document.getElementById('textboxSinceDate').value = yesterday;
+  document.getElementById('checkboxSinceEnabled').checked = true;
 }
 
 function clickResetKeywordButton() {
