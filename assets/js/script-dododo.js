@@ -215,9 +215,9 @@ window.addEventListener('DOMContentLoaded', () => {
     floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
   })
 
-//  detailsKeywordArchive.addEventListener('toggle', () => {
-//    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
-//  })
+  detailsKeywordArchive.addEventListener('toggle', () => {
+    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  })
 
   detailsSummaryConfirmThisSearch.addEventListener('toggle', () => {
     floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
