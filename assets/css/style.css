@@ -67,6 +67,12 @@ div.floating-nunnun-wrap {
   z-index: -100;
   transition: 0.2s;
 }
+div.news {
+  background-image: url('../img/rednunnun_w50.png');
+  background-repeat: repeat;
+  background-color: rgba(255,255,255,0.85);
+  background-blend-mode: lighten;
+}
 a.div {
   color: var(--color-caption-light);
 }
@@ -308,6 +314,12 @@ a.footer {
   a.div {
     color: var(--color-caption-dark);
   }
+  div.news {
+  background-image: url('../img/rednunnun_w50.png');
+  background-repeat: repeat;
+  background-color: rgba(0,0,0,0.4);
+  background-blend-mode: darken;
+}
   h1 {
     color: var(--color-text-strong-dark);
     text-decoration-color: var(--color-decoration-yellow);
