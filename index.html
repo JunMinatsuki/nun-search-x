@@ -64,6 +64,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span data-language-key="text-news-01" class="font-size-small">新曲「Dancing Reed」ABCテレビで7月6日(日)より放送スタート！</span><br>
       <input data-language-key="button-text-news-01" class="btn btn-news-link" type="button" value="30秒ティザーを見る" onClick="window.open('https://youtu.be/R7hGgJ7dQCQ')">
     </div>
+    <div class="strong-border">
+      <h5>🐻ホロアースにて「ときのそら降臨祭」開催💿</h5>
+      <span class="font-size-small">2025年6月25日(水)に、ホロライブプロダクション所属「ときのそら」が、アバターではなく本人の姿でホロアースに登場！</span><br>
+      <input class="btn btn-news-link" type="button" value="ホロアース公式サイト" onClick="window.open('https://holoearth.com/news/sora/')">
+    </div>
   </div>
   <div class="block-date border">
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
@@ -103,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#ホロ金策サバイバル" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ときのそら降臨祭" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2024" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="そらザウルス" onClick="onClickTagButton(event)">
@@ -120,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#ときのそら生放送" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそらFC" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#夜のそらちゃんスペース" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#そらちゃんの夜のスペース" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#突発のそらちゃんスペース" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃんのまったりスペース" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぬん聞いたよ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃん届いたよ" onClick="onClickTagButton(event)">
@@ -147,11 +152,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h4>さ行</h4>
         <input class="btn btn-half" type="button" value="スターそらイトファンタジー" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#スタそら" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#そらちゃんの夜のスペース" onClick="onClickTagButton(event)">
         <h4>た行</h4>
         <input class="btn btn-half" type="button" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)">
         <h4>は行</h4>
         <input class="btn btn-half" type="button" value="#はばない" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ホロ金策サバイバル" onClick="onClickTagButton(event)">
         <h4>ま行</h4>
         <input class="btn btn-half" type="button" value="モノトーン絶対領域パンツ衣装" onClick="onClickTagButton(event)">
       </details>
@@ -181,6 +188,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h4 data-language-key="heading-option">オプション</h4>
         <span class="confirm-this-search" id="confirmValueOption"></span> </details>
       <input data-language-key="text-search-btn" class="btn btn-search" id="searchBtn" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+      <span class="text-notes">↓テスト実装(๑╹ᆺ╹)💻 期間指定は直近30日までは新着表示できます。30日を超えて遡る場合、YRTの仕様で話題のポストしか表示されませぬ故ご容赦を。</span>
+      <input data-language-key="text-yrt-search-btn" class="btn btn-search" id="yrtSearchBtn" type="button" value="YRTで検索 (╹ᆺ╹๑)ぬん！" onClick="openYrtPage()">
     </div>
     <div class="floating-nunnun-wrap border" id="floatingNunnun">
       <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">

@@ -99,7 +99,7 @@ function openPage() {
   let keyword = document.getElementById('textboxKeyword').value;
   let searchQuery = null;
   if (document.getElementById('radioSearchOptionOr').checked === true) {
-    searchQuery = keyword.replace(" ", " OR ");
+    searchQuery = keyword.replaceAll(" ", " OR ");
   } else {
     searchQuery = keyword;
   }
@@ -116,6 +116,30 @@ function openPage() {
     searchQuery += " until:" + document.getElementById('textboxUntilDate').value + "_" + document.getElementById('textboxUntilTime').value + "_JST";
   }
   const openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
+  window.open(openUrl, '_blank');
+}
+function openYrtPage() {
+  let keyword = document.getElementById('textboxKeyword').value;
+  let searchQuery = null;
+  keyword = keyword.replaceAll("#", "%23");
+  if (document.getElementById('radioSearchOptionOr').checked === true) {
+    searchQuery = "(" + keyword + ")";
+  } else {
+    searchQuery = keyword.replaceAll(" ", "+");
+  }
+  if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
+    searchQuery += "+id%3Atokino_sora";
+  }
+  if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+    searchQuery += "&mtype=image";
+  }
+  if (document.getElementById('checkboxSinceEnabled').checked === true) {
+    searchQuery += "&since=" + Date.parse(document.getElementById('textboxSinceDate').value + "T" + document.getElementById('textboxSinceTime').value)/1000;
+  }
+  if (document.getElementById('checkboxUntilEnabled').checked === true) {
+    searchQuery += "&until=" + Date.parse(document.getElementById('textboxUntilDate').value + "T" + document.getElementById('textboxUntilTime').value)/1000;
+  }
+  const openUrl = "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=" + searchQuery;
   window.open(openUrl, '_blank');
 }
 
