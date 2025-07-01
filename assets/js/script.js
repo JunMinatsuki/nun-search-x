@@ -142,7 +142,11 @@ function openYrtPage() {
   const openUrl = "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=" + searchQuery;
   window.open(openUrl, '_blank');
 }
-
+function postSelectKeywords() {
+  const keyword = document.getElementById('textboxKeyword').value;
+  const openUrl = "https://x.com/intent/post?text=" + encodeURIComponent(keyword);
+  window.open(openUrl, '_blank');
+}
 function openBarehenWatch() {
   let searchQuery = "そらちゃん バレへん";
   let openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";

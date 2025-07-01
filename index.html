@@ -59,20 +59,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- 告知の表示用 -->
   <div class="border" align="center">
     <h2 data-language-key="heading-news">🌟 Tokino News 🌟</h2>
+    <div class="strong-border">
+      <h5>🐻New Digital Single Release💿</h5>
+      <span class="font-size-small">ときのそらNew Digital Single「∞超スーパー無限インフィニティ∞」噂の反復横跳びダンス(๑╹ᆺ╹)</span><br>
+      <input class="btn btn-news-link" type="button" value="MVをみる（YouTube）" onClick="window.open('https://youtu.be/qWEWwgzMpZY')">
+    </div>
     <div class="strong-border news">
       <h5 data-language-key="heading-news-01">🐻TVドラマ「グラぱらっ！」主題歌決定💿</h5>
       <span data-language-key="text-news-01" class="font-size-small">新曲「Dancing Reed」ABCテレビで7月6日(日)より放送スタート！</span><br>
       <input data-language-key="button-text-news-01" class="btn btn-news-link" type="button" value="30秒ティザーを見る" onClick="window.open('https://youtu.be/R7hGgJ7dQCQ')">
-    </div>
-    <div class="strong-border">
-      <h5>🐻ホロアースにて「ときのそら降臨祭」開催💿</h5>
-      <span class="font-size-small">2025年6月25日(水)に、ホロライブプロダクション所属「ときのそら」が、アバターではなく本人の姿でホロアースに登場！</span><br>
-      <input class="btn btn-news-link" type="button" value="ホロアース公式サイト" onClick="window.open('https://holoearth.com/news/sora/')">
-    </div>
-    <div class="strong-border">
-      <h5>🐻New Digital Single Release💿</h5>
-      <span class="font-size-small">ときのそらNew Digital Single「∞超スーパー無限インフィニティ∞」リリース決定！2025年6月26日0時から配信開始！</span><br>
-      <input class="btn btn-news-link" type="button" value="Victorさんのお知らせポスト" onClick="window.open('https://x.com/VictorMusic/status/1937088528669929731')">
     </div>
   </div>
   <div class="block-date border">
@@ -113,9 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#ときのそら降臨祭" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#スーパーインフィニティ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#そらあお" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそら_KeepShinin" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2024" onClick="onClickTagButton(event)">
       </div>
@@ -158,9 +151,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h4>さ行</h4>
         <input class="btn btn-half" type="button" value="スターそらイトファンタジー" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#スタそら" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#そらあお" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃんの夜のスペース" onClick="onClickTagButton(event)">
         <h4>た行</h4>
         <input class="btn btn-half" type="button" value="#ときのそらお披露目誕生日2025" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ときのそら降臨祭" onClick="onClickTagButton(event)">
         <h4>は行</h4>
         <input class="btn btn-half" type="button" value="#はばない" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
@@ -199,6 +194,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="floating-nunnun-wrap border" id="floatingNunnun">
       <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索 (๑╹ᆺ╹)ぬん！" onClick="openPage()">
+    </div>
+  </div>
+  <div class="border">
+    <div class="strong-border">
+      <h2>💻高い確率で消える気がするテスト機能💻</h2>
+      <span class="text-notes">検索キーワードを入力済みでポストの投稿画面を開きます。やったねハッシュタグを打ち間違えない！スペルよし！</span>
+      <input class="btn btn-search" id="pskBtn" type="button" value="選んだキーワードでポスト" onClick="postSelectKeywords()">
     </div>
   </div>
   <div class="border">
