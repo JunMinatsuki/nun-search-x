@@ -144,7 +144,7 @@ function openYrtPage() {
 }
 function postSelectKeywords() {
   const keyword = document.getElementById('textboxKeyword').value;
-  const openUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(keyword);
+  const openUrl = "https://x.com/intent/post?text=" + encodeURIComponent(keyword);
   window.open(openUrl, '_blank');
 }
 function openBarehenWatch() {
