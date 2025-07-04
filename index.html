@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：3.3.1
+	ぬんサーチ バージョン：3.4.0b
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -171,8 +171,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="strong-border">
       <input type="checkbox" name="sorachan-love" id="checkboxSoraChanLoveModeEnabled" onChange="refreshConfirmAreaOption()">
       <span data-language-key="text-option" id="textOption">ときのそら（@tokino_sora）のポストだけを検索</span><br>
-      <input type="checkbox" name="media-only" id="mediaOnlyModeEnabled" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-media-only" id="textOptionMedia">画像・動画付きのポストだけを検索</span>
+			<h4 data-language-key="text-option-filter">フィルター</h4>
+			<input type="radio" class="radio-filter-option" name="radio-filter-option" id="radioFilterOptionNone" value="NONE" onChange="refreshConfirmAreaOption()" checked>
+      <span data-language-key="text-option-nofilter" id="textOptionNoFileter">画像・動画やスペースの絞り込みを行わない</span><br>
+			<input type="radio" class="radio-filter-option" name="radio-filter-option" id="radioFilterOptionMedia" value="MEDIA" onChange="refreshConfirmAreaOption()">
+      <span data-language-key="text-media-only" id="textOptionMedia">画像・動画付きのポストだけを検索</span><br>
+      <input type="radio" class="radio-filter-option" name="radio-filter-option" id="radioFilterOptionSpace" value="SPACE" onChange="refreshConfirmAreaOption()">
+      <span data-language-key="text-space-only" id="textOptionSpace">スペースのポストだけを検索</span><br>
+			<span data-language-key="text-notes-space-only" class="text-notes">スペースの絞り込みはYRTでは無効になります。</span>
     </div>
   </div>
   <div class="block-search border">

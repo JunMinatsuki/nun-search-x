@@ -29,13 +29,20 @@ window.addEventListener('load', function confirmBlockRefresh() {
 function refreshConfirmAreaOption() {
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
-    if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+    if (document.getElementById('radioFilterOptionMedia').checked === true) {
         document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionMedia').innerText;
-        }
+    }
+		else if (document.getElementById('radioFilterOptionSpace').checked === true) {
+        document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionSpace').innerText;
+    }
   }
-  else if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+  else if (document.getElementById('radioFilterOptionMedia').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionMedia').innerText;
-  } else {
+  }
+	else if (document.getElementById('radioFilterOptionSpace').checked === true) {
+        document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionSpace').innerText;
+  }
+	else {
     document.getElementById('confirmValueOption').innerHTML = "";
   }
 }
@@ -106,8 +113,11 @@ function openPage() {
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     searchQuery += " from:tokino_sora";
   }
-  if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+  if (document.getElementById('radioFilterOptionMedia').checked === true) {
     searchQuery += " filter:media";
+  }
+	 if (document.getElementById('radioFilterOptionSpace').checked === true) {
+    searchQuery += " filter:spaces";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
     searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_" + document.getElementById('textboxSinceTime').value + "_JST";
@@ -130,7 +140,7 @@ function openYrtPage() {
   if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
     searchQuery += "+id%3Atokino_sora";
   }
-  if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+  if (document.getElementById('radioFilterOptionMedia').checked === true) {
     searchQuery += "&mtype=image";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
