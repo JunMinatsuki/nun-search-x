@@ -133,6 +133,9 @@ h5 {
 .text-align-right {
   text-align: right;
 }
+.vertical-align-middle {
+	vertical-align: middle;
+}
 .nobr {
   display: inline-block;
 }
