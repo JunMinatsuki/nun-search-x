@@ -163,6 +163,11 @@ strong {
 img.bnr {
   width: 100%;
 }
+iframe.youtube-ar {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
 input.btn {
   margin: 0.1rem 0rem 0.1rem 0rem;
   position: relative;
