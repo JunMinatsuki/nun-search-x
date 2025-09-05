@@ -54,6 +54,9 @@ div.no-border {
   width: inherit;
   border: none;
 }
+div.countdown {
+	font-size: 1.5rem;
+}
 div.floating-nunnun-wrap {
   position: fixed;
   width: inherit;
