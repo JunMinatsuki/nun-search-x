@@ -203,7 +203,13 @@ function remainAnivDay() {
   const anivDay = new Date(now.getFullYear(), 8, 7);
   if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
     birthDay.setFullYear(now.getFullYear() + 1);
+		document.getElementById('anvCountdown').style.display = "none";
+		document.getElementById('happyAnv').style.display = "block";
   }
+	else {
+		document.getElementById('anvCountdown').style.display = "block";
+		document.getElementById('happyAnv').style.display = "none";
+	}
 
   const time = anivDay.getTime() - now.getTime();
   const date = Math.floor(time / 1000 / 60 / 60 / 24);

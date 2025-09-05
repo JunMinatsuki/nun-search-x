@@ -57,6 +57,9 @@ div.no-border {
 div.countdown {
 	font-size: 1.5rem;
 }
+div.happy-aniv {
+	display: none;
+}
 div.floating-nunnun-wrap {
   position: fixed;
   width: inherit;
