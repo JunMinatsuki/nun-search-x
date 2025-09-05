@@ -201,15 +201,19 @@ function remainBirthDay() {
 function remainAnivDay() {
   const now = new Date();
   const anivDay = new Date(now.getFullYear(), 8, 7);
-  if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
-    birthDay.setFullYear(now.getFullYear() + 1);
+  if (now.getMonth() == 8 && now.getDate() == 7) {
 		document.getElementById('anvCountdown').style.display = "none";
 		document.getElementById('happyAnv').style.display = "block";
-  }
-	else {
-		document.getElementById('anvCountdown').style.display = "block";
-		document.getElementById('happyAnv').style.display = "none";
 	}
+  else if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
+    anivDay.setFullYear(now.getFullYear() + 1);
+    document.getElementById('anvCountdown').style.display = "block";
+		document.getElementById('happyAnv').style.display = "none";
+  }
+  else {
+    document.getElementById('anvCountdown').style.display = "block";
+		document.getElementById('happyAnv').style.display = "none";
+  }
 
   const time = anivDay.getTime() - now.getTime();
   const date = Math.floor(time / 1000 / 60 / 60 / 24);
