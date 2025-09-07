@@ -202,15 +202,19 @@ function remainAnivDay() {
   const now = new Date();
   const anivDay = new Date(now.getFullYear(), 8, 7);
   if (now.getMonth() == 8 && now.getDate() == 7) {
+    anivDay.setFullYear(now.getFullYear() + 1);
+    document.getElementById('eightAnivCountdown').style.display = "block";
 		document.getElementById('anvCountdown').style.display = "none";
 		document.getElementById('happyAnv').style.display = "block";
 	}
   else if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
     anivDay.setFullYear(now.getFullYear() + 1);
+    document.getElementById('eightAnivCountdown').style.display = "none";
     document.getElementById('anvCountdown').style.display = "block";
 		document.getElementById('happyAnv').style.display = "none";
   }
   else {
+    document.getElementById('eightAnivCountdown').style.display = "none";
     document.getElementById('anvCountdown').style.display = "block";
 		document.getElementById('happyAnv').style.display = "none";
   }
@@ -225,6 +229,11 @@ function remainAnivDay() {
   document.getElementById('rAnivHour').textContent = hour;
   document.getElementById('rAnivMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rAnivSecond').textContent = String(second).padStart(2, '0');
+  
+  document.getElementById('r8AnivDate').textContent = date;
+  document.getElementById('r8AnivHour').textContent = hour;
+  document.getElementById('r8AnivMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('r8AnivSecond').textContent = String(second).padStart(2, '0');
 }
 
 setInterval(runningDate, 1000);
