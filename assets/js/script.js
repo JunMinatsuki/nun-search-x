@@ -174,9 +174,14 @@ function runningDate() {
   const second = Math.floor(time / 1000) % 60;
 
   document.getElementById('runningDate').textContent = date;
-  document.getElementById('runningHour').textContent = hour;
+  document.getElementById('runningHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('runningMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('runningSecond').textContent = String(second).padStart(2, '0');
+  
+  document.getElementById('rAnivRunningDate').textContent = date;
+  document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
+  document.getElementById('rAnivRunningMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rAnivRunningSecond').textContent = String(second).padStart(2, '0');
 }
 
 function remainBirthDay() {
@@ -193,7 +198,7 @@ function remainBirthDay() {
   const second = Math.floor(time / 1000) % 60;
 
   document.getElementById('rBirthDate').textContent = date;
-  document.getElementById('rBirthHour').textContent = hour;
+  document.getElementById('rBirthHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('rBirthMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rBirthSecond').textContent = String(second).padStart(2, '0');
 }
@@ -203,20 +208,9 @@ function remainAnivDay() {
   const anivDay = new Date(now.getFullYear(), 8, 7);
   if (now.getMonth() == 8 && now.getDate() == 7) {
     anivDay.setFullYear(now.getFullYear() + 1);
-    document.getElementById('eightAnivCountdown').style.display = "block";
-		document.getElementById('anvCountdown').style.display = "none";
-		document.getElementById('happyAnv').style.display = "block";
 	}
-  else if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 7) {
+  else if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() > 7) {
     anivDay.setFullYear(now.getFullYear() + 1);
-    document.getElementById('eightAnivCountdown').style.display = "none";
-    document.getElementById('anvCountdown').style.display = "block";
-		document.getElementById('happyAnv').style.display = "none";
-  }
-  else {
-    document.getElementById('eightAnivCountdown').style.display = "none";
-    document.getElementById('anvCountdown').style.display = "block";
-		document.getElementById('happyAnv').style.display = "none";
   }
 
   const time = anivDay.getTime() - now.getTime();
@@ -226,14 +220,14 @@ function remainAnivDay() {
   const second = Math.floor(time / 1000) % 60;
 
   document.getElementById('rAnivDate').textContent = date;
-  document.getElementById('rAnivHour').textContent = hour;
+  document.getElementById('rAnivHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('rAnivMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rAnivSecond').textContent = String(second).padStart(2, '0');
   
-  document.getElementById('r8AnivDate').textContent = date;
-  document.getElementById('r8AnivHour').textContent = hour;
-  document.getElementById('r8AnivMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('r8AnivSecond').textContent = String(second).padStart(2, '0');
+//  document.getElementById('r8AnivDate').textContent = date;
+//  document.getElementById('r8AnivHour').textContent = hour;
+//  document.getElementById('r8AnivMinute').textContent = String(minute).padStart(2, '0');
+//  document.getElementById('r8AnivSecond').textContent = String(second).padStart(2, '0');
 }
 
 setInterval(runningDate, 1000);
