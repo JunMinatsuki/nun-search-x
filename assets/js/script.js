@@ -162,13 +162,14 @@ function openBarehenWatch() {
   let openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
-
 function runningDate() {
   const now = new Date();
   const bigBangDate = new Date(2017, 8, 7, 11, 8, 54);
+  const bigBangCountDate = new Date(2017, 8, 7);
 
   const time = now.getTime() - bigBangDate.getTime();
   const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const dateCount = Math.floor((now.getTime() - bigBangCountDate.getTime()) / 1000 / 60 / 60 / 24) + 1;
   const hour = Math.floor(time / 1000 / 60 / 60) % 24;
   const minute = Math.floor(time / 1000 / 60) % 60;
   const second = Math.floor(time / 1000) % 60;
@@ -182,6 +183,7 @@ function runningDate() {
   document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('rAnivRunningMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rAnivRunningSecond').textContent = String(second).padStart(2, '0');
+  document.getElementById('rAnivRunningDateCount').textContent = String(dateCount).padStart(4, '0');
 }
 
 function remainBirthDay() {

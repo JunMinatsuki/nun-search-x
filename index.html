@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：3.8.2
+	ぬんサーチ バージョン：3.8.3
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -59,11 +59,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="text-align-right font-size-small"><span data-language-key="text-share">布教する(๑╹ᆺ╹)👉️</span> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-via="minatsukijun" data-hashtags="ぬんサーチ" data-show-count="false">Post</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
   </div>
   <!-- 告知の表示用 -->
-	<div class="border" align="center" id="runningDays">
-		<h5>🌟2017.9.7 最初のポストから🌟</h5>
+	<div class="strong-border" align="center" id="runningDays">
+		<h2>🌟 2017.9.7 最初のポストから 🌟</h2>
 		<div class="no-border countdown" id="anivRunningDays">
       キョロキョロ👀<br>
-			ここは <span id="rAnivRunningDate"></span>日 <span id="rAnivRunningHour"></span>時間 <span id="rAnivRunningMinute"></span>分 <span id="rAnivRunningSecond"></span>秒 後の世界
+			ここは <span id="rAnivRunningDate"></span>日 <span id="rAnivRunningHour"></span>時間 <span id="rAnivRunningMinute"></span>分 <span id="rAnivRunningSecond"></span>秒 後の世界<br>
+      ときのそらの活動 <span id="rAnivRunningDateCount"></span> 日目です。<br>
+      <input class="btn btn-news-link" type="button" value="ときのそらの最初のポストを見る" onClick="window.open('https://x.com/tokino_sora/status/905613818872512512')"><br><br>
+      ハッシュタグ「#ときのそら_活動3000日おめでとう」でお祝いしよう！(๑╹ワ╹)🎉
+      <input class="btn btn-news-link" value="そらちゃんに気持ちを伝える" onClick="window.open('https://twitter.com/share?hashtags=ときのそら_活動3000日おめでとう')">     
 		</div>
 	</div>
   <div class="border" align="center">
@@ -72,21 +76,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h5>🐻9th ライブ 開催決定！💿</h5>
       <span class="font-size-small">ときのそら New Year's Party「Dreams in Motion」2026/1/10(土)昼夜2公演で開催！！<br>
                                     会場：東京国際フォーラム ホールA、配信：SPWN<br>
-                                    一次先行（抽選）：10/2(木)〜10/26(日)23:59、当落発表：10/31(金)13:00〜<br>
                                     二次先行（抽選）：11/7(金)21:00〜11/30(日)23:59、当落発表：12/5(金)13:00〜<br>
                                     一般販売（先着）：12/12(金)21:00〜12/25(木)23:59</span><br>
       <input class="btn btn-news-link" type="button" value="特設ページを見る" onClick="window.open('https://tokinosora-live.com/sorapa2026/')">
-    </div>
-		<div class="strong-border">
-      <h5>🐻「Dancing Reed」フルアニメMV公開</h5>
-      <span class="font-size-small">ときのそら 5th Album「Pulse」にも収録の楽曲(๑╹ᆺ╹)！</span><br>
-      <iframe class="youtube-ar" src="https://www.youtube.com/embed/QUfwN4tGUFA?si=D20NfNrSxlmiucEC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="strong-border">
-      <h5>🐻New Album Release💿</h5>
-      <span class="font-size-small">ときのそら 5th Album「Pulse」9/24リリース！</span><br>
-      <iframe class="youtube-ar" src="https://www.youtube.com/embed/SeD_0E7zwWQ?si=805HfRyZVKdLcLl2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <input class="btn btn-news-link" type="button" value="ビクターエンタテインメント公式HP" onClick="window.open('https://www.jvcmusic.co.jp/-/News/A026407/150.html')"><br>
     </div>
   </div>
   <div class="block-date border">
@@ -127,8 +119,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#そらぱ2026" onClick="onClickTagButton(event)"><br><br>
-        <input class="btn btn-half" type="button" value="#パッションアモアス" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#そらぱ2026" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ときのそら公式オフ会" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ときのそら_活動3000日おめでとう" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
       <div>
@@ -198,6 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#ときのそら降臨祭" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそらに願いを2025" onClick="onClickTagButton(event)">
         <h4>は行</h4>
+        <input class="btn btn-half" type="button" value="#パッションアモアス" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#はばない" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#holoRUST" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ホロ金策サバイバル" onClick="onClickTagButton(event)">
@@ -268,7 +262,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="border">
     <h2 data-language-key="heading-tokino-timer" class="display-inline">ときのタイマー</h2>
     <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時:分:秒</span>
-    <div class="strong-border" style="margin-top:1rem"> <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
+    <div class="strong-border" style="margin-top:1rem"> 
+      <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
       <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
       </blockquote>
       <strong><span data-language-key="tokino-timer-text-birth">お誕生日まで</span></strong><br>
