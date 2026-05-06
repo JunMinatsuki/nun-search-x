@@ -203,6 +203,11 @@ function remainBirthDay() {
   document.getElementById('rBirthHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('rBirthMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rBirthSecond').textContent = String(second).padStart(2, '0');
+
+  document.getElementById('rAnivBirthDate').textContent = date;
+  document.getElementById('rAnivBirthHour').textContent = String(hour).padStart(2, '0');
+  document.getElementById('rAnivBirthMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rAnivBirthSecond').textContent = String(second).padStart(2, '0');
 }
 
 function remainAnivDay() {
