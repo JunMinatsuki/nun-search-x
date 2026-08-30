@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+:root {
+	/** 共通カラー */
+	--color-decoration-yellow: #FBF9B9;
+	--color-decoration-red: #B8212B;
+	
+	/** ライトテーマカラー */
+	--color-div-border-light: #FDA5A2;
+	--color-div-sub-border-light: #3A3530;
+	--color-body-background-light: #FFFFFF;
+	--color-text-light: #0A0329;
+	--color-text-strong-light: #F77A75;
+	--color-caption-light: #5A554A;
+	--color-notes-light: #5A554A;
+	--color-input-border-light: #3A3530;
+	--color-input-border-active-light: #F77A75;
+	--color-input-text-light: #0A0329;
+	--color-input-text-active-light: #FFFFFF;
+	--color-input-background-light: #FDF9D9;
+	--color-input-background-active-light: #F77A75;
+	--color-footer-text-light: #FFFFFF;
+	--color-footer-background-light: #403C41;
+	
+	/** ダークテーマカラー */
+	--color-div-border-dark: #F2E45C;
+	--color-div-sub-border-dark: #7F0F19;
+	--color-body-background-dark: #1F201E;
+	--color-text-dark: #FFFFFF;
+	--color-text-strong-dark: #B93839;
+	--color-caption-dark: #85857E;	
+	--color-notes-dark: #85857E;
+	--color-input-border-dark: #FFFFFF;
+	--color-input-border-active-dark: #7F0F19;
+	--color-input-text-dark: #3B312F;	
+	--color-input-text-active-dark: #FFFFFF;
+	--color-input-background-dark: #FFFDE0;
+	--color-input-background-active-dark: #7F0F19;
+	--color-footer-text-dark: #FFFFFF;
+	--color-footer-background-dark: #220A0B;
+}

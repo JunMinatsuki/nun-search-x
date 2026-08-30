@@ -27,22 +27,27 @@ window.addEventListener('load', function confirmBlockRefresh() {
 })
 
 function refreshConfirmAreaOption() {
-  if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
-    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOption').innerText;
-    if (document.getElementById('radioFilterOptionMedia').checked === true) {
+  if (document.getElementById('radioSearchOptionOnlyMuiru').checked === true) {
+    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionMuiru').innerText;
+    if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
         document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionMedia').innerText;
-    }
-		else if (document.getElementById('radioFilterOptionSpace').checked === true) {
-        document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionSpace').innerText;
-    }
+        }
   }
-  else if (document.getElementById('radioFilterOptionMedia').checked === true) {
+  else if (document.getElementById('radioSearchOptionOnlyChuno').checked === true) {
+    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionChuno').innerText;
+    if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+        document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionMedia').innerText;
+        }
+  }
+  else if (document.getElementById('radioSearchOptionOnlyHirune').checked === true) {
+    document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionHirune').innerText;
+    if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
+        document.getElementById('confirmValueOption').innerHTML += "<br>" + document.getElementById('textOptionMedia').innerText;
+        }
+  }
+  else if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
     document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionMedia').innerText;
-  }
-	else if (document.getElementById('radioFilterOptionSpace').checked === true) {
-        document.getElementById('confirmValueOption').innerHTML = document.getElementById('textOptionSpace').innerText;
-  }
-	else {
+  } else {
     document.getElementById('confirmValueOption').innerHTML = "";
   }
 }
@@ -110,14 +115,17 @@ function openPage() {
   } else {
     searchQuery = keyword;
   }
-  if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
-    searchQuery += " from:tokino_sora";
+  if (document.getElementById('radioSearchOptionOnlyMuiru').checked === true) {
+    searchQuery += " from:Kokone_Muiru";
   }
-  if (document.getElementById('radioFilterOptionMedia').checked === true) {
+    if (document.getElementById('radioSearchOptionOnlyChuno').checked === true) {
+    searchQuery += " from:Suzuhina_Chuno";
+  }
+    if (document.getElementById('radioSearchOptionOnlyHirune').checked === true) {
+    searchQuery += " from:Runoa_Hirune";
+  }
+  if (document.getElementById('mediaOnlyModeEnabled').checked === true) {
     searchQuery += " filter:media";
-  }
-	 if (document.getElementById('radioFilterOptionSpace').checked === true) {
-    searchQuery += " filter:spaces";
   }
   if (document.getElementById('checkboxSinceEnabled').checked === true) {
     searchQuery += " since:" + document.getElementById('textboxSinceDate').value + "_" + document.getElementById('textboxSinceTime').value + "_JST";
@@ -128,68 +136,65 @@ function openPage() {
   const openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
-function openYrtPage() {
-  let keyword = document.getElementById('textboxKeyword').value;
-  let searchQuery = null;
-  keyword = keyword.replaceAll("#", "%23");
-  if (document.getElementById('radioSearchOptionOr').checked === true) {
-    searchQuery = "(" + keyword + ")";
-  } else {
-    searchQuery = keyword.replaceAll(" ", "+");
-  }
-  if (document.getElementById('checkboxSoraChanLoveModeEnabled').checked === true) {
-    searchQuery += "+id%3Atokino_sora";
-  }
-  if (document.getElementById('radioFilterOptionMedia').checked === true) {
-    searchQuery += "&mtype=image";
-  }
-  if (document.getElementById('checkboxSinceEnabled').checked === true) {
-    searchQuery += "&since=" + Date.parse(document.getElementById('textboxSinceDate').value + "T" + document.getElementById('textboxSinceTime').value)/1000;
-  }
-  if (document.getElementById('checkboxUntilEnabled').checked === true) {
-    searchQuery += "&until=" + Date.parse(document.getElementById('textboxUntilDate').value + "T" + document.getElementById('textboxUntilTime').value)/1000;
-  }
-  const openUrl = "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&p=" + searchQuery;
-  window.open(openUrl, '_blank');
-}
-function postSelectKeywords() {
-  const keyword = document.getElementById('textboxKeyword').value;
-  const openUrl = "https://x.com/intent/post?text=" + encodeURIComponent(keyword);
-  window.open(openUrl, '_blank');
-}
+
 function openBarehenWatch() {
-  let searchQuery = "そらちゃん バレへん";
+  let searchQuery = "バレへん";
   let openUrl = "https://x.com/search?q=" + encodeURIComponent(searchQuery) + "&src=typed_query&f=live";
   window.open(openUrl, '_blank');
 }
-function runningDate() {
+
+function runningDateMuiru() {
   const now = new Date();
-  const bigBangDate = new Date(2017, 8, 7, 11, 8, 54);
-  const bigBangCountDate = new Date(2017, 8, 7);
+  const bigBangDate = new Date(2025, 2, 25, 17, 0, 0);
 
   const time = now.getTime() - bigBangDate.getTime();
   const date = Math.floor(time / 1000 / 60 / 60 / 24);
-  const dateCount = Math.floor((now.getTime() - bigBangCountDate.getTime()) / 1000 / 60 / 60 / 24) + 1;
   const hour = Math.floor(time / 1000 / 60 / 60) % 24;
   const minute = Math.floor(time / 1000 / 60) % 60;
   const second = Math.floor(time / 1000) % 60;
 
-  document.getElementById('runningDate').textContent = date;
-  document.getElementById('runningHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('runningMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('runningSecond').textContent = String(second).padStart(2, '0');
-  
-  document.getElementById('rAnivRunningDate').textContent = date;
-  document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rAnivRunningMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rAnivRunningSecond').textContent = String(second).padStart(2, '0');
-  document.getElementById('rAnivRunningDateCount').textContent = String(dateCount).padStart(4, '0');
+  document.getElementById('runningDateMuiru').textContent = date;
+  document.getElementById('runningHourMuiru').textContent = hour;
+  document.getElementById('runningMinuteMuiru').textContent = String(minute).padStart(2, '0');
+  document.getElementById('runningSecondMuiru').textContent = String(second).padStart(2, '0');
 }
 
-function remainBirthDay() {
+function runningDateChuno() {
   const now = new Date();
-  const birthDay = new Date(now.getFullYear(), 4, 15);
-  if (now.getMonth() > 4 || now.getMonth() == 4 && now.getDate() >= 15) {
+  const bigBangDate = new Date(2025, 2, 25, 17, 0, 1);
+
+  const time = now.getTime() - bigBangDate.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('runningDateChuno').textContent = date;
+  document.getElementById('runningHourChuno').textContent = hour;
+  document.getElementById('runningMinuteChuno').textContent = String(minute).padStart(2, '0');
+  document.getElementById('runningSecondChuno').textContent = String(second).padStart(2, '0');
+}
+
+function runningDateHirune() {
+  const now = new Date();
+  const bigBangDate = new Date(2025, 2, 25, 17, 0, 2);
+
+  const time = now.getTime() - bigBangDate.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('runningDateHirune').textContent = date;
+  document.getElementById('runningHourHirune').textContent = hour;
+  document.getElementById('runningMinuteHirune').textContent = String(minute).padStart(2, '0');
+  document.getElementById('runningSecondHirune').textContent = String(second).padStart(2, '0');
+}
+
+function remainBirthDayMuiru() {
+  const now = new Date();
+  const birthDay = new Date(now.getFullYear(), 8, 9);
+  if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() >= 9) {
     birthDay.setFullYear(now.getFullYear() + 1);
   }
 
@@ -199,24 +204,54 @@ function remainBirthDay() {
   const minute = Math.floor(time / 1000 / 60) % 60;
   const second = Math.floor(time / 1000) % 60;
 
-  document.getElementById('rBirthDate').textContent = date;
-  document.getElementById('rBirthHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rBirthMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rBirthSecond').textContent = String(second).padStart(2, '0');
+  document.getElementById('rBirthDateMuiru').textContent = date;
+  document.getElementById('rBirthHourMuiru').textContent = hour;
+  document.getElementById('rBirthMinuteMuiru').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rBirthSecondMuiru').textContent = String(second).padStart(2, '0');
+}
 
-  document.getElementById('rAnivBirthDate').textContent = date;
-  document.getElementById('rAnivBirthHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rAnivBirthMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rAnivBirthSecond').textContent = String(second).padStart(2, '0');
+function remainBirthDayChuno() {
+  const now = new Date();
+  const birthDay = new Date(now.getFullYear(), 5, 10);
+  if (now.getMonth() > 5 || now.getMonth() == 5 && now.getDate() >= 10) {
+    birthDay.setFullYear(now.getFullYear() + 1);
+  }
+
+  const time = birthDay.getTime() - now.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('rBirthDateChuno').textContent = date;
+  document.getElementById('rBirthHourChuno').textContent = hour;
+  document.getElementById('rBirthMinuteChuno').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rBirthSecondChuno').textContent = String(second).padStart(2, '0');
+}
+
+function remainBirthDayHirune() {
+  const now = new Date();
+  const birthDay = new Date(now.getFullYear(), 10, 23);
+  if (now.getMonth() > 10 || now.getMonth() == 10 && now.getDate() >= 23) {
+    birthDay.setFullYear(now.getFullYear() + 1);
+  }
+
+  const time = birthDay.getTime() - now.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
+
+  document.getElementById('rBirthDateHirune').textContent = date;
+  document.getElementById('rBirthHourHirune').textContent = hour;
+  document.getElementById('rBirthMinuteHirune').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rBirthSecondHirune').textContent = String(second).padStart(2, '0');
 }
 
 function remainAnivDay() {
   const now = new Date();
-  const anivDay = new Date(now.getFullYear(), 8, 7);
-  if (now.getMonth() == 8 && now.getDate() == 7) {
-    anivDay.setFullYear(now.getFullYear() + 1);
-	}
-  else if (now.getMonth() > 8 || now.getMonth() == 8 && now.getDate() > 7) {
+  const anivDay = new Date(now.getFullYear(), 3, 19);
+  if (now.getMonth() > 3 || now.getMonth() == 3 && now.getDate() >= 19) {
     anivDay.setFullYear(now.getFullYear() + 1);
   }
 
@@ -227,39 +262,19 @@ function remainAnivDay() {
   const second = Math.floor(time / 1000) % 60;
 
   document.getElementById('rAnivDate').textContent = date;
-  document.getElementById('rAnivHour').textContent = String(hour).padStart(2, '0');
+  document.getElementById('rAnivHour').textContent = hour;
   document.getElementById('rAnivMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rAnivSecond').textContent = String(second).padStart(2, '0');
 }
 
-function remainSorapaDay() {
-  const now = new Date();
-  const sorapaDay = new Date(now.getFullYear(), 10, 7, 0, 0);
-  if (now.getMonth() == 8 && now.getDate() == 7) {
-    sorapaDay.setFullYear(now.getFullYear() + 1);
-	}
-  else if (now.getMonth() > 10 || now.getMonth() == 10 && now.getDate() > 7) {
-    sorapaDay.setFullYear(now.getFullYear() + 1);
-  }
-
-  const time = sorapaDay.getTime() - now.getTime();
-  const date = Math.floor(time / 1000 / 60 / 60 / 24);
-  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
-  const minute = Math.floor(time / 1000 / 60) % 60;
-  const second = Math.floor(time / 1000) % 60;
-
-  document.getElementById('rSorapaDate').textContent = date;
-  document.getElementById('rSorapaHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rSorapaMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rSorapaSecond').textContent = String(second).padStart(2, '0');
-}
-
-setInterval(runningDate, 1000);
-setInterval(remainBirthDay, 1000);
+setInterval(runningDateMuiru, 1000);
+setInterval(runningDateChuno, 1000);
+setInterval(runningDateHirune, 1000);
+setInterval(remainBirthDayMuiru, 1000);
+setInterval(remainBirthDayChuno, 1000);
+setInterval(remainBirthDayHirune, 1000);
 setInterval(remainAnivDay, 1000);
-setInterval(remainSorapaDay, 1000);
 
-// フローティングぬんぬん表示切り替え
 function floatingNunnunSwitcher(scrollEnd) {
   const floatingNunnun = document.querySelector('.floating-nunnun-wrap');
   const scroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -292,9 +307,9 @@ window.addEventListener('DOMContentLoaded', () => {
     floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
   })
 
-  detailsKeywordArchive.addEventListener('toggle', () => {
-    floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
-  })
+  // detailsKeywordArchive.addEventListener('toggle', () => {
+  //   floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
+  // })
 
   detailsSummaryConfirmThisSearch.addEventListener('toggle', () => {
     floatingNunnunSwitcher(calcScrollEnd(scrollEndOffset));
