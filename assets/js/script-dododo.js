@@ -189,9 +189,11 @@ function floatingNunnunSwitcher(scrollEnd) {
 
   if ((scroll >= 0 && scroll < scrollEnd) || scroll < 0) {
     floatingNunnun.style.opacity = "1";
+    floatingNunnun.style.pointerEvents = "auto";
     floatingNunnun.style.zIndex = "100";
   } else {
     floatingNunnun.style.opacity = "0";
+    floatingNunnun.style.pointerEvents = "none";
     floatingNunnun.style.zIndex = "-100";
   }
 }
