@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：4.7.9
+	ぬんサーチ バージョン：4.8.0
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -59,13 +59,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="text-align-right font-size-small"><span data-language-key="text-share">布教する(๑╹ᆺ╹)👉️</span> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-via="minatsukijun" data-hashtags="ぬんサーチ" data-show-count="false">Post</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
   </div>
   <!-- 告知の表示用 -->
-	<div class="strong-border" align="center" id="runningDays">
+	<!-- <div class="strong-border" align="center" id="runningDays">
 		<h2>🌟 2026.9.7 🌟<br>🌟 そらちゃん、9周年おめでとう！！ 🌟</h2>
 		<div class="no-border countdown" id="anivRunningDays">
 			(๑╹ᆺ╹) 𝑩𝑰𝑮 𝑳𝑶𝑽𝑬______
 		</div>
     <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">キョロキョロ👀</p>&mdash; ときのそら🐻💿 (@tokino_sora) <a href="https://x.com/tokino_sora/status/905613818872512512?ref_src=twsrc%5Etfw">September 7, 2017</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
-	</div>
+	</div> -->
   <div class="border" align="center">
     <h2 data-language-key="heading-news">🌟 Tokino News 🌟</h2>
     <div class="strong-border">
@@ -118,12 +118,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
+        <input class="btn btn-half" type="button" value="#そらぱ2026" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#そらぱぬんぬん" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" value="#そらぱぴあアリ2026" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#ときのそら新メイクアップライブ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそら9周年" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#そらぱぴあアリ2026" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ときのそらチェック" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#ときのそらチェック" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#全部パーフェクト" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#キラメキMODE" onClick="onClickTagButton(event)">
+        <input class="btn btn-half" type="button" value="#キラメキMODE" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#そらザウルスは良いぞ" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらちゃんマネちゃんありがとう" onClick="onClickTagButton(event)">
       </div>
@@ -206,7 +208,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#そらぱ2025_Day1" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2025_Day2" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2025_Day3" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#そらぱ2026" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2026_Day" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱ2026_Night" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱメモリー" onClick="onClickTagButton(event)">
