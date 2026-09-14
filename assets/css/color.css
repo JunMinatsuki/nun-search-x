@@ -2,40 +2,42 @@
 
 :root {
 	/** 共通カラー */
-	--color-decoration-yellow: #F0D46C;
-	--color-decoration-red: #FE2B56;
+	--color-decoration-yellow: #F2E5CA;
+	--color-decoration-red: #DA408E;
 	
 	/** ライトテーマカラー */
-	--color-div-border-light: #6471EC;
-	--color-div-sub-border-light: #FE2B56;
+	--color-div-border-light: #5E65AA;
+	--color-div-sub-border-light: #DA408E;
+	--color-html-background-light: #3C3A48;
 	--color-body-background-light: #FFFFFF;
 	--color-text-light: #16184C;
-	--color-text-strong-light: #FE2B56;
-	--color-caption-light: #6471EC;
+	--color-text-strong-light: #DA408E;
+	--color-caption-light: #5E65AA;
 	--color-notes-light: #666666;
 	--color-input-border-light: #16184C;
-	--color-input-border-active-light: #FE2B56;
+	--color-input-border-active-light: #DA408E;
 	--color-input-text-light: #16184C;
 	--color-input-text-active-light: #FFFFFF;
-	--color-input-background-light: #FDF9D9;
-	--color-input-background-active-light: #FE2B56;
+	--color-input-background-light: #F2E5CA;
+	--color-input-background-active-light: #DA408E;
 	--color-footer-text-light: #FFFFFF;
-	--color-footer-background-light: #16184C;
+	--color-footer-background-light: #1C1410;
 	
 	/** ダークテーマカラー */
-	--color-div-border-dark: #FFFFFF;
-	--color-div-sub-border-dark: #E5D198;
-	--color-body-background-dark: #3D3954;
+	--color-div-border-dark: #5E65AA;
+	--color-div-sub-border-dark: #DA408E;
+	--color-html-background-dark: #3C3A48;
+	--color-body-background-dark: #3C3A48;
 	--color-text-dark: #FFFFFF;
 	--color-text-strong-dark: #FBDCE6;
-	--color-caption-dark: #B1BDFF;	
+	--color-caption-dark: #5E65AA;	
 	--color-notes-dark: #BBBBBB;
 	--color-input-border-dark: #FFFFFF;
-	--color-input-border-active-dark: #F0D46C;
+	--color-input-border-active-dark: #F2E5CA;
 	--color-input-text-dark: #3B312F;	
-	--color-input-text-active-dark: #362F2F;
+	--color-input-text-active-dark: #3C3A48;
 	--color-input-background-dark: #FFFFFF;
-	--color-input-background-active-dark: #F0D46C;
+	--color-input-background-active-dark: #F2E5CA;
 	--color-footer-text-dark: #FFFFFF;
-	--color-footer-background-dark: #392F2E;
+	--color-footer-background-dark: #1C1410;
 }

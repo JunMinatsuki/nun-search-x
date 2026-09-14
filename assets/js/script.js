@@ -179,12 +179,12 @@ function runningDate() {
   document.getElementById('runningMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('runningSecond').textContent = String(second).padStart(2, '0');
   
-  document.getElementById('rAnivRunningDate').textContent = date;
-  document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rAnivRunningMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rAnivRunningSecond').textContent = String(second).padStart(2, '0');
-  document.getElementById('rAnivRunningDateCount').textContent = String(dateCount).padStart(4, '0');
-}
+//   document.getElementById('rAnivRunningDate').textContent = date;
+//   document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
+//   document.getElementById('rAnivRunningMinute').textContent = String(minute).padStart(2, '0');
+//   document.getElementById('rAnivRunningSecond').textContent = String(second).padStart(2, '0');
+//   document.getElementById('rAnivRunningDateCount').textContent = String(dateCount).padStart(4, '0');
+ }
 
 function remainBirthDay() {
   const now = new Date();
@@ -204,10 +204,10 @@ function remainBirthDay() {
   document.getElementById('rBirthMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('rBirthSecond').textContent = String(second).padStart(2, '0');
 
-  document.getElementById('rAnivBirthDate').textContent = date;
-  document.getElementById('rAnivBirthHour').textContent = String(hour).padStart(2, '0');
-  document.getElementById('rAnivBirthMinute').textContent = String(minute).padStart(2, '0');
-  document.getElementById('rAnivBirthSecond').textContent = String(second).padStart(2, '0');
+  // document.getElementById('rAnivBirthDate').textContent = date;
+  // document.getElementById('rAnivBirthHour').textContent = String(hour).padStart(2, '0');
+  // document.getElementById('rAnivBirthMinute').textContent = String(minute).padStart(2, '0');
+  // document.getElementById('rAnivBirthSecond').textContent = String(second).padStart(2, '0');
 }
 
 function remainAnivDay() {

@@ -27,16 +27,21 @@ header figure img {
 }
 html {
   font-size: 100%;
-  padding-left: calc(env(safe-area-inset-left) + .2em);
-  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--color-html-background-light);
+  padding-left: calc(env(safe-area-inset-left) + 1em);
+  padding-right: calc(env(safe-area-inset-right) + 1em);
+  padding-top: calc(env(safe-area-inset-top) + 1em);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 1em);
 }
 body {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.4rem;
+  padding: 0.1rem;
   font-family: sans-serif;
   color: var(--color-text-light);
+  background-color: var(--color-body-background-light);
+  border-radius: 10px;
   transition: 0.2s;
 }
 div {
@@ -45,10 +50,13 @@ div {
   padding: 0.3rem;
 }
 div.border {
-  border: solid 2px var(--color-div-border-light);
+  border: solid 3px var(--color-div-border-light);
+  border-top: solid 15px var(--color-div-border-light);
+  margin-bottom: 1rem;
 }
 div.strong-border {
-  border: solid 2px var(--color-div-sub-border-light);
+  border: solid 3px var(--color-div-sub-border-light);
+  border-top: solid 15px var(--color-div-sub-border-light);
 }
 div.no-border {
   width: inherit;
@@ -200,24 +208,25 @@ input.btn {
   word-break: break-all;
 }
 input.btn-half {
-  width: 49%;
-  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  width: calc(50% - 0.2rem);
+  height: 3rem;
+  padding: 0.1rem;
   font-size: 0.9rem;
   font-weight: normal;
-  height: 3rem;
   line-height: 1.5;
-  border: 1px solid var(--color-input-border-light);
-  border-radius: 0;
+  border: 2px solid var(--color-input-border-light);
+  border-radius: 10px;
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
 }
 input.btn-full {
   width: 100%;
-  font-size: 1rem;
+  height: 2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   line-height: 1.5;
   border: 2px solid var(--color-input-border-light);
-  border-radius: 0;
+  border-radius: 10px;
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
 }
@@ -227,7 +236,7 @@ input.btn-search {
   font-weight: bold;
   line-height: 2.5;
   border: 3px solid var(--color-input-border-light);
-  border-radius: 0;
+  border-radius: 30px;
   color: var(--color-input-text-light);
   background: var(--color-input-background-light);
 }
@@ -313,6 +322,7 @@ footer {
   color: var(--color-footer-text-light);
   text-align: center;
   padding: 0.5rem;
+  border-radius: 10px;
 }
 a.footer {
   color: var(--color-footer-text-light);
@@ -324,6 +334,9 @@ a.footer {
   }
   .text-notes {
     color: var(--color-notes-dark);
+  }
+  html {
+    background-color: var(--color-html-background-dark);
   }
   body {
     color: var(--color-text-dark);
@@ -455,7 +468,7 @@ a.footer {
     data-theme: dark;
   }
   footer {
-    border: 1px solid var(--color-div-border-dark);
+    border: 1px solid var(--color-footer-background-dark);
     background-color: var(--color-footer-background-dark);
     color: var(--color-footer-text-dark);
   }
