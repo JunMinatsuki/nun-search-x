@@ -234,7 +234,7 @@ function remainAnivDay() {
 
 function remainSorapaDay() {
   const now = new Date();
-  const sorapaDay = new Date(now.getFullYear(), 10, 7, 0, 0);
+  const sorapaDay = new Date(now.getFullYear(), 10, 7, 13, 0);
   if (now.getMonth() == 8 && now.getDate() == 7) {
     sorapaDay.setFullYear(now.getFullYear() + 1);
 	}

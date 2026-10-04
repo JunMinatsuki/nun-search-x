@@ -22,6 +22,7 @@
 	--color-input-background-active-light: #DA408E;
 	--color-footer-text-light: #FFFFFF;
 	--color-footer-background-light: #1C1410;
+	--color-block-shadow-light: #333333;
 	
 	/** ダークテーマカラー */
 	--color-div-border-dark: #5E65AA;
@@ -40,4 +41,5 @@
 	--color-input-background-active-dark: #F2E5CA;
 	--color-footer-text-dark: #FFFFFF;
 	--color-footer-background-dark: #1C1410;
+	--color-block-shadow-dark: #F2E5CA;
 }

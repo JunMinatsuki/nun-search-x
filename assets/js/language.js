@@ -30,7 +30,7 @@
     'radio-and': '"AND"で検索',
     'radio-or': '"OR"で検索',
     'keyword-text-notes': '※半角スペース区切り',
-    'textbox-keyword': '検索したいキーワードを入力',
+    'textbox-keyword': '検索キーワードを入力',
     'text-keyword-rstbtn': 'キーワードをリセット',
     'heading-autoinput-btn': 'キーワードを自動入力できるボタン',
     'heading-general-tag': '一般',
