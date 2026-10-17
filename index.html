@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：5.0.1
+	ぬんサーチ バージョン：5.0.2
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -70,7 +70,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 data-language-key="heading-news">🌟 Tokino News 🌟</h2>
     <div class="strong-border">
       <h5>🐻ときのそら 9th Anniversary Party 「Everyday Light」開催！💿<br>ぴあアリーナMM 2026年11月7日 昼夜2部公演！</h5>
-      ✨チケット一般販売中！✨<br>
+      ✨チケット一般販売中！✨<br><br>
+      <h5>🐻ライブ開催まで、あと💿</h5>
+      ✨<span id="rSorapaDate"></span>日<span id="rSorapaHour"></span>時間<span id="rSorapaMinute"></span>分<span id="rSorapaSecond"></span>秒✨<br><br>
       <input class="btn btn-news-link" type="button" value="特設ページを見る" onClick="window.open('https://tokinosora-live.com/sorapa2026-pia-arena-mm/')">
     </div>
     <div class="strong-border">
@@ -117,6 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
         <input class="btn btn-half" type="button" value="#そらぱぴあアリ2026" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" value="#リリイベときのそらチェック" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそらチェック" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぼろす" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#全部パーフェクト" onClick="onClickTagButton(event)">
@@ -339,9 +342,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <strong><span data-language-key="tokino-timer-text-aniv">周年まで</span></strong><br>
       <blockquote>＞ <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
       </blockquote>
-      <strong><span data-language-key="tokino-timer-text-sorapa">そらぱ（ワンマンライブ）まで</span></strong><br>
+      <!-- <strong><span data-language-key="tokino-timer-text-sorapa">そらぱ（ワンマンライブ）まで</span></strong><br>
       <blockquote>＞ <span id="rSorapaDate"></span>:<span id="rSorapaHour"></span>:<span id="rSorapaMinute"></span>:<span id="rSorapaSecond"></span><br>
-      </blockquote>
+      </blockquote> -->
     </div>
   </div>
   <div class ="border">
