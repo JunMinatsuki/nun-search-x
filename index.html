@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ぬんサーチ バージョン：5.0.5
+	ぬんサーチ バージョン：5.0.6
 	2025/4/9 Copyright @minatsukijun
 
 	ときのそらに関するXの検索を少し楽にするページです。
@@ -121,6 +121,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <input class="btn btn-half" type="button" value="#そらぱ初見" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#そらぱぴあアリ2026_day" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらぱぴあアリ2026_night" onClick="onClickTagButton(event)"><br>
+        <input class="btn btn-half" type="button" value="#そらぱ横アリ" onClick="onClickTagButton(event)"><br>
         <input class="btn btn-half" type="button" value="#リリイベときのそらチェック" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ときのそらチェック" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#そらザウルスは良いぞ" onClick="onClickTagButton(event)">
@@ -336,7 +337,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span data-language-key="tokino-timer-notes" class="text-notes">※ 日:時:分:秒</span>
     <div class="strong-border" style="margin-top:1rem"> 
       <strong><span data-language-key="tokino-timer-text-post">最初のポストから</span></strong><br>
-      <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span><br>
+      <blockquote>＞ <span id="runningDate"></span>:<span id="runningHour"></span>:<span id="runningMinute"></span>:<span id="runningSecond"></span>
+        （<span data-language-key="running-day-head"></span><span id="runningDay"></span><span data-language-key="running-day"></span>）<br>
       </blockquote>
       <strong><span data-language-key="tokino-timer-text-birth">お誕生日まで</span></strong><br>
       <blockquote>＞ <span id="rBirthDate"></span>:<span id="rBirthHour"></span>:<span id="rBirthMinute"></span>:<span id="rBirthSecond"></span><br>
@@ -344,9 +346,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <strong><span data-language-key="tokino-timer-text-aniv">周年まで</span></strong><br>
       <blockquote>＞ <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
       </blockquote>
-      <!-- <strong><span data-language-key="tokino-timer-text-sorapa">そらぱ（ワンマンライブ）まで</span></strong><br>
+      <strong><span data-language-key="tokino-timer-text-sorapa">そらぱ（ワンマンライブ）まで</span></strong><br>
       <blockquote>＞ <span id="rSorapaDate"></span>:<span id="rSorapaHour"></span>:<span id="rSorapaMinute"></span>:<span id="rSorapaSecond"></span><br>
-      </blockquote> -->
+      </blockquote>
     </div>
   </div>
   <div class ="border">

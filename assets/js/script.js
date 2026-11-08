@@ -174,10 +174,12 @@ function runningDate() {
   const minute = Math.floor(time / 1000 / 60) % 60;
   const second = Math.floor(time / 1000) % 60;
 
+
   document.getElementById('runningDate').textContent = date;
   document.getElementById('runningHour').textContent = String(hour).padStart(2, '0');
   document.getElementById('runningMinute').textContent = String(minute).padStart(2, '0');
   document.getElementById('runningSecond').textContent = String(second).padStart(2, '0');
+  document.getElementById('runningDay').textContent = dateCount;
   
 //   document.getElementById('rAnivRunningDate').textContent = date;
 //   document.getElementById('rAnivRunningHour').textContent = String(hour).padStart(2, '0');
@@ -232,27 +234,27 @@ function remainAnivDay() {
   document.getElementById('rAnivSecond').textContent = String(second).padStart(2, '0');
 }
 
-// function remainSorapaDay() {
-//   const now = new Date();
-//   const sorapaDay = new Date(now.getFullYear(), 10, 7, 13, 0);
-//   if (now.getMonth() == 8 && now.getDate() == 7) {
-//     sorapaDay.setFullYear(now.getFullYear() + 1);
-// 	}
-//   else if (now.getMonth() > 10 || now.getMonth() == 10 && now.getDate() > 7) {
-//     sorapaDay.setFullYear(now.getFullYear() + 1);
-//   }
+function remainSorapaDay() {
+  const now = new Date();
+  const sorapaDay = new Date(now.getFullYear(), 2027, 11, 17, 0, 0);
+  if (now.getMonth() == 8 && now.getDate() == 7) {
+    sorapaDay.setFullYear(now.getFullYear() + 1);
+	}
+  else if (now.getMonth() > 10 || now.getMonth() == 10 && now.getDate() > 7) {
+    sorapaDay.setFullYear(now.getFullYear() + 1);
+  }
 
-//   const time = sorapaDay.getTime() - now.getTime();
-//   const date = Math.floor(time / 1000 / 60 / 60 / 24);
-//   const hour = Math.floor(time / 1000 / 60 / 60) % 24;
-//   const minute = Math.floor(time / 1000 / 60) % 60;
-//   const second = Math.floor(time / 1000) % 60;
+  const time = sorapaDay.getTime() - now.getTime();
+  const date = Math.floor(time / 1000 / 60 / 60 / 24);
+  const hour = Math.floor(time / 1000 / 60 / 60) % 24;
+  const minute = Math.floor(time / 1000 / 60) % 60;
+  const second = Math.floor(time / 1000) % 60;
 
-//   document.getElementById('rSorapaDate').textContent = date;
-//   document.getElementById('rSorapaHour').textContent = String(hour).padStart(2, '0');
-//   document.getElementById('rSorapaMinute').textContent = String(minute).padStart(2, '0');
-//   document.getElementById('rSorapaSecond').textContent = String(second).padStart(2, '0');
-// }
+  document.getElementById('rSorapaDate').textContent = date;
+  document.getElementById('rSorapaHour').textContent = String(hour).padStart(2, '0');
+  document.getElementById('rSorapaMinute').textContent = String(minute).padStart(2, '0');
+  document.getElementById('rSorapaSecond').textContent = String(second).padStart(2, '0');
+}
 
 setInterval(runningDate, 1000);
 setInterval(remainBirthDay, 1000);
