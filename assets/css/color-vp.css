@@ -4,28 +4,37 @@
 	/** 共通カラー */
 	--color-decoration-yellow: #FBF9B9;
 	--color-decoration-red: #B8212B;
+	--color-html-background-grad-top: #F7DCEA;
+	--color-html-background-grad-middle: #FDF9D7;
+	--color-html-background-grad-bottom: #DBEAFA;
+	--color-muiru-main: #EA76A2;
+	--color-chuno-main: #F3D749;
+	--color-hirune-main: #5A97F8;
 	
 	/** ライトテーマカラー */
-	--color-div-border-light: #FDA5A2;
-	--color-div-sub-border-light: #3A3530;
+	--color-div-border-light: #262A56;
+	--color-div-sub-border-light: #262A56;
 	--color-body-background-light: #FFFFFF;
-	--color-text-light: #0A0329;
-	--color-text-strong-light: #F77A75;
-	--color-caption-light: #5A554A;
-	--color-notes-light: #5A554A;
-	--color-input-border-light: #3A3530;
-	--color-input-border-active-light: #F77A75;
-	--color-input-text-light: #0A0329;
+	--color-text-light: #262A56;
+	--color-text-strong-light: #262A56;
+	--color-caption-light: #262A56;
+	--color-notes-light: #262A56;
+	--color-input-border-light: #262A56;
+	--color-input-border-active-light: #262A56;
+	--color-input-text-light: #262A56;
 	--color-input-text-active-light: #FFFFFF;
-	--color-input-background-light: #FDF9D9;
-	--color-input-background-active-light: #F77A75;
-	--color-footer-text-light: #FFFFFF;
-	--color-footer-background-light: #403C41;
+	--color-input-background-light: #FFFFFF;
+	--color-input-background-active-light: #262A56;
+	--color-footer-text-light: #262A56;
+	--color-footer-background-light: #E5ECFD;
 	
 	/** ダークテーマカラー */
-	--color-div-border-dark: #F2E45C;
+	/* --color-div-border-dark: #F2E45C;
 	--color-div-sub-border-dark: #7F0F19;
 	--color-body-background-dark: #1F201E;
+	--color-body-background-grad-top-dark: #FFFFFF;
+	--color-body-background-grad-middle-dark: #FFFFFF;
+	--color-body-background-grad-bottom-dark: #FFFFFF;
 	--color-text-dark: #FFFFFF;
 	--color-text-strong-dark: #B93839;
 	--color-caption-dark: #85857E;	
@@ -37,5 +46,5 @@
 	--color-input-background-dark: #FFFDE0;
 	--color-input-background-active-dark: #7F0F19;
 	--color-footer-text-dark: #FFFFFF;
-	--color-footer-background-dark: #220A0B;
+	--color-footer-background-dark: #220A0B; */
 }

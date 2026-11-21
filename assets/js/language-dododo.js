@@ -1,9 +1,10 @@
 ﻿const languageData = {
   /** 日本語 */
   'ja': {
-    'page-title': 'ドドドサーチ（DoDoDo Search）',
-    'text-nun-search': 'ぬんサーチ（Nun Search）',
-    'text-dododo-search': 'ドドドサーチ（DoDoDo Search）',
+    'page-title': 'ドドドサーチ',
+    'text-nun-search': 'ぬんサーチ',
+    'text-dododo-search': 'ドドドサーチ',
+    'text-vp-search': 'ベルプロサーチ',
     'header-caption': '',
     'label-language-selector': 'Language: ',
     'text-description': '「ドドドサーチ」はホロライブ所属のVtuber「角巻わため」に関するXポストの検索ツールです。検索日時の範囲や、よく使われるハッシュタグなどを、簡単に設定することができます。推し活やエゴサが楽になるかも。',
@@ -61,6 +62,7 @@
     'page-title': 'ドドドサーチ（DoDoDo Search）',
     'text-nun-search': 'Nun Search',
     'text-dododo-search': 'DoDoDo Search',
+    'text-vp-search': 'VEIL PRO Search',
     'header-caption': '',
     'label-language-selector': 'Language: ',
     'text-description': '"DoDoDo Search" is a search tool for X posts related to Hololive\'s Vtuber "Tsunomaki Watame". You can easily set the search date range and frequently used hashtags. It may make your oshikatsu and ego search easier.',

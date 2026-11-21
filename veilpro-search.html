@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-	ベルプロサーチ バージョン：0.1.0
+	ベルプロサーチ バージョン：1.0.0
 	2026/8/31 Copyright @minatsukijun
 
 	ベルプロに関するXの検索を少し楽にするページです。
@@ -28,7 +28,7 @@
 -->
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="stylesheet" href="assets/css/color-vp.css" type="text/css">
-<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="assets/css/style-vp.css" type="text/css">
 </head>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -52,6 +52,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div ontouchstart="">
   <h1 data-language-key="page-title">ベルプロサーチ</h1>
   <div data-language-key="text-description" class="no-border font-size-small"></div>
+  <div class="border" align="center">
+    <h2 data-language-key="heading-news">News</h2>
+    <div class="strong-border">
+      <h5>ベルプロ 2ndワンマンライブ<br>「ときめきレボリューション2027」開催<br>池袋harevutai 2027.3.20 SAT</h5>
+      <div><span class="font-size-small">
+        ＜先行抽選受付期間＞<br>
+        2026年11月7日(土)21:00 〜 2026年11月26日(木)23:59
+      </span></div>
+      <input class="btn btn-news-link" type="button" value="特設ページを見る" onClick="window.open('https://veilproject.zaiko.io/ja/e/tokimekirevolution2027')">
+    </div>
+  </div>
   <div class="block-date border">
     <h2 data-language-key="heading-date">1. 日付範囲指定</h2>
     <span data-language-key="date-text-notes" class="text-notes">※チェックボックスで日付範囲の有効/無効を切り替えられます</span>
@@ -81,60 +92,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <input type="radio" class="radio-search-option" name="radio-search-option" id="radioSearchOptionOr" value="OR" onChange="refreshConfirmAreaAndOr()">
       <span data-language-key="radio-or">"OR"で検索</span><br>
       <p>
-        <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="name" id="textboxKeyword" placeholder="検索したいキーワードを入力">
+        <input data-language-key="textbox-keyword" class="textbox-keyword" type="text" name="vpsearchbox(ᐢ⩌⩊⩌ᐢ)🔎" id="textboxKeyword" autocomplete="off" spellcheck="false">
         <span data-language-key="keyword-text-notes" class="text-notes">※半角スペース区切り</span><br>
         <input data-language-key="text-keyword-rstbtn" class="btn btn-full button-reset-keyword" type="button" name="reset-keyword" id="buttonResetKeyword" value="キーワードをリセット" onClick="clickResetKeywordButton()">
       </p>
     </div>
     <div class="strong-border">
       <h3 data-language-key="heading-autoinput-btn">キーワードを自動入力できるボタン</h3>
-      <!--<h4 data-language-key="heading-special-tag">スペシャル</h4>
+      <h4 data-language-key="heading-special-tag">スペシャル</h4>
       <div>
-      </div>-->
+        <input class="btn btn-half" type="button" value="#ときレボ2027" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#瑠乃亜ひるね生誕祭2026" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#vividone" onClick="onClickTagButton(event)">
+      </div>
       <h4 data-language-key="heading-general-tag">一般</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#心恋音むいる" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#鈴日菜ちゅの" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#瑠乃亜ひるね" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#心恋音むいる" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#鈴日菜ちゅの" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#瑠乃亜ひるね" onClick="onClickTagButton(event)">
         <input class="btn btn-half" type="button" value="#ベルプロ" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-streaming-tag">配信やコンテンツの感想</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#むいるらいぶ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#むいるぼいす" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ちゅのらいぶ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ちゅのぼいす" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ひるねらいぶ" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ひるねぼいす" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#むいるらいぶ" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#むいるぼいす" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#ちゅのらいぶ" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#ちゅのぼいす" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#ひるねらいぶ" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#ひるねぼいす" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-fanart-tag">ファンアートや切り抜き動画</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#むいるあーと" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#むいるカット" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ちゅのずかん" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#きりぬきちゅの" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ひるねあーと" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ひるねメモリー" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#むいるあーと" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#むいるカット" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#ちゅのずかん" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#きりぬきちゅの" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#ひるねあーと" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#ひるねメモリー" onClick="onClickTagButton(event)">
       </div>
       <h4 data-language-key="heading-schedule-tag">スケジュール</h4>
       <div>
-        <input class="btn btn-half" type="button" value="#むいじゅーる" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ちゅのじゅーる" onClick="onClickTagButton(event)">
-        <input class="btn btn-half" type="button" value="#ひるじゅーる" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-muiru" type="button" value="#むいじゅーる" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#ちゅのじゅーる" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-hirune" type="button" value="#ひるじゅーる" onClick="onClickTagButton(event)">
       </div>
-      <!-- <details id="detailsKeywordArchive">
+      <details id="detailsKeywordArchive">
         <summary><span data-language-key="heading-archive-tag">アーカイブ</span></summary>
         <h4>あ行</h4>
+        <input class="btn btn-half" type="button" value="#えるすりー12" onClick="onClickTagButton(event)">
         <h4>か行</h4>
+        <input class="btn btn-half btn-muiru" type="button" value="#心恋音むいる生誕祭2026" onClick="onClickTagButton(event)">
         <h4>さ行</h4>
+        <input class="btn btn-half" type="button" value="#深海フェス2026" onClick="onClickTagButton(event)">
+        <input class="btn btn-half btn-chuno" type="button" value="#鈴日菜ちゅの生誕祭2026" onClick="onClickTagButton(event)">
         <h4>た行</h4>
         <h4>な行</h4>
         <h4>は行</h4>
         <h4>ま行</h4>
         <h4>や行</h4>
         <h4>ら行</h4>
+        <input class="btn btn-half btn-hirune" type="button" value="#瑠乃亜ひるね生誕祭2025" onClick="onClickTagButton(event)">
         <h4>わ行</h4>
-      </details> -->
+      </details>
     </div>
   </div>
   <div class="block-option border">
@@ -144,11 +163,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <input type="radio" class="radio-search-option-only" name="radio-search-option-only" id="radioSearchOptionAnyone" value="ANYONE" onChange="refreshConfirmAreaOption()" checked>
       <span data-language-key="text-option-anyone" id="textOptionAnyone">全てのアカウントのポストを検索</span><br>
       <input type="radio" class="radio-search-option-only" name="radio-search-option-only" id="radioSearchOptionOnlyMuiru" value="MUIRU" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-option-muiru" id="textOptionMuiru">心恋音むいる（@Kokone_Muiru）のポストだけを検索</span><br>
+      <span data-language-key="text-option-muiru" id="textOptionMuiru">「心恋音むいる」のポストだけを検索</span><br>
       <input type="radio" class="radio-search-option-only" name="radio-search-option-only" id="radioSearchOptionOnlyChuno" value="CHUNO" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-option-chuno" id="textOptionChuno">鈴日菜ちゅの（@Suzuhina_Chuno）のポストだけを検索</span><br>
+      <span data-language-key="text-option-chuno" id="textOptionChuno">「鈴日菜ちゅの」のポストだけを検索</span><br>
       <input type="radio" class="radio-search-option-only" name="radio-search-option-only" id="radioSearchOptionOnlyHirune" value="HIRUNE" onChange="refreshConfirmAreaOption()">
-      <span data-language-key="text-option-hirune" id="textOptionHirune">瑠乃亜ひるね（@Runoa_Hirune）のポストだけを検索</span><br>
+      <span data-language-key="text-option-hirune" id="textOptionHirune">「瑠乃亜ひるね」のポストだけを検索</span><br>
       <strong><span>コンテンツの絞り込み</span></strong><br>
       <input type="checkbox" name="media-only" id="mediaOnlyModeEnabled" onChange="refreshConfirmAreaOption()">
       <span data-language-key="text-media-only" id="textOptionMedia">画像・動画付きのポストだけを検索</span>
@@ -156,7 +175,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <div class="block-search border">
     <h2 data-language-key="heading-search">3. 設定した条件でXを検索</h2>
-    <div class="strong-border">
       <details id="detailsSummaryConfirmThisSearch">
         <summary><span data-language-key="summary-confirm-this-search">検索内容を確認する</span></summary>
         <h4 data-language-key="text-date-01">いつから？</h4>
@@ -169,7 +187,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h4 data-language-key="heading-option">オプション</h4>
         <span class="confirm-this-search" id="confirmValueOption"></span></details>
       <input data-language-key="text-search-btn" class="btn btn-search" id="searchBtn" type="button" value="Xで検索🔎" onClick="openPage()">
-    </div>
     <div class="floating-nunnun-wrap border" id="floatingNunnun">
       <input data-language-key="text-search-btn" class="btn btn-search btn-floating" type="button" value="Xで検索🔎" onClick="openPage()">
     </div>
@@ -201,6 +218,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <strong><span data-language-key="timer-text-aniv">周年まで</span></strong><br>
       <blockquote>➡️ <span id="rAnivDate"></span>:<span id="rAnivHour"></span>:<span id="rAnivMinute"></span>:<span id="rAnivSecond"></span><br>
       </blockquote>
+    </div>
+  </div>
+  <div class ="border">
+    <h2 data-language-key="heading-sister-page">姉妹ページ一覧</h2>
+    <div class="strong-border">
+      <input data-language-key="text-nun-search" class="btn btn-full" type="button" value="ぬんサーチ" onClick="location.href='./'">
+      <input data-language-key="text-dododo-search" class="btn btn-full" type="button" value="ドドドサーチ" onClick="location.href='./dododo-search.html'">
+      <input data-language-key="text-vp-search" class="btn btn-full" type="button" value="ベルプロサーチ" onClick="location.href='./veilpro-search.html'">
     </div>
   </div>
 </div>
